@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Home, Mail, Phone } from "lucide-react";
+import { FounderImage } from "@/components/founder-image";
 import { PageHero } from "@/components/page-hero";
-import { company, loanPrograms } from "@/lib/site-data";
+import { company, founder, loanPrograms } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -43,6 +44,18 @@ export default function ContactPage() {
             </div>
           </aside>
           <div className="rounded-sm bg-white p-7 shadow-[0_18px_50px_rgba(13,27,42,0.08)] md:p-10">
+            <div className="mb-8 flex flex-col gap-5 rounded-sm border border-navy/10 bg-light-gray p-5 sm:flex-row sm:items-center">
+              <FounderImage variant="avatar" />
+              <div>
+                <p className="text-xl font-bold text-navy">{founder.name}</p>
+                <p className="mt-1 text-sm font-semibold text-gold">{founder.title}</p>
+                <div className="mt-3 grid gap-1 text-sm leading-6 text-slate-600">
+                  <p>Individual NMLS #{company.individualNmls}</p>
+                  <p>Phone: <a href={company.phoneHref} className="font-semibold text-navy hover:text-gold">{company.phoneDisplay}</a></p>
+                  <p>Email: <a href={company.emailHref} className="font-semibold text-navy hover:text-gold">{company.email}</a></p>
+                </div>
+              </div>
+            </div>
             {/* TODO: Wire this Phase 1 lead form to Resend, Supabase, the CRM dashboard, and the LOS handoff when backend services are ready. */}
             <form className="grid gap-5" aria-label="Mortgage inquiry form">
               <div className="grid gap-5 sm:grid-cols-2">

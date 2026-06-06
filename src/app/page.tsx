@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChartNoAxesCombined, Handshake, Headphones, House, ShieldCheck, TrendingUp } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
+import { FounderImage } from "@/components/founder-image";
 import { LoanCard } from "@/components/loan-card";
-import { featuredLoanPrograms } from "@/lib/site-data";
+import { company, featuredLoanPrograms, founder } from "@/lib/site-data";
 
 const values = [
   { label: "Trust", text: "Clear guidance and transparent communication.", icon: ShieldCheck },
@@ -48,6 +49,26 @@ export default function HomePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-navy text-white">
+        <div className="container-shell grid gap-12 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="eyebrow text-gold">Meet David Bates</p>
+            <div className="mt-5 h-1 w-20 bg-gold" />
+            <h2 className="mt-6 text-4xl font-semibold tracking-tight md:text-5xl">Founder-led mortgage guidance.</h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/70">{founder.shortBio}</p>
+            <p className="mt-6 text-sm font-semibold text-gold">
+              {founder.title} | Individual NMLS #{company.individualNmls}
+            </p>
+            <Link href="/contact" className="button-gold mt-9">
+              Schedule a Consultation <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-gold/40 bg-white/5 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+            <FounderImage variant="home" />
+          </div>
         </div>
       </section>
 
