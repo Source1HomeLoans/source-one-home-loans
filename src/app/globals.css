@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0d1b2a;
+  --gold: #d4af37;
+  --light-gray: #f2f4f7;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-light-gray: var(--light-gray);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container-shell {
+  width: min(100% - 2rem, 1180px);
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 5rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.button-gold,
+.button-navy,
+.button-outline {
+  display: inline-flex;
+  min-height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.125rem;
+  padding: 0.75rem 1.35rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: 180ms ease;
+}
+
+.button-gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.button-gold:hover {
+  background: #e0bd49;
+  transform: translateY(-1px);
+}
+
+.button-navy {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.button-navy:hover {
+  background: #152b41;
+  transform: translateY(-1px);
+}
+
+.button-outline {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.button-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.form-field {
+  width: 100%;
+  min-height: 3.1rem;
+  border: 1px solid #d6dbe2;
+  border-radius: 0.125rem;
+  background: #ffffff;
+  padding: 0.8rem 0.95rem;
+  color: var(--navy);
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.form-field:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
+}
+
+@media (min-width: 768px) {
+  .container-shell {
+    width: min(100% - 3rem, 1180px);
+  }
+
+  .section-space {
+    padding-block: 6.5rem;
+  }
+}
