@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { LegalPage } from "@/components/legal-page";
 import { company } from "@/lib/site-data";
 
@@ -40,5 +41,16 @@ const sections = [
 ];
 
 export default function LicensingDisclosuresPage() {
-  return <LegalPage title="Licensing & Disclosures" description="Important licensing information and general disclosures for Source One Home Loans." sections={sections} />;
+  return (
+    <>
+      <LegalPage title="Licensing & Disclosures" description="Important licensing information and general disclosures for Source One Home Loans." sections={sections} />
+      <section className="bg-light-gray pb-20">
+        <div className="container-shell max-w-4xl">
+          <Link href={company.nmlsConsumerAccessUrl} className="button-navy" target="_blank" rel="noreferrer">
+            Verify Licensing Through NMLS Consumer Access
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }
