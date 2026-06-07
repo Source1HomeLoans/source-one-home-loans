@@ -120,7 +120,7 @@ export default function HomePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="order-2 grid grid-cols-2 gap-4 lg:order-1">
             {[
-              ["Investor Property Loans", "DSCR and Rental Property Financing"],
+              ["Real Estate Investor Loans", "Financing solutions for real estate investors purchasing or refinancing rental properties, including DSCR and investor-focused lending programs."],
               ["Rental Portfolio Growth", "Financing for your next investment"],
               ["Cash-Flow Focused Options", "Programs built around investment property goals"],
               ["Investor Guidance", "Clear next steps for qualified real estate investors"],

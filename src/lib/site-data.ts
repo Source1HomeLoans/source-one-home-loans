@@ -122,9 +122,9 @@ export const loanPrograms = [
     featured: false,
   },
   {
-    title: "Investor Property Loans",
+    title: "Real Estate Investor Loans",
     description:
-      "Financing solutions for real estate investors purchasing or refinancing rental properties using DSCR and other investor-focused loan programs.",
+      "Financing solutions for real estate investors purchasing or refinancing rental properties, including DSCR and investor-focused lending programs.",
     icon: HandCoins,
     category: "Real Estate Investor Loans",
     featured: true,
@@ -156,7 +156,7 @@ const featuredLoanProgramTitles = [
   "Conventional Loans",
   "FHA Loans",
   "VA Loans",
-  "Investor Property Loans",
+  "Real Estate Investor Loans",
   "Bank Statement Loans",
   "Profit & Loss (P&L) Loans",
   "No Doc Loans",
