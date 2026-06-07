@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import Image from "next/image";
 import { founder } from "@/lib/site-data";
@@ -9,7 +9,8 @@ type FounderImageProps = {
 };
 
 export function FounderImage({ variant, priority = false }: FounderImageProps) {
-  const hasHeadshot = existsSync(join(process.cwd(), "public", "images", "david-bates-headshot.jpg"));
+  const headshotPath = join(process.cwd(), "public", "images", "david-bates-headshot.jpg");
+  const hasHeadshot = existsSync(headshotPath) && statSync(headshotPath).size > 0;
 
   if (!hasHeadshot) {
     const fallbackClass =
