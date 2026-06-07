@@ -7,8 +7,9 @@ type LeadNotificationPayload = {
   phone: string;
   loan_program_interest: string | null;
   message: string | null;
+  lead_source: string;
   source_page: string;
-  submitted_at: string;
+  submitted_at_display: string;
 };
 
 const notificationRecipient = "david@sourceonehomeloans.com";
@@ -40,7 +41,8 @@ function buildTextEmail(lead: LeadNotificationPayload) {
     `Phone: ${lead.phone}`,
     `Loan Program Interest: ${formatValue(lead.loan_program_interest)}`,
     `Message: ${formatValue(lead.message)}`,
-    `Timestamp: ${lead.submitted_at}`,
+    `Timestamp: ${lead.submitted_at_display}`,
+    `Lead Source: ${lead.lead_source}`,
   ].join("\n");
 }
 
@@ -52,7 +54,8 @@ function buildHtmlEmail(lead: LeadNotificationPayload) {
     ["Phone", lead.phone],
     ["Loan Program Interest", formatValue(lead.loan_program_interest)],
     ["Message", formatValue(lead.message)],
-    ["Timestamp", lead.submitted_at],
+    ["Timestamp", lead.submitted_at_display],
+    ["Lead Source", lead.lead_source],
   ];
 
   return `
@@ -97,7 +100,7 @@ export async function sendLeadNotification(lead: LeadNotificationPayload) {
     console.error("Resend notification failed for website lead.", {
       error,
       sourcePage: lead.source_page,
-      submittedAt: lead.submitted_at,
+      submittedAt: lead.submitted_at_display,
     });
 
     return { sent: false, reason: "resend_error" };
@@ -106,7 +109,7 @@ export async function sendLeadNotification(lead: LeadNotificationPayload) {
   console.info("Resend notification sent for website lead.", {
     emailId: data?.id,
     sourcePage: lead.source_page,
-    submittedAt: lead.submitted_at,
+    submittedAt: lead.submitted_at_display,
   });
 
   return { sent: true, emailId: data?.id };
