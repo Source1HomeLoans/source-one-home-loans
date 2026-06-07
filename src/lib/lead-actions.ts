@@ -1,7 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
-import { sendLeadNotification } from "@/lib/lead-notifications";
+import { sendLeadConfirmation, sendLeadNotification } from "@/lib/lead-notifications";
 
 export type LeadFormState = {
   status: "idle" | "success" | "error";
@@ -190,7 +190,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
     // TODO: Add spam protection before launch scale-up, such as Turnstile, reCAPTCHA, rate limiting, or a honeypot.
     // TODO: Add CRM assignment/routing logic when the CRM dashboard and LOS workflow are connected.
-    await sendLeadNotification({
+    const savedLead = {
       first_name: leadDetails.first_name,
       last_name: leadDetails.last_name,
       email: leadDetails.email,
@@ -200,7 +200,12 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
       lead_source: leadSource,
       source_page: leadDetails.source_page,
       submitted_at_display: submittedAtDisplay,
-    });
+    };
+
+    await Promise.allSettled([
+      sendLeadNotification(savedLead),
+      sendLeadConfirmation(savedLead),
+    ]);
 
     return {
       status: "success",
