@@ -126,7 +126,7 @@ export const loanPrograms = [
     description:
       "Financing solutions for real estate investors purchasing or refinancing rental properties using DSCR and other investor-focused loan programs.",
     icon: HandCoins,
-    category: "Investor Financing",
+    category: "Real Estate Investor Loans",
     featured: true,
   },
   {
@@ -148,7 +148,7 @@ export const loanPrograms = [
 export const loanProgramCategories = [
   "Traditional Loans",
   "Self-Employed & Alternative Income",
-  "Investor Financing",
+  "Real Estate Investor Loans",
   "Additional Programs",
 ] as const;
 

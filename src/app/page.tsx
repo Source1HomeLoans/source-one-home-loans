@@ -133,10 +133,10 @@ export default function HomePage() {
             ))}
           </div>
           <div className="order-1 lg:order-2 lg:pl-12">
-            <p className="eyebrow text-gold">Investor Financing</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Financing Solutions for Real Estate Investors</h2>
+            <p className="eyebrow text-gold">Real Estate Investor Loans</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Real Estate Investor Loans</h2>
             <p className="mt-6 text-base leading-8 text-slate-600">
-              Whether you&apos;re purchasing your first investment property or expanding your rental portfolio, Source One Home Loans offers investor-focused financing solutions, including DSCR and rental property loan programs designed to help you grow your real estate investments.
+              Financing solutions for real estate investors purchasing or refinancing rental properties, including DSCR and investor-focused lending programs.
             </p>
             <Link href="/contact#lead-form" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
           </div>

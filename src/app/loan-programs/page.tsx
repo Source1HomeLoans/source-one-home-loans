@@ -5,9 +5,17 @@ import { PageHero } from "@/components/page-hero";
 import { company, loanProgramCategories, loanPrograms } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Loan Programs",
+  title: "Real Estate Investor Loans",
   description:
-    "Explore conventional, FHA, VA, jumbo, investor property, self-employed, non-QM, refinance, and first-time homebuyer loan options.",
+    "Explore real estate investor loan options including DSCR and rental property financing solutions designed for real estate investors.",
+  keywords: [
+    "Real Estate Investor Loans",
+    "DSCR Loans",
+    "Rental Property Loans",
+    "Investment Property Financing",
+    "Real Estate Investment Loans",
+    "Investor Mortgage Loans",
+  ],
 };
 
 export default function LoanProgramsPage() {
@@ -16,7 +24,7 @@ export default function LoanProgramsPage() {
       <PageHero
         eyebrow="Loan Programs"
         title="More options. More flexibility. A loan strategy built around you."
-        description="Every borrower has a different story. Explore financing options for traditional homebuyers, business owners, investors, and borrowers with unique income profiles."
+        description="Every borrower has a different story. Explore financing options for traditional homebuyers, business owners, real estate investors, and borrowers with unique income profiles."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell">
