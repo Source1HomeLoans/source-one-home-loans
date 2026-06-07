@@ -121,6 +121,23 @@ textarea {
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.14);
 }
 
+.prose-content {
+  color: #334155;
+}
+
+.prose-content h2 {
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--navy);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.prose-content p {
+  margin-top: 1rem;
+  line-height: 1.85;
+}
+
 @media (min-width: 768px) {
   .container-shell {
     width: min(100% - 3rem, 1180px);

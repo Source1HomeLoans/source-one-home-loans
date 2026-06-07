@@ -30,7 +30,7 @@ const sections = [
     ],
   },
   {
-    title: "Contact Us",
+    title: "Contact Source One Home Loans",
     content: [`Questions about these Terms of Use may be directed to ${company.email}.`],
   },
 ];

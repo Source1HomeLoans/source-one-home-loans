@@ -169,6 +169,8 @@ export const featuredLoanPrograms = featuredLoanProgramTitles.map(
 export const navigation = [
   { href: "/", label: "Home" },
   { href: "/loan-programs", label: "Loan Programs" },
+  { href: "/learning-center", label: "Mortgage Learning Center" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

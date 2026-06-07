@@ -117,13 +117,24 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
   const consentToContact = formData.get("consent_to_contact") === "on";
   const turnstileToken = readRequiredText(formData, "cf-turnstile-response");
+  const fullName = readRequiredText(formData, "name");
+  const [fallbackFirstName = "", ...fallbackLastNameParts] = fullName.split(/\s+/).filter(Boolean);
+  const preferredContactMethod = readRequiredText(formData, "preferred_contact_method");
+  const loanGoal = readRequiredText(formData, "loan_goal");
+  const rawMessage = readRequiredText(formData, "message");
+  const enhancedMessage = [
+    rawMessage,
+    preferredContactMethod ? `Preferred Contact Method: ${preferredContactMethod}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n\n");
   const leadDetails = {
-    first_name: readRequiredText(formData, "first_name"),
-    last_name: readRequiredText(formData, "last_name"),
+    first_name: readRequiredText(formData, "first_name") || fallbackFirstName,
+    last_name: readRequiredText(formData, "last_name") || fallbackLastNameParts.join(" ") || "Not provided",
     email: readRequiredText(formData, "email"),
     phone: formatUsPhone(readRequiredText(formData, "phone")),
-    loan_program_interest: readRequiredText(formData, "loan_program_interest") || null,
-    message: readRequiredText(formData, "message") || null,
+    loan_program_interest: readRequiredText(formData, "loan_program_interest") || loanGoal || null,
+    message: enhancedMessage || null,
     consent_to_contact: consentToContact,
     source_page: readRequiredText(formData, "source_page") || "/contact",
     lead_status: "new",

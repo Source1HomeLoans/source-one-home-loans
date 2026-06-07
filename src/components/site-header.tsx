@@ -8,14 +8,14 @@ export function SiteHeader() {
     <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/80 backdrop-blur-md">
       <div className="container-shell flex h-20 items-center justify-between">
         <Logo />
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
           {navigation.map((item) => (
             <Link key={item.href} href={item.href} className="text-sm font-medium text-white/80 transition hover:text-gold">
               {item.label}
             </Link>
           ))}
-          <Link href="/contact#lead-form" className="button-gold">
-            Apply Now
+          <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
+            Get Pre-Qualified
           </Link>
         </nav>
         <details className="relative lg:hidden">
@@ -29,8 +29,8 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact#lead-form" className="button-gold mt-2 w-full">
-              Apply Now
+            <Link href="/contact#lead-form" className="button-gold mt-2 w-full" data-analytics-event="get_prequalified_click">
+              Get Pre-Qualified
             </Link>
           </nav>
         </details>

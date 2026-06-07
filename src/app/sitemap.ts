@@ -1,9 +1,16 @@
 import type { MetadataRoute } from "next";
 import { company } from "@/lib/site-data";
+import { blogPosts, locationPages, mortgageProgramPages } from "@/lib/seo-content";
 
 const routes = [
   "",
   "/loan-programs",
+  "/mortgage-programs",
+  "/locations",
+  "/learning-center",
+  "/learning-center/blog",
+  "/blog",
+  "/google-business-profile",
   "/about",
   "/contact",
   "/privacy-policy",
@@ -12,7 +19,14 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const dynamicRoutes = [
+    ...mortgageProgramPages.map((page) => `/mortgage-programs/${page.slug}`),
+    ...locationPages.map((page) => `/locations/${page.slug}`),
+    ...blogPosts.map((post) => `/learning-center/blog/${post.slug}`),
+    ...blogPosts.map((post) => `/blog/${post.slug}`),
+  ];
+
+  return [...routes, ...dynamicRoutes].map((route) => ({
     url: `${company.siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",

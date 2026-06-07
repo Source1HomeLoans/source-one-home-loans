@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ChartNoAxesCombined, Handshake, Headphones, House, ShieldCheck, TrendingUp } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
 import { FounderImage } from "@/components/founder-image";
+import { LeadForm } from "@/components/lead-form";
 import { LoanCard } from "@/components/loan-card";
 import { company, featuredLoanPrograms, founder } from "@/lib/site-data";
 
@@ -30,8 +31,8 @@ export default function HomePage() {
               Smart mortgage solutions for homebuyers, investors, and self-employed borrowers.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact#lead-form" className="button-gold">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
-              <Link href="/loan-programs" className="button-outline">Explore Loan Programs</Link>
+              <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="#free-consultation" className="button-outline" data-analytics-event="schedule_consultation_click">Schedule a Consultation</Link>
             </div>
           </div>
         </div>
@@ -139,6 +140,72 @@ export default function HomePage() {
               Financing solutions for real estate investors purchasing or refinancing rental properties, including DSCR and investor-focused lending programs.
             </p>
             <Link href="/contact#lead-form" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-navy text-white">
+        <div className="container-shell">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow text-gold">Client Success Stories</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Borrower wins start with clear guidance.</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-white/65">
+              Review placeholders are ready for future Google Review integration. Live reviews will be connected after the Google Business Profile is active.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              ["★★★★★", "First-time buyer guidance", "Placeholder success story: A Texas buyer received step-by-step education before choosing a mortgage path."],
+              ["★★★★★", "Investor strategy support", "Placeholder success story: A real estate investor reviewed DSCR and rental property financing options for portfolio growth."],
+              ["★★★★★", "Self-employed borrower clarity", "Placeholder success story: A business owner explored bank statement and Non-QM documentation options."],
+            ].map(([rating, title, text]) => (
+              <article key={title} className="rounded-sm border border-white/10 bg-white/5 p-7">
+                <p className="text-gold">{rating}</p>
+                <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/65">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-light-gray">
+        <div className="container-shell">
+          <p className="eyebrow text-gold">Why Borrowers Choose Source One Home Loans</p>
+          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Mortgage support that feels personal, fast, and practical.</h2>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Personalized Service", "Loan guidance based on your goals, documentation, property type, and timeline."],
+              ["Investor Expertise", "Support for DSCR concepts, rental property financing, and real estate investor loan strategy."],
+              ["Self-Employed Borrower Solutions", "Bank statement, P&L, and Non-QM conversations for business owners and entrepreneurs."],
+              ["Fast Communication", "Responsive next steps so borrowers know what is needed and why it matters."],
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-sm bg-white p-7 shadow-[0_14px_40px_rgba(13,27,42,0.05)]">
+                <h3 className="text-xl font-semibold text-navy">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="free-consultation" className="section-space bg-white">
+        <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="eyebrow text-gold">Free Mortgage Consultation</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Explore your loan options with a focused consultation.</h2>
+            <p className="mt-6 text-base leading-8 text-slate-600">
+              Share your name, contact details, loan goal, and preferred contact method. Your submission is stored for follow-up in the shared lead pipeline.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/loan-programs" className="button-navy">Explore Your Loan Options</Link>
+              <a href={company.phoneHref} className="button-gold" data-analytics-event="phone_call_click">Call Now</a>
+            </div>
+          </div>
+          <div className="rounded-sm border border-navy/10 bg-light-gray p-7 md:p-10">
+            <LeadForm variant="consultation" sourcePage="/#free-consultation" />
           </div>
         </div>
       </section>

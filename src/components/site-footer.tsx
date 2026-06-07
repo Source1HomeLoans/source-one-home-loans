@@ -33,10 +33,10 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">Connect</h3>
           <div className="mt-4 grid gap-3">
-            <a href={company.phoneHref} className="flex items-center gap-3 text-sm text-white/60 transition hover:text-white">
+            <a href={company.phoneHref} className="flex items-center gap-3 text-sm text-white/60 transition hover:text-white" data-analytics-event="phone_call_click">
               <Phone className="h-4 w-4 text-gold" /> {company.phoneDisplay}
             </a>
-            <a href={company.emailHref} className="flex items-center gap-3 text-sm text-white/60 transition hover:text-white">
+            <a href={company.emailHref} className="flex items-center gap-3 text-sm text-white/60 transition hover:text-white" data-analytics-event="email_click">
               <Mail className="h-4 w-4 text-gold" /> {company.email}
             </a>
             <p className="text-sm text-white/60">Company NMLS #{company.nmls}</p>

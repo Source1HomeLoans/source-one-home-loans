@@ -27,7 +27,7 @@ const sections = [
     ],
   },
   {
-    title: "Contact Us",
+    title: "Contact Source One Home Loans",
     content: [`Questions about this Privacy Policy may be directed to ${company.email}.`],
   },
 ];

@@ -14,9 +14,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact Us"
-        title="Let's talk about your home financing goals."
-        description="Tell us a little about what you are planning. A member of our team will follow up to help you explore your options."
+        eyebrow="Get Pre-Qualified"
+        title="Schedule a free mortgage consultation."
+        description="Tell us a little about what you are planning. Source One Home Loans will follow up to help you explore your loan options."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
@@ -24,13 +24,13 @@ export default function ContactPage() {
             <p className="eyebrow text-gold">Connect Directly</p>
             <h2 className="mt-4 text-3xl font-semibold">We are ready when you are.</h2>
             <p className="mt-5 text-sm leading-7 text-white/65">
-              Reach out by phone or email, or send a message through the form. We look forward to learning more about your goals.
+              Reach out by phone or email, or send a message through the form to start your pre-qualification conversation.
             </p>
             <div className="mt-9 grid gap-5">
-              <a href={company.phoneHref} className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75 hover:text-gold">
+              <a href={company.phoneHref} className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75 hover:text-gold" data-analytics-event="phone_call_click">
                 <Phone className="mt-0.5 h-5 w-5 text-gold" /> <span><strong className="block text-white">Call Us</strong>{company.phoneDisplay}</span>
               </a>
-              <a href={company.emailHref} className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75 hover:text-gold">
+              <a href={company.emailHref} className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75 hover:text-gold" data-analytics-event="email_click">
                 <Mail className="mt-0.5 h-5 w-5 text-gold" /> <span><strong className="block text-white">Email Us</strong>{company.email}</span>
               </a>
               <p className="border-t border-white/10 pt-5 text-sm text-white/75"><strong className="block text-white">Company NMLS</strong>#{company.nmls}</p>
