@@ -32,7 +32,7 @@ export function FounderImage({ variant, priority = false }: FounderImageProps) {
         alt={founder.imageAlt}
         width={96}
         height={96}
-        className="h-24 w-24 shrink-0 rounded-full border-2 border-gold object-cover object-center"
+        className="h-24 w-24 shrink-0 rounded-full border-2 border-gold object-cover object-top"
       />
     );
   }
@@ -43,7 +43,7 @@ export function FounderImage({ variant, priority = false }: FounderImageProps) {
       alt={founder.imageAlt}
       width={variant === "about" ? 820 : 720}
       height={variant === "about" ? 980 : 860}
-      className="aspect-[4/5] w-full rounded-2xl object-cover object-center"
+      className="aspect-[4/5] w-full rounded-2xl object-cover object-top"
       priority={priority}
     />
   );

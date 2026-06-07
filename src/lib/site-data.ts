@@ -46,7 +46,7 @@ export const founder = {
   name: "David Bates",
   title: "Mortgage Loan Originator",
   image: "/images/david-bates-headshot.jpg",
-  imageAlt: "David Bates, Mortgage Loan Originator at Source One Home Loans",
+  imageAlt: "David Bates, Mortgage Loan Originator at Source One Home Loans.",
   shortBio:
     "As the founder of Source One Home Loans, David Bates is committed to helping homebuyers, homeowners, and real estate investors navigate the mortgage process with confidence. He brings experience in mortgage lending, real estate, military service, and aerospace quality assurance to deliver clear, detail-focused guidance.",
   bio: [
