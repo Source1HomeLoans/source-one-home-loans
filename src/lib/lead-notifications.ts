@@ -11,9 +11,10 @@ type LeadNotificationPayload = {
   submitted_at: string;
 };
 
-const notificationRecipients = ["david@sourceonehomeloans.com", "support@sourceonehomeloans.com"];
+const notificationRecipient = "david@sourceonehomeloans.com";
+const notificationCc = "support@sourceonehomeloans.com";
 const notificationSubject = "New Website Lead - Source One Home Loans";
-const notificationFrom = "Source One Home Loans <noreply@sourceonehomeloans.com>";
+const notificationFrom = "noreply@sourceonehomeloans.com";
 
 function escapeHtml(value: string) {
   return value
@@ -29,30 +30,29 @@ function formatValue(value: string | null) {
 }
 
 function buildTextEmail(lead: LeadNotificationPayload) {
+  const name = `${lead.first_name} ${lead.last_name}`.trim();
+
   return [
     "A new website lead was submitted.",
     "",
-    `First Name: ${lead.first_name}`,
-    `Last Name: ${lead.last_name}`,
+    `Name: ${name}`,
     `Email: ${lead.email}`,
     `Phone: ${lead.phone}`,
     `Loan Program Interest: ${formatValue(lead.loan_program_interest)}`,
     `Message: ${formatValue(lead.message)}`,
     `Timestamp: ${lead.submitted_at}`,
-    `Source Page: ${lead.source_page}`,
   ].join("\n");
 }
 
 function buildHtmlEmail(lead: LeadNotificationPayload) {
+  const name = `${lead.first_name} ${lead.last_name}`.trim();
   const rows = [
-    ["First Name", lead.first_name],
-    ["Last Name", lead.last_name],
+    ["Name", name],
     ["Email", lead.email],
     ["Phone", lead.phone],
     ["Loan Program Interest", formatValue(lead.loan_program_interest)],
     ["Message", formatValue(lead.message)],
     ["Timestamp", lead.submitted_at],
-    ["Source Page", lead.source_page],
   ];
 
   return `
@@ -86,7 +86,8 @@ export async function sendLeadNotification(lead: LeadNotificationPayload) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { data, error } = await resend.emails.send({
     from: notificationFrom,
-    to: notificationRecipients,
+    to: notificationRecipient,
+    cc: notificationCc,
     subject: notificationSubject,
     text: buildTextEmail(lead),
     html: buildHtmlEmail(lead),
