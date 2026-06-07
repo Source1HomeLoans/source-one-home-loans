@@ -23,7 +23,7 @@ export default function LearningCenterPage() {
             <BookOpen className="h-10 w-10 text-gold" />
             <h2 className="mt-6 text-4xl font-semibold">Start with the right question.</h2>
             <p className="mt-5 text-sm leading-7 text-white/70">
-              Mortgage decisions are easier when borrowers understand options before pressure enters the process. The Learning Center is built to support future CMS publishing and long-term organic search growth.
+              Mortgage decisions are easier when borrowers understand options before pressure enters the process. The Learning Center brings together practical Texas mortgage education, loan program guides, and borrower planning resources.
             </p>
             <Link href="/learning-center/blog" className="button-gold mt-8">
               Visit the Blog <ArrowRight className="h-4 w-4" />
@@ -33,7 +33,7 @@ export default function LearningCenterPage() {
             {blogCategories.map((category) => (
               <Link key={category} href="/learning-center/blog" className="rounded-sm border border-navy/10 bg-light-gray p-6 transition hover:border-gold">
                 <h3 className="font-semibold text-navy">{category}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">Browse current and future articles in this category.</p>
+                <p className="mt-3 text-sm leading-7 text-slate-600">Browse completed educational articles in this category.</p>
               </Link>
             ))}
           </div>
@@ -58,7 +58,7 @@ export default function LearningCenterPage() {
           {[
             ["Home Buying Tips", "Prepare for pre-qualification, offers, documentation, and closing.", Home],
             ["Real Estate Investing", "Explore rental property, DSCR, and investor loan strategy.", LineChart],
-            ["Refinancing Strategies", "Review payment, term, equity, and portfolio goals.", RefreshCcw],
+            ["Refinancing", "Review payment, term, equity, and portfolio goals.", RefreshCcw],
           ].map(([title, text, Icon]) => (
             <div key={title as string} className="rounded-sm border border-navy/10 p-7">
               <Icon className="h-7 w-7 text-gold" />

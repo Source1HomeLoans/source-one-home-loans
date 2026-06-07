@@ -9,7 +9,7 @@ export function BlogIndex({ basePath = "/blog" }: { basePath?: string }) {
       <PageHero
         eyebrow="Blog"
         title="Mortgage insights for Texas borrowers."
-        description="An SEO-ready blog system prepared for future CMS/admin publishing."
+        description="Original mortgage education, home buying, refinancing, real estate investing, and self-employed borrower resources for Texas."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
