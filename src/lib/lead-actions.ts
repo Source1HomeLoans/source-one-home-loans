@@ -117,7 +117,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
   const consentToContact = formData.get("consent_to_contact") === "on";
   const turnstileToken = readRequiredText(formData, "cf-turnstile-response");
-  const payload = {
+  const leadDetails = {
     first_name: readRequiredText(formData, "first_name"),
     last_name: readRequiredText(formData, "last_name"),
     email: readRequiredText(formData, "email"),
@@ -126,13 +126,10 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
     message: readRequiredText(formData, "message") || null,
     consent_to_contact: consentToContact,
     source_page: readRequiredText(formData, "source_page") || "/contact",
-    lead_source: leadSource,
-    lead_status: "New",
-    ip_address: ipAddress,
-    user_agent: userAgent,
+    lead_status: "new",
   };
 
-  if (!payload.first_name || !payload.last_name || !payload.email || !payload.phone || !consentToContact) {
+  if (!leadDetails.first_name || !leadDetails.last_name || !leadDetails.email || !leadDetails.phone || !consentToContact) {
     return {
       status: "error",
       message: "Please complete the required fields and consent checkbox before submitting.",
@@ -149,6 +146,15 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   }
 
   try {
+    console.info("Submitting website lead to Supabase.", {
+      payloadColumns: Object.keys(leadDetails),
+      leadSource,
+      sourcePage: leadDetails.source_page,
+      ipAddress,
+      userAgent,
+      submittedAt: submittedAtIso,
+    });
+
     const response = await fetch(`${supabaseUrl.replace(/\/$/, "")}/rest/v1/leads`, {
       method: "POST",
       headers: {
@@ -157,35 +163,42 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
         "Content-Type": "application/json",
         Prefer: "return=minimal",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(leadDetails),
       cache: "no-store",
     });
 
     if (!response.ok) {
+      const errorBody = await response.text();
+
       console.error("Supabase lead insert failed.", {
         status: response.status,
         statusText: response.statusText,
-        sourcePage: payload.source_page,
+        errorBody,
+        payloadColumns: Object.keys(leadDetails),
+        leadSource,
+        sourcePage: leadDetails.source_page,
+        ipAddress,
+        userAgent,
         submittedAt: submittedAtIso,
       });
 
       return {
         status: "error",
-        message: initialErrorMessage,
+        message: `Supabase insert failed: ${errorBody || response.statusText}`,
       };
     }
 
     // TODO: Add spam protection before launch scale-up, such as Turnstile, reCAPTCHA, rate limiting, or a honeypot.
     // TODO: Add CRM assignment/routing logic when the CRM dashboard and LOS workflow are connected.
     await sendLeadNotification({
-      first_name: payload.first_name,
-      last_name: payload.last_name,
-      email: payload.email,
-      phone: payload.phone,
-      loan_program_interest: payload.loan_program_interest,
-      message: payload.message,
-      lead_source: payload.lead_source,
-      source_page: payload.source_page,
+      first_name: leadDetails.first_name,
+      last_name: leadDetails.last_name,
+      email: leadDetails.email,
+      phone: leadDetails.phone,
+      loan_program_interest: leadDetails.loan_program_interest,
+      message: leadDetails.message,
+      lead_source: leadSource,
+      source_page: leadDetails.source_page,
       submitted_at_display: submittedAtDisplay,
     });
 
@@ -196,7 +209,10 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   } catch (error) {
     console.error("Website lead submission failed.", {
       error,
-      sourcePage: payload.source_page,
+      leadSource,
+      sourcePage: leadDetails.source_page,
+      ipAddress,
+      userAgent,
       submittedAt: submittedAtIso,
     });
 

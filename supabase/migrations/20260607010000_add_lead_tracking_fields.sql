@@ -17,8 +17,8 @@ for insert
 to anon, authenticated
 with check (
   consent_to_contact is true
-  and lead_status = 'New'
-  and lead_source = 'Website Contact Form'
+  and lead_status in ('new', 'New')
+  and coalesce(lead_source, 'Website Contact Form') = 'Website Contact Form'
   and coalesce(trim(first_name), '') <> ''
   and coalesce(trim(last_name), '') <> ''
   and coalesce(trim(email), '') <> ''
