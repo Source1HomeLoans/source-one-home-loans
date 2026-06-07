@@ -1,5 +1,7 @@
 "use server";
 
+import { sendLeadNotification } from "@/lib/lead-notifications";
+
 export type LeadFormState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -20,6 +22,7 @@ function readRequiredText(formData: FormData, key: string) {
 export async function submitLead(_previousState: LeadFormState, formData: FormData): Promise<LeadFormState> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const submittedAt = new Date().toISOString();
 
   if (!supabaseUrl || !supabaseAnonKey) {
     return {
@@ -62,6 +65,13 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
     });
 
     if (!response.ok) {
+      console.error("Supabase lead insert failed.", {
+        status: response.status,
+        statusText: response.statusText,
+        sourcePage: payload.source_page,
+        submittedAt,
+      });
+
       return {
         status: "error",
         message: initialErrorMessage,
@@ -70,12 +80,28 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
     // TODO: Add spam protection before launch scale-up, such as Turnstile, reCAPTCHA, rate limiting, or a honeypot.
     // TODO: Add CRM assignment/routing logic when the CRM dashboard and LOS workflow are connected.
-    // TODO: Optionally send a Resend notification to david@sourceonehomeloans.com and support@sourceonehomeloans.com.
+    await sendLeadNotification({
+      first_name: payload.first_name,
+      last_name: payload.last_name,
+      email: payload.email,
+      phone: payload.phone,
+      loan_program_interest: payload.loan_program_interest,
+      message: payload.message,
+      source_page: payload.source_page,
+      submitted_at: submittedAt,
+    });
+
     return {
       status: "success",
       message: "Thank you. Your inquiry has been received, and Source One Home Loans will follow up soon.",
     };
-  } catch {
+  } catch (error) {
+    console.error("Website lead submission failed.", {
+      error,
+      sourcePage: payload.source_page,
+      submittedAt,
+    });
+
     return {
       status: "error",
       message: initialErrorMessage,
