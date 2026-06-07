@@ -5,6 +5,7 @@ import { blogPosts, locationPages, mortgageProgramPages } from "@/lib/seo-conten
 const routes = [
   "",
   "/loan-programs",
+  "/mortgage-calculator",
   "/mortgage-programs",
   "/locations",
   "/learning-center",

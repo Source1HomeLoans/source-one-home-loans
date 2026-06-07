@@ -118,6 +118,28 @@ export default function HomePage() {
       </section>
 
       <section className="section-space bg-white">
+        <div className="container-shell grid gap-10 rounded-sm border border-navy/10 bg-light-gray p-8 md:p-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+          <div>
+            <p className="eyebrow text-gold">Mortgage Calculator</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Estimate your monthly mortgage payment.</h2>
+            <p className="mt-6 text-base leading-8 text-slate-600">
+              Use the Source One Home Loans mortgage calculator to estimate principal, interest, taxes, insurance, HOA dues, and PMI before scheduling a more personalized review.
+            </p>
+            <Link href="/mortgage-calculator" className="button-navy mt-8">
+              Try the Mortgage Calculator <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="rounded-sm bg-navy p-7 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">Sample Estimate</p>
+            <p className="mt-5 text-4xl font-semibold">$2,900/mo</p>
+            <p className="mt-3 text-sm leading-7 text-white/65">
+              Example only. Your actual payment depends on the property, loan terms, taxes, insurance, HOA dues, mortgage insurance, and underwriting guidelines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space bg-white">
         <div className="container-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="order-2 grid grid-cols-2 gap-4 lg:order-1">
             {[
