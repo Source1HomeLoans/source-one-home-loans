@@ -14,7 +14,7 @@ export function LoanCard({ program }: { program: LoanProgram }) {
       </span>
       <h3 className="mt-6 text-xl font-semibold text-navy">{program.title}</h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">{program.description}</p>
-      <Link href="/contact#lead-form" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy transition group-hover:text-gold">
+      <Link href={`/mortgage-programs/${program.slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-navy transition group-hover:text-gold">
         Explore Your Loan Options <ArrowRight className="h-4 w-4" />
       </Link>
     </article>

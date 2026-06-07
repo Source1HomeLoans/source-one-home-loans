@@ -23,12 +23,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(13,27,42,0.45),transparent_45%)]" />
         <div className="container-shell relative flex min-h-[760px] items-center pt-20">
           <div className="max-w-3xl py-24">
-            <p className="eyebrow text-gold">Mortgage Solutions Built Around You</p>
+            <p className="eyebrow text-gold">Veteran-Owned Mortgage Company</p>
             <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.2rem]">
-              Your Home. <br />Your Future. <span className="text-gold">Our Focus.</span>
+              Veteran-Owned Mortgage Solutions for Texas Homebuyers and Real Estate Investors
             </h1>
             <p className="mt-7 max-w-xl text-base leading-8 text-white/75 md:text-lg">
-              Smart mortgage solutions for homebuyers, investors, and self-employed borrowers.
+              Helping veterans, active-duty service members, homebuyers, and investors secure financing with personalized service and expert guidance.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
@@ -50,6 +50,32 @@ export default function HomePage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="container-shell grid gap-12 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="eyebrow text-gold">Veteran-Owned Business</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Veteran-Owned. Service-Focused.</h2>
+            <p className="mt-6 text-base leading-8 text-slate-600">
+              As a veteran-owned mortgage company, Source One Home Loans understands the importance of integrity, accountability, and service. We are proud to help veterans, active-duty military personnel, and their families navigate the home financing process with confidence.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {["David Bates served in the U.S. Navy Reserve", "VA loan guidance for eligible military borrowers", "Company NMLS #2812359", "Equal Housing Opportunity"].map((item) => (
+                <div key={item} className="rounded-sm border border-navy/10 bg-light-gray p-4 text-sm font-semibold text-navy">
+                  <ShieldCheck className="mb-3 h-5 w-5 text-gold" />
+                  {item}
+                </div>
+              ))}
+            </div>
+            <Link href="/mortgage-programs/texas-va-loans" className="button-navy mt-9">
+              Explore VA Loans <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-gold/40 bg-navy p-3 shadow-[0_24px_70px_rgba(13,27,42,0.16)]">
+            <FounderImage variant="home" />
+          </div>
         </div>
       </section>
 
@@ -77,8 +103,8 @@ export default function HomePage() {
         <div className="container-shell">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="eyebrow text-gold">Explore Your Options</p>
-              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">The right loan starts with the right conversation.</h2>
+              <p className="eyebrow text-gold">Featured Programs</p>
+              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">VA, jumbo, and conventional mortgage solutions lead the way.</h2>
             </div>
             <Link href="/loan-programs" className="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-gold">
               View all loan programs <ArrowRight className="h-4 w-4" />
@@ -99,7 +125,7 @@ export default function HomePage() {
               Traditional income documentation does not always tell the full story. We offer alternative paths designed for qualified entrepreneurs, contractors, and business owners.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {["Bank Statement Programs", "P&L Programs", "No Doc Options", "Non-QM Solutions"].map((item) => (
+              {["Bank Statement Programs", "P&L Programs", "Self-Employed Mortgage Options", "Non-QM Solutions"].map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm font-semibold text-navy">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" /> {item}
                 </div>
@@ -197,11 +223,12 @@ export default function HomePage() {
         <div className="container-shell">
           <p className="eyebrow text-gold">Why Borrowers Choose Source One Home Loans</p>
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Mortgage support that feels personal, fast, and practical.</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
             {[
+              ["Veteran-Owned Service", "Guidance shaped by military discipline, accountability, and attention to detail."],
               ["Personalized Service", "Loan guidance based on your goals, documentation, property type, and timeline."],
-              ["Investor Expertise", "Support for DSCR concepts, rental property financing, and real estate investor loan strategy."],
-              ["Self-Employed Borrower Solutions", "Bank statement, P&L, and Non-QM conversations for business owners and entrepreneurs."],
+              ["VA, Jumbo, and Conventional Focus", "Prominent support for Texas VA loans, high-value home financing, and conventional loan paths."],
+              ["Investor and Self-Employed Solutions", "Support for investor property, bank statement, P&L, and Non-QM conversations."],
               ["Fast Communication", "Responsive next steps so borrowers know what is needed and why it matters."],
             ].map(([title, text]) => (
               <div key={title} className="rounded-sm bg-white p-7 shadow-[0_14px_40px_rgba(13,27,42,0.05)]">

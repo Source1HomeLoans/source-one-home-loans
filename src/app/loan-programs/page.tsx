@@ -5,16 +5,15 @@ import { PageHero } from "@/components/page-hero";
 import { company, loanProgramCategories, loanPrograms } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Real Estate Investor Loans",
+  title: "Texas VA, Jumbo, and Conventional Loan Programs",
   description:
-    "Explore real estate investor loan options including DSCR and rental property financing solutions designed for real estate investors.",
+    "Explore Source One Home Loans mortgage programs, with a primary focus on Texas VA loans, jumbo loans, and conventional loans.",
   keywords: [
-    "Real Estate Investor Loans",
-    "DSCR Loans",
-    "Rental Property Loans",
-    "Investment Property Financing",
-    "Real Estate Investment Loans",
-    "Investor Mortgage Loans",
+    "Texas VA Loans",
+    "Veteran Mortgage Texas",
+    "Texas Jumbo Loans",
+    "Conventional Loans Texas",
+    "VA Mortgage Broker Texas",
   ],
 };
 
@@ -23,8 +22,8 @@ export default function LoanProgramsPage() {
     <>
       <PageHero
         eyebrow="Loan Programs"
-        title="More options. More flexibility. A loan strategy built around you."
-        description="Every borrower has a different story. Explore financing options for traditional homebuyers, business owners, real estate investors, and borrowers with unique income profiles."
+        title="VA, jumbo, and conventional loans are our primary focus."
+        description="Explore mortgage options for veterans, active-duty service members, high-value homebuyers, conventional borrowers, first-time buyers, self-employed borrowers, and Texas real estate investors."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell">

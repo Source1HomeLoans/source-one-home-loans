@@ -66,6 +66,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-navy text-white">
+        <div className="container-shell grid gap-8 py-16 md:grid-cols-[0.35fr_1fr] md:items-start">
+          <div>
+            <p className="eyebrow text-gold">Military Service</p>
+            <h2 className="mt-4 text-3xl font-semibold">U.S. Navy Reserve</h2>
+          </div>
+          <div className="rounded-sm border border-white/10 bg-white/5 p-7">
+            <p className="text-base leading-8 text-white/75">
+              Before entering the mortgage and real estate industries, David Bates served in the U.S. Navy Reserve as a Jet Engine Mechanic. The discipline, attention to detail, and commitment to service developed during his military career continue to guide his approach to helping clients today.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.14em] text-gold">
+              <span>Veteran-Owned Business</span>
+              <span>VA Loan Guidance</span>
+              <span>Service-Focused Mortgage Support</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-light-gray">
         <div className="container-shell grid gap-4 py-16 md:grid-cols-3">
           {[

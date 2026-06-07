@@ -45,6 +45,7 @@ export type BlogPost = {
 };
 
 export const blogCategories = [
+  "Veteran Homeownership",
   "Mortgage Education",
   "Home Buying Tips",
   "Real Estate Investing",
@@ -196,16 +197,31 @@ export const mortgageProgramPages: SeoPage[] = [
     slug: "texas-jumbo-loans",
     title: "Texas Jumbo Loans",
     metaTitle: "Texas Jumbo Loans | Source One Home Loans",
-    metaDescription: "Explore Texas jumbo loan options for higher-value homes that exceed conforming loan limits.",
-    keywords: ["Texas Jumbo Loans", "jumbo mortgage Texas", "high balance mortgage Texas"],
+    metaDescription: "Explore Texas jumbo loan options for higher-value homes, luxury properties, and borrowers whose loan amount exceeds conforming limits.",
+    keywords: ["Texas Jumbo Loans", "jumbo mortgage Texas", "high balance mortgage Texas", "luxury home financing Texas"],
     eyebrow: "Premium Home Financing",
     intro:
-      "Texas jumbo loans can help qualified borrowers finance higher-value properties that exceed standard conforming loan limits.",
+      "Texas jumbo loans can help qualified borrowers finance higher-value properties, luxury homes, and purchase or refinance scenarios that exceed standard conforming loan limits.",
     primaryTopic: "jumbo mortgage options in Texas",
     audience: "buyers and homeowners financing higher-value properties",
-    benefits: ["Higher loan amount review", "Documentation planning", "Purchase and refinance guidance"],
-    relatedProgramSlugs: ["texas-refinance-loans", "texas-bank-statement-loans", "texas-non-qm-loans"],
+    benefits: ["Higher loan amount review", "Luxury home financing guidance", "Purchase and refinance planning"],
+    relatedProgramSlugs: ["luxury-home-financing-in-texas", "jumbo-vs-conventional-loans", "texas-conventional-loans"],
     faqs: baseFaqs("a Texas jumbo loan"),
+  },
+  {
+    slug: "texas-conventional-loans",
+    title: "Texas Conventional Loans",
+    metaTitle: "Texas Conventional Loans | Source One Home Loans",
+    metaDescription: "Explore Texas conventional loan options for qualified homebuyers, first-time buyers, repeat buyers, and homeowners planning a refinance.",
+    keywords: ["Conventional Loans Texas", "Texas Conventional Loans", "conventional mortgage Texas", "first-time homebuyer conventional loans"],
+    eyebrow: "Primary Mortgage Programs",
+    intro:
+      "Texas conventional loans are a core mortgage option for qualified borrowers buying or refinancing a primary residence, second home, or eligible investment property.",
+    primaryTopic: "conventional loan options in Texas",
+    audience: "qualified Texas buyers and homeowners comparing mainstream mortgage options",
+    benefits: ["Conventional eligibility review", "Down payment and mortgage insurance planning", "Purchase and refinance guidance"],
+    relatedProgramSlugs: ["conventional-loan-requirements", "first-time-homebuyer-conventional-loans", "va-loan-vs-conventional-loan"],
+    faqs: baseFaqs("a Texas conventional loan"),
   },
   {
     slug: "texas-fha-loans",
@@ -226,16 +242,151 @@ export const mortgageProgramPages: SeoPage[] = [
     slug: "texas-va-loans",
     title: "Texas VA Loans",
     metaTitle: "Texas VA Loans | Source One Home Loans",
-    metaDescription: "Explore Texas VA loan options for eligible veterans, active-duty service members, and qualifying spouses.",
-    keywords: ["Texas VA Loans", "VA mortgage Texas", "VA home loan Texas"],
+    metaDescription: "Explore Texas VA loan options for eligible veterans, active-duty service members, and qualifying spouses with a veteran-owned mortgage company.",
+    keywords: ["Texas VA Loans", "Veteran Mortgage Texas", "VA mortgage Texas", "VA home loan Texas", "VA Mortgage Broker Texas"],
     eyebrow: "Veteran Home Financing",
     intro:
-      "Texas VA loans offer valuable mortgage benefits for eligible veterans, active-duty service members, and qualifying spouses.",
+      "Texas VA loans offer valuable mortgage benefits for eligible veterans, active-duty service members, and qualifying spouses. Source One Home Loans is veteran-owned and provides service-focused VA loan guidance for military borrowers throughout Texas.",
     primaryTopic: "VA mortgage options in Texas",
     audience: "eligible military borrowers and qualifying spouses",
-    benefits: ["VA eligibility discussion", "Purchase and refinance planning", "Clear documentation guidance"],
-    relatedProgramSlugs: ["texas-first-time-homebuyer-loans", "texas-refinance-loans", "texas-fha-loans"],
+    benefits: ["VA eligibility discussion", "Veteran-owned mortgage guidance", "Purchase and refinance planning"],
+    relatedProgramSlugs: ["va-loan-benefits-for-veterans", "va-loan-eligibility-guide", "va-loan-vs-conventional-loan"],
     faqs: baseFaqs("a Texas VA loan"),
+  },
+  {
+    slug: "va-loan-benefits-for-veterans",
+    title: "VA Loan Benefits for Veterans",
+    metaTitle: "VA Loan Benefits for Veterans | Source One Home Loans",
+    metaDescription: "Learn about VA loan benefits for eligible Texas veterans, active-duty service members, and qualifying spouses.",
+    keywords: ["VA Loan Benefits for Veterans", "Texas VA Loans", "Veteran Mortgage Texas"],
+    eyebrow: "Veteran Homeownership",
+    intro:
+      "VA loan benefits may help eligible military borrowers purchase or refinance a home with features designed around service member and veteran homeownership.",
+    primaryTopic: "VA loan benefits for Texas veterans",
+    audience: "eligible veterans, active-duty service members, and qualifying spouses",
+    benefits: ["VA benefit review", "Texas homebuyer planning", "Veteran-owned mortgage support"],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "va-loan-funding-fee-explained"],
+    faqs: baseFaqs("VA loan benefits"),
+  },
+  {
+    slug: "va-loan-eligibility-guide",
+    title: "VA Loan Eligibility Guide",
+    metaTitle: "VA Loan Eligibility Guide | Source One Home Loans",
+    metaDescription: "Review general VA loan eligibility topics for Texas veterans, active-duty service members, National Guard, Reserve members, and qualifying spouses.",
+    keywords: ["VA Loan Eligibility Guide", "Texas VA Loans", "VA Mortgage Broker Texas"],
+    eyebrow: "Veteran Homeownership",
+    intro:
+      "VA loan eligibility depends on service history, entitlement, occupancy, credit, income, property approval, and VA program requirements.",
+    primaryTopic: "VA loan eligibility for Texas military borrowers",
+    audience: "military borrowers reviewing VA eligibility before buying or refinancing",
+    benefits: ["Eligibility conversation", "Certificate of Eligibility planning", "Clear next-step guidance"],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-benefits-for-veterans", "va-loan-funding-fee-explained"],
+    faqs: baseFaqs("VA loan eligibility"),
+  },
+  {
+    slug: "va-loan-vs-conventional-loan",
+    title: "VA Loan vs Conventional Loan",
+    metaTitle: "VA Loan vs Conventional Loan | Source One Home Loans",
+    metaDescription: "Compare VA loans and conventional loans for eligible Texas military borrowers evaluating down payment, mortgage insurance, and program fit.",
+    keywords: ["VA Loan vs Conventional Loan", "Texas VA Loans", "Conventional Loans Texas"],
+    eyebrow: "VA Loan Comparison",
+    intro:
+      "Eligible Texas military borrowers often compare VA loans and conventional loans to understand down payment options, mortgage insurance, property requirements, and long-term strategy.",
+    primaryTopic: "VA loan versus conventional loan planning",
+    audience: "eligible veterans and active-duty borrowers comparing loan options",
+    benefits: ["Side-by-side program discussion", "Payment and cash-to-close planning", "Guidance from a veteran-owned mortgage company"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "conventional-loan-requirements"],
+    faqs: baseFaqs("a VA loan versus a conventional loan"),
+  },
+  {
+    slug: "va-loan-funding-fee-explained",
+    title: "VA Loan Funding Fee Explained",
+    metaTitle: "VA Loan Funding Fee Explained | Source One Home Loans",
+    metaDescription: "Understand the VA loan funding fee, how it may apply, and why eligible Texas VA borrowers should review it before choosing a loan path.",
+    keywords: ["VA Loan Funding Fee", "Texas VA Loans", "Veteran Mortgage Texas"],
+    eyebrow: "VA Loan Education",
+    intro:
+      "The VA funding fee is an important part of many VA loan conversations, and the amount may depend on service category, down payment, prior VA loan use, and exemption status.",
+    primaryTopic: "VA funding fee basics for Texas borrowers",
+    audience: "eligible VA borrowers comparing payment and cash-to-close details",
+    benefits: ["Funding fee education", "Payment planning", "VA documentation guidance"],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "va-loan-benefits-for-veterans"],
+    faqs: baseFaqs("the VA loan funding fee"),
+  },
+  {
+    slug: "luxury-home-financing-in-texas",
+    title: "Luxury Home Financing in Texas",
+    metaTitle: "Luxury Home Financing in Texas | Source One Home Loans",
+    metaDescription: "Explore luxury home financing in Texas for higher-value properties, jumbo loan scenarios, and borrowers seeking personalized mortgage guidance.",
+    keywords: ["Luxury Home Financing in Texas", "Texas Jumbo Loans", "high balance mortgage options"],
+    eyebrow: "Premium Home Financing",
+    intro:
+      "Luxury home financing in Texas often requires a more detailed review of assets, income, property type, reserves, and overall loan structure.",
+    primaryTopic: "luxury home mortgage planning in Texas",
+    audience: "buyers and homeowners financing higher-value Texas properties",
+    benefits: ["Higher-value property review", "Asset and reserve planning", "Jumbo loan strategy"],
+    relatedProgramSlugs: ["texas-jumbo-loans", "jumbo-vs-conventional-loans", "high-balance-mortgage-options"],
+    faqs: baseFaqs("luxury home financing in Texas"),
+  },
+  {
+    slug: "jumbo-vs-conventional-loans",
+    title: "Jumbo vs Conventional Loans",
+    metaTitle: "Jumbo vs Conventional Loans | Source One Home Loans",
+    metaDescription: "Compare jumbo and conventional loans for Texas borrowers evaluating loan limits, documentation, reserves, and high-value home financing.",
+    keywords: ["Jumbo vs Conventional Loans", "Texas Jumbo Loans", "Conventional Loans Texas"],
+    eyebrow: "Mortgage Comparison",
+    intro:
+      "Jumbo and conventional loans can both serve strong borrowers, but the right fit depends on loan amount, property value, documentation, reserves, and conforming loan limits.",
+    primaryTopic: "jumbo versus conventional loan planning",
+    audience: "Texas borrowers comparing higher-balance and conforming mortgage options",
+    benefits: ["Loan limit review", "Documentation planning", "High-value home strategy"],
+    relatedProgramSlugs: ["texas-jumbo-loans", "texas-conventional-loans", "luxury-home-financing-in-texas"],
+    faqs: baseFaqs("jumbo versus conventional loans"),
+  },
+  {
+    slug: "high-balance-mortgage-options",
+    title: "High Balance Mortgage Options",
+    metaTitle: "High Balance Mortgage Options | Source One Home Loans",
+    metaDescription: "Review high balance mortgage options for Texas borrowers buying or refinancing properties with larger loan amounts.",
+    keywords: ["High Balance Mortgage Options", "Texas Jumbo Loans", "high balance mortgage Texas"],
+    eyebrow: "Premium Home Financing",
+    intro:
+      "High balance mortgage options help Texas borrowers think through loan size, property value, documentation, reserves, and whether a jumbo or conventional strategy may fit.",
+    primaryTopic: "high balance mortgage planning",
+    audience: "buyers and homeowners reviewing larger loan amount scenarios",
+    benefits: ["High-balance scenario review", "Jumbo and conventional comparison", "Purchase and refinance planning"],
+    relatedProgramSlugs: ["texas-jumbo-loans", "jumbo-vs-conventional-loans", "texas-conventional-loans"],
+    faqs: baseFaqs("high balance mortgage options"),
+  },
+  {
+    slug: "conventional-loan-requirements",
+    title: "Conventional Loan Requirements",
+    metaTitle: "Conventional Loan Requirements | Source One Home Loans",
+    metaDescription: "Learn about common conventional loan requirement topics for Texas buyers, including credit, income, assets, property, and mortgage insurance.",
+    keywords: ["Conventional Loan Requirements", "Conventional Loans Texas", "Texas Conventional Loans"],
+    eyebrow: "Conventional Loan Education",
+    intro:
+      "Conventional loan requirements can include credit, income, assets, down payment, property approval, occupancy, and mortgage insurance considerations.",
+    primaryTopic: "conventional loan requirements in Texas",
+    audience: "Texas buyers and homeowners preparing for a conventional mortgage review",
+    benefits: ["Documentation planning", "Down payment guidance", "Mortgage insurance discussion"],
+    relatedProgramSlugs: ["texas-conventional-loans", "first-time-homebuyer-conventional-loans", "jumbo-vs-conventional-loans"],
+    faqs: baseFaqs("conventional loan requirements"),
+  },
+  {
+    slug: "first-time-homebuyer-conventional-loans",
+    title: "First-Time Homebuyer Conventional Loans",
+    metaTitle: "First-Time Homebuyer Conventional Loans | Source One Home Loans",
+    metaDescription: "Explore conventional loan options for Texas first-time homebuyers comparing down payment, mortgage insurance, and pre-qualification paths.",
+    keywords: ["First-Time Homebuyer Conventional Loans", "Conventional Loans Texas", "Texas First-Time Homebuyer Loans"],
+    eyebrow: "First-Time Homebuyer Guidance",
+    intro:
+      "First-time homebuyer conventional loans may fit qualified Texas buyers who want a mainstream mortgage option with flexible down payment and mortgage insurance possibilities.",
+    primaryTopic: "conventional loans for Texas first-time buyers",
+    audience: "first-time homebuyers comparing conventional, FHA, and VA options",
+    benefits: ["First-time buyer planning", "Conventional option comparison", "Pre-qualification guidance"],
+    relatedProgramSlugs: ["texas-conventional-loans", "texas-first-time-homebuyer-loans", "conventional-loan-requirements"],
+    faqs: baseFaqs("first-time homebuyer conventional loans"),
   },
 ];
 
@@ -281,7 +432,267 @@ export const locationPages: LocationPage[] = [
   faqs: cityFaqs(city),
 }));
 
+const veteranHomeownershipPosts: BlogPost[] = [
+  {
+    slug: "top-va-loan-benefits-for-texas-veterans",
+    title: "Top VA Loan Benefits for Texas Veterans",
+    metaTitle: "Top VA Loan Benefits for Texas Veterans | Source One Home Loans",
+    metaDescription: "Learn key VA loan benefits for eligible Texas veterans, active-duty service members, and qualifying spouses.",
+    category: "Veteran Homeownership",
+    excerpt: "A practical guide to VA loan benefits, Texas market considerations, and next steps for eligible military borrowers.",
+    date: "2026-06-07",
+    readTime: "7 min read",
+    keywords: ["Texas VA Loans", "Veteran Mortgage Texas", "VA loan benefits", "VA Mortgage Broker Texas"],
+    takeaways: [
+      "VA loans can provide meaningful advantages for eligible military borrowers.",
+      "Texas property taxes, insurance, and local market conditions still matter when reviewing affordability.",
+      "Eligibility, entitlement, credit, income, property approval, and underwriting guidelines all remain part of the process.",
+      "A veteran-owned mortgage company can help borrowers compare VA benefits with other loan options.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-benefits-for-veterans", "va-loan-eligibility-guide"],
+    sections: [
+      {
+        heading: "Why VA Loan Benefits Matter in Texas",
+        paragraphs: [
+          "For many Texas veterans and active-duty service members, the VA loan is one of the most valuable mortgage benefits available. It can help eligible borrowers evaluate homeownership with a financing option created specifically for military service. The benefit is not just about a loan product; it is about helping those who served compare a responsible path to owning or refinancing a home.",
+          "Texas markets can vary widely. A borrower in San Antonio may be comparing military relocation needs, while a veteran in Dallas, Fort Worth, Houston, Austin, or Frisco may be weighing commute, school districts, property taxes, insurance, and long-term plans. A strong VA loan conversation should bring those details into the open early.",
+        ],
+        subheadings: [
+          {
+            heading: "Service-focused guidance",
+            paragraphs: [
+              "Source One Home Loans is veteran-owned, and David Bates brings U.S. Navy Reserve experience into a mortgage process built around discipline, clarity, and accountability. That perspective matters when borrowers need a calm explanation of eligibility, documentation, payment comfort, and next steps.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "What Borrowers Should Review",
+        paragraphs: [
+          "VA borrowers should be ready to discuss service history, Certificate of Eligibility needs, income, credit, assets, property goals, and timing. The VA benefit can be powerful, but loan approvals are still subject to credit approval, underwriting guidelines, property approval, and program requirements.",
+          "A VA loan may be compared with conventional, FHA, or jumbo options depending on the borrower and property. The right answer depends on the full file, not a single headline feature. A borrower purchasing near a Texas military installation may have different priorities than a veteran refinancing a long-term primary residence.",
+        ],
+      },
+      {
+        heading: "Next Steps for Texas Veterans",
+        paragraphs: [
+          "The best next step is a focused pre-qualification conversation. Source One Home Loans can help review the purchase or refinance goal, documentation needs, eligibility questions, and how VA loan benefits may fit the borrower's broader financial plan.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Are VA loans only for first-time buyers?", answer: "No. Eligible borrowers may use VA loan benefits for qualifying purchase or refinance scenarios, subject to program rules and underwriting approval." },
+      { question: "Does a VA loan guarantee approval?", answer: "No. VA loans are subject to credit approval, underwriting guidelines, property approval, and program requirements." },
+      { question: "Can Source One Home Loans help Texas veterans?", answer: "Yes. Source One Home Loans provides VA loan guidance for eligible military borrowers throughout Texas." },
+    ],
+  },
+  {
+    slug: "va-loan-myths-explained",
+    title: "VA Loan Myths Explained",
+    metaTitle: "VA Loan Myths Explained | Source One Home Loans",
+    metaDescription: "Clear up common VA loan myths for Texas veterans, active-duty service members, and qualifying spouses.",
+    category: "Veteran Homeownership",
+    excerpt: "A plain-English look at common VA loan misconceptions and what Texas military borrowers should know.",
+    date: "2026-06-07",
+    readTime: "7 min read",
+    keywords: ["VA loan myths", "Texas VA Loans", "Veteran Mortgage Texas"],
+    takeaways: [
+      "VA loans are often misunderstood by buyers, sellers, and even some real estate professionals.",
+      "The VA loan process still includes underwriting, property review, and borrower qualification.",
+      "Eligible borrowers should compare facts instead of relying on old assumptions.",
+      "A knowledgeable VA mortgage conversation can help prevent avoidable confusion.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-vs-conventional-loan", "va-loan-funding-fee-explained"],
+    sections: [
+      {
+        heading: "Common VA Loan Misconceptions",
+        paragraphs: [
+          "One common myth is that VA loans are slow or difficult by default. In reality, the experience depends heavily on documentation, communication, property condition, contract details, and lender process. A well-prepared VA borrower can move through the mortgage process with clear expectations when the file is organized early.",
+          "Another myth is that VA loans are only useful when a borrower has no other options. That is not accurate. VA loans can be a strong benefit for eligible borrowers, but they should still be compared with conventional or other programs based on the full scenario.",
+        ],
+        subheadings: [
+          {
+            heading: "Property review is not a bad thing",
+            paragraphs: [
+              "VA property requirements are designed to support habitability and marketability. They do not mean every home fails. Texas borrowers should talk through the property type, condition, appraisal process, and contract timeline before assuming a VA loan will create a problem.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Why Facts Matter for Texas Buyers",
+        paragraphs: [
+          "In competitive Texas markets, outdated myths can influence how buyers and sellers think about offers. A veteran buyer may need help explaining the strength of their financing path. Clear communication from the mortgage team can support better expectations for everyone involved.",
+          "VA loans are not automatic approvals, and they are not identical for every borrower. Credit, income, assets, entitlement, property approval, and underwriting guidelines matter. The right conversation focuses on the actual borrower and property.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Are VA loans always harder for sellers?", answer: "No. VA loans require proper documentation and property review, but a prepared borrower and responsive mortgage team can help the process move clearly." },
+      { question: "Can VA buyers compete in Texas markets?", answer: "Yes, many VA buyers compete successfully when their financing is well prepared and communicated." },
+      { question: "Are VA loans automatic approvals?", answer: "No. Approval is subject to underwriting, credit, property, and program requirements." },
+    ],
+  },
+  {
+    slug: "how-veterans-can-buy-a-home-with-no-down-payment",
+    title: "How Veterans Can Buy a Home with No Down Payment",
+    metaTitle: "How Veterans Can Buy a Home with No Down Payment | Source One Home Loans",
+    metaDescription: "Learn how eligible veterans may buy a Texas home with no down payment using VA loan benefits, subject to qualification and approval.",
+    category: "Veteran Homeownership",
+    excerpt: "How eligible military borrowers can think through no-down-payment VA loan options and total homebuying costs.",
+    date: "2026-06-07",
+    readTime: "8 min read",
+    keywords: ["VA no down payment", "Texas VA Loans", "Veteran Mortgage Texas"],
+    takeaways: [
+      "Eligible VA borrowers may have access to no-down-payment purchase options.",
+      "No down payment does not mean no costs; taxes, insurance, closing costs, and reserves still matter.",
+      "Texas borrowers should review payment comfort before choosing a home price.",
+      "Pre-qualification helps veterans understand documentation and affordability before making an offer.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "va-loan-benefits-for-veterans"],
+    sections: [
+      {
+        heading: "Understanding No-Down-Payment VA Financing",
+        paragraphs: [
+          "The ability to pursue a home purchase with no down payment is one of the best-known VA loan benefits for eligible borrowers. For Texas veterans and active-duty service members, that feature can make homeownership feel more accessible, especially when savings are needed for moving costs, reserves, or other family priorities.",
+          "No down payment does not erase the rest of the mortgage conversation. Borrowers still need to review closing costs, prepaid taxes and insurance, monthly payment comfort, credit profile, income, assets, and property requirements. A responsible VA loan discussion looks beyond the down payment and considers the complete financial picture.",
+        ],
+      },
+      {
+        heading: "Texas Costs to Consider",
+        paragraphs: [
+          "Texas property taxes and homeowners insurance can vary by city and property type. A home in Houston may carry different insurance considerations than a home in Plano or McKinney. A property in Austin, Fort Worth, or San Antonio may have different tax and HOA assumptions. These details can affect monthly payment even when the down payment is low or zero.",
+          "Source One Home Loans helps eligible borrowers compare the loan benefit with real-world affordability. The goal is not just to buy a home, but to choose a mortgage path that supports long-term confidence.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can every veteran buy with no down payment?", answer: "No. Eligibility, entitlement, credit, income, property approval, and underwriting guidelines apply." },
+      { question: "Does no down payment mean no closing costs?", answer: "No. Borrowers should still review closing costs, prepaid items, taxes, insurance, and other expenses." },
+      { question: "Where should I start?", answer: "Start with a pre-qualification conversation to review VA eligibility, documentation, and payment comfort." },
+    ],
+  },
+  {
+    slug: "va-loans-vs-conventional-loans",
+    title: "VA Loans vs Conventional Loans",
+    metaTitle: "VA Loans vs Conventional Loans | Source One Home Loans",
+    metaDescription: "Compare VA loans and conventional loans for Texas military borrowers deciding which mortgage path may fit.",
+    category: "Veteran Homeownership",
+    excerpt: "A comparison guide for eligible military borrowers weighing VA and conventional mortgage options.",
+    date: "2026-06-07",
+    readTime: "8 min read",
+    keywords: ["VA loans vs conventional loans", "Texas VA Loans", "Conventional Loans Texas"],
+    takeaways: [
+      "VA and conventional loans can both be strong options depending on the borrower.",
+      "Down payment, mortgage insurance, property type, occupancy, and eligibility matter.",
+      "Texas borrowers should compare payment and cash-to-close, not just loan labels.",
+      "A veteran-owned mortgage consultation can help clarify the tradeoffs.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "va-loan-vs-conventional-loan"],
+    sections: [
+      {
+        heading: "How the Two Paths Differ",
+        paragraphs: [
+          "VA loans are designed for eligible veterans, active-duty service members, and qualifying spouses. Conventional loans are not tied to military eligibility and may fit a wide range of qualified borrowers. The best choice depends on eligibility, down payment, credit profile, property type, occupancy, mortgage insurance, and long-term goals.",
+          "A Texas military borrower may prefer a VA loan because of the program's military-focused benefits. Another borrower may compare conventional terms if they have a larger down payment, a different property scenario, or a specific long-term strategy. There is no universal answer that fits every file.",
+        ],
+      },
+      {
+        heading: "What to Compare",
+        paragraphs: [
+          "Borrowers should compare monthly payment, cash to close, reserve needs, property requirements, closing timeline, and future refinance possibilities. For some eligible borrowers, VA loan benefits may be compelling. For others, conventional financing may be worth evaluating side by side.",
+          "Source One Home Loans helps borrowers review the actual numbers and documentation instead of guessing. That is especially useful in Texas markets where property taxes, insurance, and HOA dues can materially affect payment comfort.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Is VA always better than conventional?", answer: "No. VA can be excellent for eligible borrowers, but the right fit depends on the full scenario." },
+      { question: "Can I compare both before applying?", answer: "Yes. A pre-qualification conversation can review both paths when appropriate." },
+      { question: "Do conventional loans require military eligibility?", answer: "No. Conventional loans are available to qualified borrowers regardless of military service." },
+    ],
+  },
+  {
+    slug: "texas-veterans-home-buying-guide",
+    title: "Texas Veterans Home Buying Guide",
+    metaTitle: "Texas Veterans Home Buying Guide | Source One Home Loans",
+    metaDescription: "A Texas home buying guide for veterans and active-duty service members preparing to use VA loan benefits.",
+    category: "Veteran Homeownership",
+    excerpt: "A step-by-step planning guide for Texas veterans preparing to buy a home with confidence.",
+    date: "2026-06-07",
+    readTime: "8 min read",
+    keywords: ["Texas Veterans Home Buying Guide", "Texas VA Loans", "Veteran Mortgage Texas"],
+    takeaways: [
+      "Veterans should start with goals, payment comfort, and VA eligibility questions.",
+      "Documentation preparation can make the purchase process smoother.",
+      "Texas market conditions vary by city, property type, taxes, and insurance.",
+      "A clear pre-qualification path helps buyers shop with more confidence.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "texas-first-time-homebuyer-loans", "va-loan-eligibility-guide"],
+    sections: [
+      {
+        heading: "Start with Readiness",
+        paragraphs: [
+          "Texas veterans preparing to buy a home should begin with a readiness review. That means discussing VA eligibility, income, credit, assets, monthly payment comfort, timeline, and preferred location. A buyer relocating to Dallas may have different needs than a family comparing homes near San Antonio, Houston, Austin, or Fort Worth.",
+          "The home buying process becomes easier when expectations are clear. Borrowers should understand what documents may be needed, how the pre-qualification process works, and how loan approvals remain subject to underwriting and property review.",
+        ],
+      },
+      {
+        heading: "Build a Practical Home Search Strategy",
+        paragraphs: [
+          "A strong search strategy includes more than a maximum price. Texas buyers should review property taxes, insurance, HOA dues, commute, school districts, resale potential, and long-term fit. VA borrowers should also be aware of property condition and appraisal considerations.",
+          "Source One Home Loans helps veterans connect the mortgage conversation to the real home search. That practical guidance can help buyers avoid surprises and move forward with more confidence.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Should veterans get pre-qualified before shopping?", answer: "Yes. Pre-qualification can help clarify budget, documentation, eligibility, and next steps before making an offer." },
+      { question: "Can VA loans be used in major Texas cities?", answer: "VA loans may be used for eligible properties throughout Texas, subject to borrower and property approval." },
+      { question: "Does Source One Home Loans serve veterans statewide?", answer: "Source One Home Loans provides mortgage guidance for Texas borrowers, including eligible veterans and active-duty service members." },
+    ],
+  },
+  {
+    slug: "military-relocation-and-home-financing",
+    title: "Military Relocation and Home Financing",
+    metaTitle: "Military Relocation and Home Financing | Source One Home Loans",
+    metaDescription: "Learn how military relocation can affect Texas home financing, VA loan planning, timelines, and documentation.",
+    category: "Veteran Homeownership",
+    excerpt: "Mortgage planning considerations for active-duty service members and military families relocating in Texas.",
+    date: "2026-06-07",
+    readTime: "7 min read",
+    keywords: ["military relocation mortgage", "Texas VA Loans", "VA Mortgage Broker Texas"],
+    takeaways: [
+      "Military relocation can create tight timelines and unique documentation needs.",
+      "VA loan planning should account for orders, occupancy, income, assets, and local Texas costs.",
+      "Clear communication helps borrowers coordinate home search, financing, and moving logistics.",
+      "A veteran-owned mortgage company can help military families plan with practical next steps.",
+    ],
+    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "texas-conventional-loans"],
+    sections: [
+      {
+        heading: "Mortgage Planning During Military Relocation",
+        paragraphs: [
+          "Military relocation can move quickly. Active-duty service members and their families may be balancing orders, reporting dates, school calendars, temporary housing, and a home search all at once. A clear mortgage plan can reduce stress by identifying documentation needs and realistic timing early.",
+          "Texas has several markets that may be relevant for military families, including San Antonio, Fort Worth, Houston, Austin, and surrounding communities. Each market has its own price ranges, commute considerations, taxes, insurance, and property types. The mortgage plan should fit the relocation reality.",
+        ],
+      },
+      {
+        heading: "Documentation and Timing",
+        paragraphs: [
+          "Borrowers may need to discuss income, service status, orders, assets, credit, current housing, and occupancy plans. VA eligibility and Certificate of Eligibility questions should be addressed early so they do not slow down the process later.",
+          "Source One Home Loans brings a service-focused approach to military relocation conversations. The goal is to help borrowers understand what is needed, why it matters, and how to move from planning to pre-qualification with confidence.",
+        ],
+      },
+    ],
+    faqs: [
+      { question: "Can active-duty service members use VA loans during relocation?", answer: "Eligible active-duty borrowers may be able to use VA financing, subject to VA eligibility, occupancy, underwriting, and property requirements." },
+      { question: "Should I start before I arrive in Texas?", answer: "Starting early can help clarify documentation, payment comfort, and market expectations before the home search intensifies." },
+      { question: "Can I compare VA and conventional options?", answer: "Yes. Eligible borrowers can review VA and conventional paths when both are relevant to the scenario." },
+    ],
+  },
+];
+
 export const blogPosts: BlogPost[] = [
+  ...veteranHomeownershipPosts,
   {
     slug: "how-texas-buyers-can-prepare-for-pre-qualification",
     title: "How Texas Buyers Can Prepare for Mortgage Pre-Qualification",
@@ -389,7 +800,7 @@ export const blogPosts: BlogPost[] = [
       "DSCR stands for debt service coverage ratio and is commonly used to evaluate rental property cash flow.",
       "Texas investors may use DSCR concepts when purchasing or refinancing rental properties.",
       "Lease income, market rent, property taxes, insurance, HOA dues, and loan terms can all affect the scenario.",
-      "DSCR loans are not guaranteed approvals; underwriting, property approval, credit, assets, and program rules still matter.",
+      "DSCR loans are not automatic approvals; underwriting, property approval, credit, assets, and program rules still matter.",
     ],
     relatedProgramSlugs: ["texas-dscr-loans", "texas-investor-property-loans", "texas-non-qm-loans", "texas-refinance-loans"],
     sections: [
@@ -455,7 +866,7 @@ export const blogPosts: BlogPost[] = [
           "They may be available for certain refinance scenarios, depending on property type, equity, loan purpose, seasoning, credit profile, and program guidelines.",
       },
       {
-        question: "Is a DSCR loan a guaranteed approval?",
+        question: "Is a DSCR loan an automatic approval?",
         answer:
           "No. DSCR loans are subject to credit approval, underwriting guidelines, property approval, and program requirements.",
       },
