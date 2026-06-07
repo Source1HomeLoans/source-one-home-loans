@@ -449,7 +449,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Eligibility, entitlement, credit, income, property approval, and underwriting guidelines all remain part of the process.",
       "A veteran-owned mortgage company can help borrowers compare VA benefits with other loan options.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "va-loan-benefits-for-veterans", "va-loan-eligibility-guide"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "va-loan-benefits-for-veterans", "va-loan-eligibility-guide"],
     sections: [
       {
         heading: "Why VA Loan Benefits Matter in Texas",
@@ -479,10 +479,52 @@ const veteranHomeownershipPosts: BlogPost[] = [
           "The best next step is a focused pre-qualification conversation. Source One Home Loans can help review the purchase or refinance goal, documentation needs, eligibility questions, and how VA loan benefits may fit the borrower's broader financial plan.",
         ],
       },
+      {
+        heading: "Documents Veterans Should Prepare",
+        paragraphs: [
+          "A complete VA loan conversation starts with documentation. Veterans and active-duty service members should be ready to discuss service history, current employment, income, monthly debts, available assets, and the property goal. A Certificate of Eligibility may be needed to confirm VA entitlement, and borrowers may also be asked for pay stubs, W-2s, bank statements, identification, and explanations for large deposits or recent credit events.",
+          "Self-employed veterans may need a more detailed documentation strategy. Business owners can prepare tax returns if available, recent bank statements, profit and loss information, and a clear explanation of how business income flows. The goal is not to overwhelm the borrower with paperwork; it is to identify the right path early so the file does not stall after a home is under contract.",
+        ],
+      },
+      {
+        heading: "Credit, Debt, and Payment Comfort",
+        paragraphs: [
+          "VA loan benefits are valuable, but credit and debt still matter. Borrowers should review credit reports for errors, avoid taking on new debts before or during the mortgage process, and be prepared to discuss student loans, car payments, credit cards, personal loans, child support, or other recurring obligations. Debt-to-income considerations can affect the loan conversation even when a borrower has strong service history and stable employment.",
+          "Texas buyers should also look beyond principal and interest. Property taxes, homeowners insurance, flood or wind considerations in some areas, HOA dues, and maintenance expectations can all affect comfort. A veteran buying near San Antonio may face a different payment picture than a borrower comparing homes in Dallas, Fort Worth, Houston, Austin, Plano, Frisco, McKinney, or Arlington. The right budget is the one that works after the full payment is considered.",
+        ],
+      },
+      {
+        heading: "How VA Benefits Compare with Conventional and Jumbo Loans",
+        paragraphs: [
+          "VA loans often deserve first look for eligible military borrowers, but they should still be compared with conventional loans when the borrower's profile supports multiple options. A conventional loan may be part of the conversation when a borrower has a larger down payment, a specific property scenario, or a long-term strategy that makes conventional terms worth reviewing. Source One Home Loans keeps the comparison practical by looking at cash to close, payment, documentation, mortgage insurance, and property requirements.",
+          "Jumbo loans may enter the picture when a Texas buyer is purchasing a higher-value property or needs a loan amount above conforming limits. Veterans and active-duty borrowers shopping in higher-priced areas should not assume there is only one route. A careful review can compare VA options, conventional financing, and jumbo loan preparation so the borrower understands the tradeoffs before making an offer.",
+        ],
+      },
+      {
+        heading: "Common Mistakes to Avoid",
+        paragraphs: [
+          "One common mistake is assuming that a VA benefit removes the need for preparation. The loan still needs income review, credit review, asset documentation, property approval, and underwriting. Another mistake is focusing only on the down payment while ignoring taxes, insurance, closing costs, reserves, and long-term payment comfort. In Texas, those details can make a meaningful difference.",
+          "Borrowers should also avoid changing jobs, opening new credit, moving money without documentation, or shopping beyond a realistic payment range before speaking with a mortgage professional. A short planning call can prevent avoidable delays and help veterans use their benefits with more confidence.",
+        ],
+      },
+      {
+        heading: "Questions to Ask Before You Choose a VA Loan",
+        paragraphs: [
+          "Before choosing a VA loan, veterans should ask how the estimated payment compares with a conventional loan, whether the VA funding fee applies, how much cash may be needed at closing, and what property issues could affect approval. They should also ask how long documentation review may take and whether the home search price range reflects the full Texas payment, not just principal and interest.",
+          "These questions do not make the process more complicated; they make it more honest. A veteran-owned mortgage company should help borrowers understand the benefit, the responsibilities, and the alternatives. Source One Home Loans uses that approach so eligible borrowers can move toward pre-qualification with clear expectations.",
+        ],
+      },
+      {
+        heading: "When to Contact a Mortgage Professional",
+        paragraphs: [
+          "Veterans do not need to wait until they have found a home to ask about VA benefits. The best time to start is before shopping seriously, especially if the borrower is comparing cities, reviewing a new job, relocating, or deciding whether a higher-value home may require jumbo loan preparation. Early guidance can clarify whether VA, conventional, or jumbo financing should be reviewed.",
+          "A pre-qualification conversation also helps borrowers understand which documents matter first. That way, when the right home appears, the borrower is not starting from zero. Source One Home Loans encourages Texas veterans to ask questions early, compare options honestly, and move forward only when the loan path feels clear.",
+        ],
+      },
     ],
     faqs: [
       { question: "Are VA loans only for first-time buyers?", answer: "No. Eligible borrowers may use VA loan benefits for qualifying purchase or refinance scenarios, subject to program rules and underwriting approval." },
-      { question: "Does a VA loan guarantee approval?", answer: "No. VA loans are subject to credit approval, underwriting guidelines, property approval, and program requirements." },
+      { question: "Does a VA loan mean automatic approval?", answer: "No. VA loans are subject to credit approval, underwriting guidelines, property approval, and program requirements." },
       { question: "Can Source One Home Loans help Texas veterans?", answer: "Yes. Source One Home Loans provides VA loan guidance for eligible military borrowers throughout Texas." },
     ],
   },
@@ -502,7 +544,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Eligible borrowers should compare facts instead of relying on old assumptions.",
       "A knowledgeable VA mortgage conversation can help prevent avoidable confusion.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "va-loan-vs-conventional-loan", "va-loan-funding-fee-explained"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "va-loan-vs-conventional-loan", "va-loan-funding-fee-explained"],
     sections: [
       {
         heading: "Common VA Loan Misconceptions",
@@ -524,6 +566,55 @@ const veteranHomeownershipPosts: BlogPost[] = [
         paragraphs: [
           "In competitive Texas markets, outdated myths can influence how buyers and sellers think about offers. A veteran buyer may need help explaining the strength of their financing path. Clear communication from the mortgage team can support better expectations for everyone involved.",
           "VA loans are not automatic approvals, and they are not identical for every borrower. Credit, income, assets, entitlement, property approval, and underwriting guidelines matter. The right conversation focuses on the actual borrower and property.",
+        ],
+      },
+      {
+        heading: "Myth: VA Loans Are Only for First-Time Buyers",
+        paragraphs: [
+          "Many borrowers think VA loans are only for first-time homebuyers. That is not correct. Eligible veterans, active-duty service members, and qualifying spouses may be able to use VA benefits in different purchase or refinance scenarios, subject to entitlement, occupancy, underwriting, and property requirements. A veteran who owned a home before should still ask whether VA financing is available for the next move.",
+          "This matters in Texas because life changes quickly. A service member may relocate to San Antonio, a veteran may move from a starter home in Fort Worth to a larger home in Frisco, or a family may refinance a primary residence in Houston. The right conversation looks at current eligibility, remaining entitlement, property goals, and whether VA, conventional, or jumbo financing fits the new situation.",
+        ],
+      },
+      {
+        heading: "Myth: VA Borrowers Do Not Need to Prepare Credit or Documents",
+        paragraphs: [
+          "A VA loan benefit does not replace borrower preparation. Credit history, income stability, asset documentation, debts, and property approval all remain part of the process. Borrowers should review credit, avoid new debt, gather pay stubs, W-2s, bank statements, identification, and service-related documentation, and be ready to explain employment or deposit details if needed.",
+          "Self-employed veterans should be especially proactive. A business owner may need tax returns, bank statements, P&L documentation, or alternative income review depending on the scenario. Source One Home Loans helps borrowers organize the file before pressure builds, which can make the difference between a smooth path and last-minute scrambling.",
+        ],
+      },
+      {
+        heading: "Myth: Conventional or Jumbo Loans Are Always Better for Strong Borrowers",
+        paragraphs: [
+          "Some eligible borrowers assume that if they have strong credit or assets, they should skip VA financing and use a conventional loan. That may or may not be true. Conventional loans can be excellent, especially for qualified borrowers with specific down payment goals or property scenarios, but VA benefits may still offer meaningful advantages. The comparison should include payment, cash to close, mortgage insurance, funding fee considerations, and long-term plans.",
+          "Jumbo loans are also worth discussing when a borrower is purchasing a higher-value Texas home. A veteran buying in a luxury market or higher-priced neighborhood may need a more detailed review of loan amount, reserves, assets, and property type. The point is not to force one program; it is to compare VA, conventional, and jumbo options honestly.",
+        ],
+      },
+      {
+        heading: "Myth: The VA Appraisal Makes Every Offer Weak",
+        paragraphs: [
+          "VA appraisals and property standards are often misunderstood. The appraisal process is meant to evaluate value and basic property acceptability; it does not automatically make an offer weak. Issues can arise with any loan type when property condition, value, or contract terms are not aligned. A prepared buyer and informed real estate team can discuss expectations early.",
+          "Texas buyers can help by choosing experienced professionals, reviewing property condition before making an offer, and keeping communication open. If the home appears to have major safety or repair issues, the borrower should ask questions before committing. Clear expectations reduce surprises.",
+        ],
+      },
+      {
+        heading: "How to Replace Myths with a Plan",
+        paragraphs: [
+          "The best way to move past VA loan myths is to get specific. What is the borrower trying to buy? Where in Texas is the property? Is the borrower active-duty, veteran, National Guard, Reserve, or a qualifying spouse? What is the timeline? What documents are available now? What payment feels comfortable after taxes, insurance, and HOA dues?",
+          "Source One Home Loans is a veteran-owned mortgage company, and that perspective shapes the guidance. Borrowers can start with a pre-qualification conversation, compare VA with conventional or jumbo options where appropriate, and move forward with facts instead of assumptions.",
+        ],
+      },
+      {
+        heading: "What a Strong VA Pre-Qualification Conversation Includes",
+        paragraphs: [
+          "A strong VA pre-qualification conversation should cover eligibility, entitlement, income, credit, debts, assets, property goals, estimated taxes, insurance, and the borrower's timeline. It should also identify whether the borrower is comparing VA with conventional or jumbo financing. That comparison is especially important for Texas buyers who may be shopping across cities with very different price points and monthly cost structures.",
+          "The borrower should leave the conversation knowing what documents to gather, what questions still need answers, and what next step makes sense. That kind of clarity helps replace myths with a practical plan. It also helps real estate agents and sellers understand that the buyer is prepared.",
+        ],
+      },
+      {
+        heading: "Questions Borrowers Should Ask Instead",
+        paragraphs: [
+          "Instead of asking whether VA loans are good or bad, borrowers should ask better questions. How does a VA loan compare with a conventional loan for this exact scenario? What would cash to close look like? Does the property type create any concerns? Are taxes, insurance, and HOA dues included in the payment estimate? Would a jumbo loan ever need to be considered?",
+          "Those questions lead to useful answers because they are tied to the borrower and property. Source One Home Loans helps Texas veterans replace blanket assumptions with a practical comparison that respects the value of the VA benefit while still reviewing the full mortgage picture.",
         ],
       },
     ],
@@ -549,7 +640,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Texas borrowers should review payment comfort before choosing a home price.",
       "Pre-qualification helps veterans understand documentation and affordability before making an offer.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "va-loan-benefits-for-veterans"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "va-loan-eligibility-guide", "va-loan-benefits-for-veterans"],
     sections: [
       {
         heading: "Understanding No-Down-Payment VA Financing",
@@ -563,6 +654,55 @@ const veteranHomeownershipPosts: BlogPost[] = [
         paragraphs: [
           "Texas property taxes and homeowners insurance can vary by city and property type. A home in Houston may carry different insurance considerations than a home in Plano or McKinney. A property in Austin, Fort Worth, or San Antonio may have different tax and HOA assumptions. These details can affect monthly payment even when the down payment is low or zero.",
           "Source One Home Loans helps eligible borrowers compare the loan benefit with real-world affordability. The goal is not just to buy a home, but to choose a mortgage path that supports long-term confidence.",
+        ],
+      },
+      {
+        heading: "What No Down Payment Really Means",
+        paragraphs: [
+          "No down payment means the eligible borrower may be able to finance the purchase price without bringing a traditional down payment, subject to VA entitlement, underwriting, property approval, and program requirements. It does not mean the borrower should ignore closing costs, prepaid taxes, homeowners insurance, inspections, appraisal costs, moving expenses, or reserves. A strong plan separates down payment from the total cash needed to complete and sustain the purchase.",
+          "This distinction matters for first-time buyers and relocating military families. A borrower might qualify for a no-down-payment structure but still want cash available after closing for furniture, repairs, emergency savings, or transition costs. Source One Home Loans reviews the full picture so the VA benefit supports the borrower rather than creating a payment that feels stretched.",
+        ],
+      },
+      {
+        heading: "Preparing Credit, Income, and Debt",
+        paragraphs: [
+          "Veterans should prepare for a standard mortgage review even when the down payment requirement is favorable. That means reviewing credit, avoiding new debts, documenting income, and understanding recurring obligations. Car loans, credit cards, student loans, child support, and personal loans may affect debt-to-income considerations. Employment history and income stability can also shape the file.",
+          "Active-duty borrowers may need to discuss base pay, allowances, orders, and relocation timing. Self-employed veterans may need business documentation, bank statements, or P&L information. The more organized the file, the easier it is to compare VA financing with conventional loans or other options when appropriate.",
+        ],
+      },
+      {
+        heading: "Texas Homebuyer Examples",
+        paragraphs: [
+          "Consider an eligible veteran buying a first home in Fort Worth. The no-down-payment feature may help preserve savings, but the monthly payment still needs to include taxes, insurance, and possible HOA dues. A borrower in Houston may need to review insurance carefully. A buyer in Austin or Frisco may be comparing higher purchase prices and may need a detailed payment discussion before deciding where to shop.",
+          "A military family relocating to San Antonio may have a short timeline and need to coordinate temporary housing, school calendars, and closing dates. A clear VA pre-qualification process can help identify documentation needs early and reduce uncertainty during the home search.",
+        ],
+      },
+      {
+        heading: "How VA Compares with Conventional and Jumbo Options",
+        paragraphs: [
+          "Eligible borrowers often begin with VA because the benefit can be powerful, but comparison still matters. Conventional loans may be worth reviewing when a borrower has significant savings, a different property strategy, or wants to compare mortgage insurance and cash-to-close. Jumbo loans may become relevant if a Texas borrower is buying a higher-value property or needs a larger loan amount.",
+          "A careful comparison should include monthly payment, total cash needed, loan amount, property requirements, reserves, and long-term goals. The right mortgage path is not always the one with the flashiest headline; it is the one that fits the borrower and the property.",
+        ],
+      },
+      {
+        heading: "Common Mistakes to Avoid",
+        paragraphs: [
+          "A common mistake is assuming no down payment means the borrower should shop at the top of a projected range. Another is moving money between accounts without documentation, opening new credit, or waiting until after making an offer to discuss VA eligibility. These choices can slow the process or create avoidable stress.",
+          "Borrowers should start with a pre-qualification conversation, gather documents, ask about payment comfort, and review Texas-specific costs before making an offer. Source One Home Loans helps veterans and active-duty borrowers turn the VA benefit into a practical homebuying plan.",
+        ],
+      },
+      {
+        heading: "When No Down Payment May Not Be the Only Priority",
+        paragraphs: [
+          "Even when a no-down-payment VA option is available, some borrowers may still choose to bring money to closing for strategic reasons. A down payment may affect loan structure, total interest over time, or payment comfort. Other borrowers may prefer to preserve cash for reserves, repairs, relocation expenses, or family needs. The right answer depends on the borrower, not a one-size-fits-all rule.",
+          "This is why VA borrowers should compare scenarios before writing offers. A veteran buying a modest first home may prioritize cash preservation. A borrower purchasing a higher-value property may want to compare VA, conventional, and jumbo structures. Source One Home Loans helps Texas buyers review those options clearly and responsibly.",
+        ],
+      },
+      {
+        heading: "How to Prepare Before Making an Offer",
+        paragraphs: [
+          "Before making an offer, eligible borrowers should confirm the home search range, review the full estimated payment, gather required documents, and discuss how quickly they can respond to underwriting requests. They should also ask whether the property type, condition, or location creates any special considerations. Preparation matters even when the financing path includes no down payment.",
+          "A first-time buyer may need extra education around closing costs and inspections. An active-duty borrower may need to coordinate orders and occupancy. A self-employed veteran may need extra time for income documentation. A buyer shopping in a higher-price Texas market may need to compare VA with conventional or jumbo options before deciding how to structure the offer.",
         ],
       },
     ],
@@ -588,7 +728,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Texas borrowers should compare payment and cash-to-close, not just loan labels.",
       "A veteran-owned mortgage consultation can help clarify the tradeoffs.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "va-loan-vs-conventional-loan"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "va-loan-vs-conventional-loan"],
     sections: [
       {
         heading: "How the Two Paths Differ",
@@ -602,6 +742,61 @@ const veteranHomeownershipPosts: BlogPost[] = [
         paragraphs: [
           "Borrowers should compare monthly payment, cash to close, reserve needs, property requirements, closing timeline, and future refinance possibilities. For some eligible borrowers, VA loan benefits may be compelling. For others, conventional financing may be worth evaluating side by side.",
           "Source One Home Loans helps borrowers review the actual numbers and documentation instead of guessing. That is especially useful in Texas markets where property taxes, insurance, and HOA dues can materially affect payment comfort.",
+        ],
+      },
+      {
+        heading: "Down Payment and Cash-to-Close Differences",
+        paragraphs: [
+          "VA loans may allow eligible borrowers to pursue financing with no down payment, while conventional loans usually involve down payment choices based on borrower profile, occupancy, property type, and program rules. That difference can be meaningful for veterans who want to preserve cash after closing. However, cash-to-close is not just the down payment. Closing costs, prepaid taxes, insurance, and reserves may still matter.",
+          "A Texas borrower comparing VA and conventional options should ask for a practical side-by-side conversation. What is the estimated monthly payment? How much cash might be needed? How do taxes, insurance, and HOA dues affect the result? Does either option create a better long-term fit? Source One Home Loans keeps the discussion centered on the borrower's actual goals rather than a generic product ranking.",
+        ],
+      },
+      {
+        heading: "Mortgage Insurance, Funding Fee, and Long-Term Strategy",
+        paragraphs: [
+          "Conventional loans may include private mortgage insurance depending on down payment, loan-to-value, credit profile, and program details. VA loans may involve a VA funding fee unless the borrower is exempt. These costs are different, and they should be reviewed carefully. A borrower should not assume one is better without looking at the full payment and total loan structure.",
+          "Long-term strategy also matters. A veteran purchasing a starter home in Arlington may care most about cash preservation and monthly affordability. A buyer moving into a higher-value home in Plano or Frisco may need to compare VA, conventional, and possibly jumbo options. A homeowner refinancing in Houston may care about term, equity, and payment stability. The comparison should match the situation.",
+        ],
+      },
+      {
+        heading: "Credit, Income, and Property Considerations",
+        paragraphs: [
+          "Both VA and conventional loans require credit, income, asset, and property review. VA eligibility alone does not replace underwriting. Conventional strength alone does not mean every property or payment works. Borrowers should prepare documents, avoid new debt, review credit, and be ready to discuss employment, military income, self-employment, or other income sources.",
+          "Property type can also affect the conversation. Primary residence requirements, occupancy, appraisal, condition, condominium rules, and loan amount can influence whether VA or conventional financing is the better fit. Texas buyers should raise property questions early, especially when looking at older homes, rural properties, condos, or higher-value homes.",
+        ],
+      },
+      {
+        heading: "Where Jumbo Loans Fit",
+        paragraphs: [
+          "Some Texas borrowers comparing VA and conventional loans are also looking at higher-priced homes. In that case, jumbo loan preparation may become part of the conversation. Jumbo loans can involve larger loan amounts, detailed asset review, reserve expectations, and additional documentation. They are not only for luxury buyers, but they are commonly associated with higher-value properties.",
+          "A veteran-owned mortgage company can help eligible military borrowers compare VA benefits with conventional and jumbo options without losing sight of the service-related advantages. The goal is to understand which path fits the property, the borrower, and the long-term plan.",
+        ],
+      },
+      {
+        heading: "Common Mistakes When Comparing Programs",
+        paragraphs: [
+          "One mistake is comparing only the interest rate while ignoring cash to close, mortgage insurance, funding fee, property requirements, and long-term flexibility. Another mistake is assuming that VA is always best or conventional is always cleaner. The right answer depends on the full file.",
+          "Borrowers should also avoid waiting until contract negotiations to ask about program fit. A pre-qualification conversation can compare VA, conventional, and jumbo options early so the buyer knows how to shop, what documents are needed, and what tradeoffs may matter.",
+        ],
+      },
+      {
+        heading: "Examples of Borrowers Who Should Compare Both",
+        paragraphs: [
+          "A veteran with strong credit and significant savings may want to compare VA and conventional loans side by side. A first-time buyer with limited cash may find that VA benefits deserve serious attention. A borrower buying a higher-value Texas home may need to compare VA options with jumbo preparation. An active-duty family relocating quickly may care most about certainty, timing, and communication.",
+          "Self-employed veterans should also compare carefully because documentation can shape the available options. Bank statements, business income, tax returns, P&L details, and reserves may influence whether VA, conventional, jumbo, or another strategy is realistic. A thoughtful review helps borrowers avoid choosing based on assumptions.",
+        ],
+      },
+      {
+        heading: "How to Make the Comparison Practical",
+        paragraphs: [
+          "A practical comparison should use the same purchase price, property tax estimate, insurance estimate, HOA dues, and realistic closing timeline. Otherwise, borrowers may compare one complete scenario against one incomplete scenario. Source One Home Loans helps borrowers look at the same facts across VA, conventional, and jumbo possibilities so the decision is clearer.",
+          "The comparison should also include documentation. A borrower with straightforward W-2 income may have one path, while a self-employed borrower or relocating active-duty borrower may have a different set of considerations. The better the information, the better the recommendation.",
+        ],
+      },
+      {
+        heading: "When to Revisit the Decision",
+        paragraphs: [
+          "Borrowers should revisit the VA versus conventional decision if the property price changes, the down payment changes, the borrower adds or pays off debt, or the home search moves into a higher-value range where jumbo preparation matters. Mortgage planning is not frozen after the first conversation. It should update as the facts become clearer.",
         ],
       },
     ],
@@ -627,7 +822,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Texas market conditions vary by city, property type, taxes, and insurance.",
       "A clear pre-qualification path helps buyers shop with more confidence.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "texas-first-time-homebuyer-loans", "va-loan-eligibility-guide"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "texas-first-time-homebuyer-loans", "va-loan-eligibility-guide"],
     sections: [
       {
         heading: "Start with Readiness",
@@ -641,6 +836,62 @@ const veteranHomeownershipPosts: BlogPost[] = [
         paragraphs: [
           "A strong search strategy includes more than a maximum price. Texas buyers should review property taxes, insurance, HOA dues, commute, school districts, resale potential, and long-term fit. VA borrowers should also be aware of property condition and appraisal considerations.",
           "Source One Home Loans helps veterans connect the mortgage conversation to the real home search. That practical guidance can help buyers avoid surprises and move forward with more confidence.",
+        ],
+      },
+      {
+        heading: "Step One: Review VA Eligibility and Entitlement",
+        paragraphs: [
+          "Veterans and active-duty service members should begin by discussing VA eligibility and entitlement. A Certificate of Eligibility may be needed, and the borrower should be prepared to talk through service history, prior VA loan use, occupancy plans, and the property goal. Eligibility is important, but it is only one part of the larger mortgage review.",
+          "Source One Home Loans helps borrowers connect eligibility questions to the practical homebuying process. That includes reviewing income, debts, credit, assets, payment comfort, and whether VA, conventional, or jumbo financing should be compared. A veteran-owned mortgage company can help translate the benefit into a plan that makes sense for the Texas market.",
+        ],
+      },
+      {
+        heading: "Step Two: Prepare Documents Before Shopping",
+        paragraphs: [
+          "A Texas veteran should gather recent pay stubs, W-2s, bank statements, identification, service-related documentation, and information about debts. Active-duty borrowers may need to discuss allowances, orders, and relocation timing. Self-employed veterans may need tax returns, business bank statements, profit and loss documentation, or other income records depending on the loan path.",
+          "Pre-qualification is stronger when the information is complete. A borrower who understands the likely documentation request can shop with more confidence and avoid surprises after making an offer. This is especially helpful for first-time buyers who are learning the mortgage process while also learning the Texas housing market.",
+        ],
+      },
+      {
+        heading: "Step Three: Understand Texas Payment Variables",
+        paragraphs: [
+          "Texas property taxes and homeowners insurance can have a major impact on monthly payment. A buyer comparing homes in Dallas, Fort Worth, Houston, Austin, San Antonio, Plano, Frisco, McKinney, or Arlington should not rely only on purchase price. HOA dues, insurance, tax rates, and property condition can change the affordability conversation.",
+          "Veterans should ask for payment estimates that include principal, interest, taxes, insurance, and any applicable HOA dues or mortgage-related costs. A home that looks affordable before taxes and insurance may feel very different after the full payment is reviewed. Responsible planning keeps the borrower from being surprised late in the process.",
+        ],
+      },
+      {
+        heading: "Step Four: Compare VA, Conventional, and Jumbo Options",
+        paragraphs: [
+          "VA loans are often the first program to review for eligible borrowers, but comparison can still be useful. Conventional loans may fit some borrowers with specific down payment goals, property types, or long-term plans. Jumbo loans may be relevant when a veteran is purchasing a higher-value Texas property or needs a larger loan amount.",
+          "Comparing options does not mean the borrower is abandoning the VA benefit. It means the borrower is making an informed decision. Source One Home Loans helps veterans review payment, cash to close, documentation, reserves, and property requirements so the loan strategy matches the home search.",
+        ],
+      },
+      {
+        heading: "Common Mistakes Texas Veterans Should Avoid",
+        paragraphs: [
+          "Common mistakes include shopping before pre-qualification, ignoring taxes and insurance, opening new credit, changing jobs without discussing the impact, assuming every property will meet requirements, or waiting too long to request service-related documents. These issues can create stress after an offer is accepted.",
+          "Another mistake is treating the maximum potential price as the right price. The right home should fit the borrower's budget, lifestyle, and long-term goals. A focused consultation can help veterans understand the difference between possible and comfortable.",
+        ],
+      },
+      {
+        heading: "How Source One Home Loans Helps Veterans Plan",
+        paragraphs: [
+          "Source One Home Loans starts with a practical conversation about the borrower's service background, homeownership goals, income, assets, debts, and Texas market. From there, the discussion can move into VA loan eligibility, conventional loan comparison, jumbo loan preparation when relevant, and the documents needed for a stronger pre-qualification.",
+          "David Bates brings U.S. Navy Reserve experience and a service-focused mindset to the process. The goal is to provide honest guidance, responsive communication, and a clear plan so veterans and active-duty borrowers can move through the home buying process with confidence.",
+        ],
+      },
+      {
+        heading: "What to Do After Pre-Qualification",
+        paragraphs: [
+          "After pre-qualification, veterans should keep documents updated, avoid new debts, communicate changes quickly, and stay realistic about payment comfort. If the home search shifts to a different city or price range, the borrower should update the mortgage conversation instead of relying on old numbers. Texas taxes, insurance, and HOA dues can vary enough to change the analysis.",
+          "Borrowers should also keep comparing options when the facts change. A VA loan may remain the best path, but conventional or jumbo financing may deserve another look if the property, price, or borrower goals change. A strong mortgage plan stays flexible without becoming confusing.",
+        ],
+      },
+      {
+        heading: "Why Local Guidance Matters",
+        paragraphs: [
+          "Texas is too large and varied for one generic mortgage rule to fit every veteran. A buyer in a military community, a first-time buyer in a fast-growing suburb, and a veteran purchasing a higher-value home may all need different guidance. Local planning helps connect VA benefits to real taxes, insurance, property values, and timing.",
+          "Local guidance also helps borrowers avoid comparing homes with incomplete numbers. When the estimate includes taxes, insurance, HOA dues, and realistic closing-cost expectations, the buyer can make decisions with more confidence before writing an offer in a competitive Texas market.",
         ],
       },
     ],
@@ -666,7 +917,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
       "Clear communication helps borrowers coordinate home search, financing, and moving logistics.",
       "A veteran-owned mortgage company can help military families plan with practical next steps.",
     ],
-    relatedProgramSlugs: ["texas-va-loans", "va-loan-eligibility-guide", "texas-conventional-loans"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "va-loan-eligibility-guide"],
     sections: [
       {
         heading: "Mortgage Planning During Military Relocation",
@@ -680,6 +931,62 @@ const veteranHomeownershipPosts: BlogPost[] = [
         paragraphs: [
           "Borrowers may need to discuss income, service status, orders, assets, credit, current housing, and occupancy plans. VA eligibility and Certificate of Eligibility questions should be addressed early so they do not slow down the process later.",
           "Source One Home Loans brings a service-focused approach to military relocation conversations. The goal is to help borrowers understand what is needed, why it matters, and how to move from planning to pre-qualification with confidence.",
+        ],
+      },
+      {
+        heading: "Start Before the Move Becomes Urgent",
+        paragraphs: [
+          "Military relocation often compresses decisions that other buyers make over several months. A service member may receive orders, begin researching neighborhoods, coordinate temporary housing, evaluate schools, and compare commute times all at once. Starting the mortgage conversation early can help separate what is known from what still needs confirmation.",
+          "Early planning also helps identify whether VA, conventional, or jumbo financing should be reviewed. A borrower relocating to a higher-priced Texas market may need to understand loan amount options, reserves, and documentation before choosing a search range. A family moving to a more affordable area may still need to review property taxes, insurance, and closing costs carefully.",
+        ],
+      },
+      {
+        heading: "Orders, Occupancy, and Employment Details",
+        paragraphs: [
+          "Active-duty borrowers should be prepared to discuss orders, expected report dates, current duty station, income, allowances, and occupancy plans. These details can shape the loan conversation because VA financing is tied to eligible occupancy and borrower qualification. The mortgage team needs to understand the timeline so expectations are realistic.",
+          "If a spouse is changing jobs, if the borrower is leaving active duty soon, or if income will change after relocation, those details should be discussed early. Employment and income verification are not boxes to check at the end; they are part of building a reliable plan before the borrower commits to a home.",
+        ],
+      },
+      {
+        heading: "Texas Market Examples for Military Families",
+        paragraphs: [
+          "A family relocating to San Antonio may be focused on military community, commute, schools, and timing. A borrower moving to Fort Worth or Dallas may be comparing suburban options and property tax differences. A move to Houston may require careful insurance review, while Austin, Plano, Frisco, or McKinney may involve higher purchase prices and a stronger need to compare conventional, VA, and jumbo options.",
+          "These local details matter because the same loan amount can feel different from one city to another. Source One Home Loans helps borrowers connect the mortgage numbers to the Texas market they are actually entering, not a generic national average.",
+        ],
+      },
+      {
+        heading: "Documentation Checklist for Relocating Borrowers",
+        paragraphs: [
+          "Military families can prepare by gathering identification, pay documentation, W-2s, bank statements, service-related documentation, debt information, and any available relocation or orders paperwork. If the borrower owns a current home, details about mortgage payment, taxes, insurance, lease plans, or pending sale may also matter.",
+          "Self-employed spouses or veterans with business income should prepare additional documentation, such as business bank statements, tax returns, or profit and loss information. The more complete the file is, the easier it is to compare loan paths and avoid late-stage surprises.",
+        ],
+      },
+      {
+        heading: "Common Relocation Mistakes to Avoid",
+        paragraphs: [
+          "One mistake is choosing a home search range before reviewing the full payment. Another is assuming a short relocation timeline means documentation can wait. Borrowers should avoid opening new credit, making large undocumented transfers, changing financial plans without discussion, or overlooking Texas property taxes and insurance.",
+          "The better approach is to start with a consultation, review VA eligibility, compare conventional or jumbo options if needed, and build a timeline that accounts for the move. Source One Home Loans provides veteran-owned, service-focused guidance for military families who need clarity during a busy transition.",
+        ],
+      },
+      {
+        heading: "Coordinating the Mortgage with the Move",
+        paragraphs: [
+          "Military families often need the mortgage plan to work alongside lease endings, temporary lodging, school enrollment, travel, household goods shipments, and report dates. That coordination requires more than a quick payment estimate. Borrowers should understand when documents are needed, how quickly they can respond to requests, and how the financing timeline lines up with the relocation calendar.",
+          "A VA loan may be the right fit, but conventional or jumbo options may also need to be reviewed depending on property price, location, and borrower profile. Source One Home Loans helps relocating borrowers compare those paths early so the move and the mortgage process support each other instead of competing for attention.",
+        ],
+      },
+      {
+        heading: "How to Keep the File Moving",
+        paragraphs: [
+          "Relocating borrowers can keep the mortgage file moving by responding quickly, keeping pay and asset documents current, avoiding new debts, and communicating any changes to orders, employment, or housing plans. If a spouse has new employment, if temporary housing affects timing, or if the family changes target cities, the mortgage team should know early.",
+          "The best relocation financing plan is organized but flexible. Source One Home Loans helps military families understand the VA loan path, compare conventional and jumbo options when appropriate, and keep the next step visible during a busy move.",
+        ],
+      },
+      {
+        heading: "Why Relocation Buyers Should Ask Early",
+        paragraphs: [
+          "A relocating military buyer should ask early about payment range, VA eligibility, conventional comparisons, jumbo loan preparation, and documentation timing. Early questions give the borrower more room to make decisions before the move becomes urgent. That extra clarity can make the home search feel more controlled.",
+          "Early planning also gives the borrower time to coordinate real estate agents, family logistics, and mortgage documentation. When everyone understands the timeline, it becomes easier to avoid rushed decisions during an already demanding move.",
         ],
       },
     ],
@@ -710,7 +1017,7 @@ export const blogPosts: BlogPost[] = [
       "The best loan path depends on the borrower, property, timeline, and documentation profile.",
       "A focused consultation can help first-time buyers, repeat buyers, and self-employed borrowers compare realistic next steps.",
     ],
-    relatedProgramSlugs: ["texas-first-time-homebuyer-loans", "texas-fha-loans", "texas-va-loans", "texas-jumbo-loans"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "texas-first-time-homebuyer-loans", "texas-fha-loans"],
     sections: [
       {
         heading: "Why Pre-Qualification Matters for Texas Homebuyers",
@@ -802,7 +1109,7 @@ export const blogPosts: BlogPost[] = [
       "Lease income, market rent, property taxes, insurance, HOA dues, and loan terms can all affect the scenario.",
       "DSCR loans are not automatic approvals; underwriting, property approval, credit, assets, and program rules still matter.",
     ],
-    relatedProgramSlugs: ["texas-dscr-loans", "texas-investor-property-loans", "texas-non-qm-loans", "texas-refinance-loans"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "texas-dscr-loans", "texas-investor-property-loans", "texas-non-qm-loans"],
     sections: [
       {
         heading: "What a DSCR Loan Is",
@@ -894,7 +1201,7 @@ export const blogPosts: BlogPost[] = [
       "Texas business owners should review both qualifying strategy and payment comfort.",
       "A mortgage consultation can help organize income, assets, credit, and loan goals before application.",
     ],
-    relatedProgramSlugs: ["texas-self-employed-mortgages", "texas-bank-statement-loans", "texas-p-l-loans", "texas-non-qm-loans"],
+    relatedProgramSlugs: ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans", "texas-self-employed-mortgages", "texas-bank-statement-loans", "texas-p-l-loans"],
     sections: [
       {
         heading: "Why Self-Employed Mortgage Files Need a Different Conversation",
