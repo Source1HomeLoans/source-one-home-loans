@@ -120,10 +120,10 @@ export default function HomePage() {
         <div className="container-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="order-2 grid grid-cols-2 gap-4 lg:order-1">
             {[
-              ["DSCR Loans", "Property cash-flow qualification"],
-              ["Rental Property Financing", "Financing for your next investment"],
-              ["Fix & Flip Opportunities", "Short-term renovation financing"],
-              ["Portfolio Growth", "Flexible investor solutions"],
+              ["Investor Property Loans", "DSCR and Rental Property Financing"],
+              ["Rental Portfolio Growth", "Financing for your next investment"],
+              ["Cash-Flow Focused Options", "Programs built around investment property goals"],
+              ["Investor Guidance", "Clear next steps for qualified real estate investors"],
             ].map(([title, text], index) => (
               <div key={title} className={`rounded-sm p-6 ${index === 0 ? "bg-gold text-navy" : "bg-light-gray text-navy"}`}>
                 <ChartNoAxesCombined className="h-6 w-6" strokeWidth={1.6} />
@@ -134,9 +134,9 @@ export default function HomePage() {
           </div>
           <div className="order-1 lg:order-2 lg:pl-12">
             <p className="eyebrow text-gold">Investor Financing</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Financing Built for Real Estate Investors</h2>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Financing Solutions for Real Estate Investors</h2>
             <p className="mt-6 text-base leading-8 text-slate-600">
-              Whether you are acquiring your first rental property or expanding an established portfolio, we can help you explore loan options aligned with your investment strategy.
+              Whether you&apos;re purchasing your first investment property or expanding your rental portfolio, Source One Home Loans offers investor-focused financing solutions, including DSCR and rental property loan programs designed to help you grow your real estate investments.
             </p>
             <Link href="/contact#lead-form" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
           </div>

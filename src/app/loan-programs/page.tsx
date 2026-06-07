@@ -6,7 +6,8 @@ import { company, loanProgramCategories, loanPrograms } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Loan Programs",
-  description: "Explore conventional, FHA, VA, jumbo, investor, self-employed, non-QM, refinance, and first-time homebuyer loan options.",
+  description:
+    "Explore conventional, FHA, VA, jumbo, investor property, self-employed, non-QM, refinance, and first-time homebuyer loan options.",
 };
 
 export default function LoanProgramsPage() {
