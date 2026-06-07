@@ -16,7 +16,7 @@ export function ContactCta() {
           <a href={company.phoneHref} className="button-navy shrink-0">
             Call Now <Phone className="h-4 w-4" />
           </a>
-          <Link href="/contact" className="button-navy shrink-0">
+          <Link href="/contact#lead-form" className="button-navy shrink-0">
             Contact Us <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

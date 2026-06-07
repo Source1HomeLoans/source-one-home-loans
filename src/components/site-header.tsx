@@ -14,7 +14,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="button-gold">
+          <Link href="/contact#lead-form" className="button-gold">
             Apply Now
           </Link>
         </nav>
@@ -29,7 +29,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" className="button-gold mt-2 w-full">
+            <Link href="/contact#lead-form" className="button-gold mt-2 w-full">
               Apply Now
             </Link>
           </nav>

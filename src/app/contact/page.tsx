@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Home, Mail, Phone } from "lucide-react";
 import { FounderImage } from "@/components/founder-image";
+import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
-import { company, founder, loanPrograms } from "@/lib/site-data";
+import { company, founder } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -56,39 +57,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            {/* TODO: Wire this Phase 1 lead form to Resend, Supabase, the CRM dashboard, and the LOS handoff when backend services are ready. */}
-            <form className="grid gap-5" aria-label="Mortgage inquiry form">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-semibold text-navy">First Name<input className="form-field" type="text" name="firstName" autoComplete="given-name" required /></label>
-                <label className="grid gap-2 text-sm font-semibold text-navy">Last Name<input className="form-field" type="text" name="lastName" autoComplete="family-name" required /></label>
-                <label className="grid gap-2 text-sm font-semibold text-navy">Email<input className="form-field" type="email" name="email" autoComplete="email" required /></label>
-                <label className="grid gap-2 text-sm font-semibold text-navy">Phone<input className="form-field" type="tel" name="phone" autoComplete="tel" required /></label>
-              </div>
-              <label className="grid gap-2 text-sm font-semibold text-navy">
-                Loan Program Interest
-                <select className="form-field" name="loanProgramInterest" defaultValue="">
-                  <option value="" disabled>Select a loan program</option>
-                  {loanPrograms.map((program) => <option key={program.title} value={program.title}>{program.title}</option>)}
-                  <option value="Other">Other / Not Sure Yet</option>
-                </select>
-              </label>
-              <label className="grid gap-2 text-sm font-semibold text-navy">
-                Message
-                <textarea className="form-field min-h-36 resize-y" name="message" placeholder="Tell us about your goals, timeline, or questions." />
-              </label>
-              <label className="flex gap-3 rounded-sm border border-navy/10 bg-light-gray p-4 text-xs leading-6 text-slate-600">
-                <input type="checkbox" name="consent" required className="mt-1 h-4 w-4 shrink-0 accent-gold" />
-                <span>{company.formConsent}</span>
-              </label>
-              {/* TODO: Replace this frontend-only button with a Server Action or API route that validates, stores, emails, and routes leads. */}
-              <button type="button" className="button-navy justify-self-start">Send My Inquiry</button>
-              <p className="text-xs leading-6 text-slate-500">
-                {company.formDisclaimer}
-              </p>
-              <p className="text-xs leading-6 text-slate-500">
-                This form is prepared for future CRM/LOS integration. Please do not submit sensitive personal information.
-              </p>
-            </form>
+            <LeadForm />
           </div>
         </div>
       </section>

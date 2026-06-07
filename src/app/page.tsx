@@ -30,7 +30,7 @@ export default function HomePage() {
               Smart mortgage solutions for homebuyers, investors, and self-employed borrowers.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="button-gold">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/contact#lead-form" className="button-gold">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
               <Link href="/loan-programs" className="button-outline">Explore Loan Programs</Link>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function HomePage() {
             <p className="mt-6 text-sm font-semibold text-gold">
               {founder.title} | Individual NMLS #{company.individualNmls}
             </p>
-            <Link href="/contact" className="button-gold mt-9">
+            <Link href="/contact#lead-form" className="button-gold mt-9">
               Schedule a Consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <Link href="/contact" className="button-navy mt-9">Discuss Your Options</Link>
+            <Link href="/contact#lead-form" className="button-navy mt-9">Discuss Your Options</Link>
           </div>
           <div className="relative rounded-sm bg-navy p-10 text-white shadow-[0_24px_60px_rgba(13,27,42,0.16)] md:p-14">
             <div className="absolute right-8 top-8 h-28 w-28 rounded-full border border-gold/20" />
@@ -138,7 +138,7 @@ export default function HomePage() {
             <p className="mt-6 text-base leading-8 text-slate-600">
               Whether you are acquiring your first rental property or expanding an established portfolio, we can help you explore loan options aligned with your investment strategy.
             </p>
-            <Link href="/contact" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
+            <Link href="/contact#lead-form" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
           </div>
         </div>
       </section>
