@@ -5,6 +5,7 @@ import { ContactCta } from "@/components/contact-cta";
 import { FounderImage } from "@/components/founder-image";
 import { LeadForm } from "@/components/lead-form";
 import { LoanCard } from "@/components/loan-card";
+import { Reviews } from "@/components/reviews";
 import { TrustBadges } from "@/components/trust-badges";
 import { company, featuredLoanPrograms, founder } from "@/lib/site-data";
 
@@ -13,6 +14,25 @@ const values = [
   { label: "Home", text: "Financing centered on your goals.", icon: House },
   { label: "Growth", text: "Strategies for today and what comes next.", icon: TrendingUp },
   { label: "Support", text: "A responsive team from start to finish.", icon: Headphones },
+];
+
+const borrowerChoiceCards = [
+  [
+    "Personalized Guidance",
+    "We take the time to understand your goals and help you explore financing options that fit your situation.",
+  ],
+  [
+    "Responsive Communication",
+    "Questions don't stop after business hours. We strive to keep borrowers informed throughout the loan process.",
+  ],
+  [
+    "Flexible Loan Solutions",
+    "From conventional and jumbo financing to VA and investor property loans, we offer a range of mortgage solutions.",
+  ],
+  [
+    "Local Market Knowledge",
+    "We understand the Texas housing market and work to help borrowers make informed decisions.",
+  ],
 ];
 
 export default function HomePage() {
@@ -196,48 +216,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Reviews />
+
       <section className="section-space bg-navy text-white">
         <div className="container-shell">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="eyebrow text-gold">Client Success Stories</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Borrower wins start with clear guidance.</h2>
-            </div>
-            <p className="max-w-xl text-sm leading-7 text-white/65">
-              Review placeholders are ready for future Google Review integration. Live reviews will be connected after the Google Business Profile is active.
-            </p>
+          <div className="max-w-3xl">
+            <p className="eyebrow text-gold">Why Borrowers Choose Source One Home Loans</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Focused on clear communication, personalized service, and mortgage solutions tailored to your goals.</h2>
           </div>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              ["★★★★★", "First-time buyer guidance", "Placeholder success story: A Texas buyer received step-by-step education before choosing a mortgage path."],
-              ["★★★★★", "Investor strategy support", "Placeholder success story: A real estate investor reviewed DSCR and rental property financing options for portfolio growth."],
-              ["★★★★★", "Self-employed borrower clarity", "Placeholder success story: A business owner explored bank statement and Non-QM documentation options."],
-            ].map(([rating, title, text]) => (
-              <article key={title} className="rounded-sm border border-white/10 bg-white/5 p-7">
-                <p className="text-gold">{rating}</p>
-                <h3 className="mt-4 text-xl font-semibold">{title}</h3>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {borrowerChoiceCards.map(([title, text]) => (
+              <div key={title} className="rounded-sm border border-white/10 bg-white/5 p-7">
+                <h3 className="text-xl font-semibold">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-white/65">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space bg-light-gray">
-        <div className="container-shell">
-          <p className="eyebrow text-gold">Why Borrowers Choose Source One Home Loans</p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Mortgage support that feels personal, fast, and practical.</h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-            {[
-              ["Personalized Service", "Loan guidance based on your goals, documentation, property type, and timeline."],
-              ["Conventional Loan Guidance", "Support for qualified buyers comparing flexible mainstream mortgage options."],
-              ["Jumbo Loan Expertise", "Preparation for higher-value Texas homes, asset review, and reserve planning."],
-              ["VA Loan Options", "VA loan guidance remains available for eligible veterans, service members, and qualifying spouses."],
-              ["Investor and Self-Employed Solutions", "Support for investor property, bank statement, P&L, and Non-QM conversations."],
-            ].map(([title, text]) => (
-              <div key={title} className="rounded-sm bg-white p-7 shadow-[0_14px_40px_rgba(13,27,42,0.05)]">
-                <h3 className="text-xl font-semibold text-navy">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
               </div>
             ))}
           </div>
