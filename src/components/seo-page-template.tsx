@@ -6,24 +6,12 @@ import { PageHero } from "@/components/page-hero";
 import { getProgramContactHref } from "@/lib/program-contact-links";
 import { company } from "@/lib/site-data";
 import type { SeoPage } from "@/lib/seo-content";
+import { getFaqSchema } from "@/lib/structured-data";
 
 export function SeoProgramPage({ page }: { page: SeoPage }) {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: page.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <>
-      <JsonLd data={faqSchema} />
+      <JsonLd data={getFaqSchema(page.faqs)} />
       <PageHero eyebrow={page.eyebrow} title={page.title} description={page.metaDescription} />
       <section className="section-space bg-white">
         <div className="container-shell grid gap-12 lg:grid-cols-[1fr_0.36fr]">

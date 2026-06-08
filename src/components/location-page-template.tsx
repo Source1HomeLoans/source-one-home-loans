@@ -5,15 +5,20 @@ import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { company } from "@/lib/site-data";
 import type { LocationPage } from "@/lib/seo-content";
+import { getFaqSchema, organizationId } from "@/lib/structured-data";
 
 export function LocationPageTemplate({ page }: { page: LocationPage }) {
   const localSchema = {
     "@context": "https://schema.org",
     "@type": "MortgageBroker",
+    "@id": `${company.siteUrl}/locations/${page.slug}#mortgage-broker`,
     name: company.name,
     url: `${company.siteUrl}/locations/${page.slug}`,
     telephone: company.phoneDisplay,
     email: company.email,
+    parentOrganization: {
+      "@id": organizationId,
+    },
     areaServed: {
       "@type": "City",
       name: page.city,
@@ -24,6 +29,7 @@ export function LocationPageTemplate({ page }: { page: LocationPage }) {
   return (
     <>
       <JsonLd data={localSchema} />
+      <JsonLd data={getFaqSchema(page.faqs)} />
       <PageHero eyebrow="Texas Mortgage Broker" title={page.title} description={page.metaDescription} />
       <section className="section-space bg-white">
         <div className="container-shell grid gap-12 lg:grid-cols-[1fr_0.36fr]">

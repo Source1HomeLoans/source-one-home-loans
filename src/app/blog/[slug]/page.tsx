@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.metaDescription,
     keywords: post.keywords,
     alternates: {
-      canonical: `${company.domain}/blog/${post.slug}`,
+      canonical: `${company.siteUrl}/blog/${post.slug}`,
     },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
-      url: `${company.domain}/blog/${post.slug}`,
+      url: `${company.siteUrl}/blog/${post.slug}`,
       siteName: company.name,
       type: "article",
       publishedTime: post.publishDate,

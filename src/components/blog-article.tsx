@@ -5,46 +5,35 @@ import { PageHero } from "@/components/page-hero";
 import { blogPosts, type BlogPost } from "@/lib/blogPosts";
 import { getProgramContactHref } from "@/lib/program-contact-links";
 import { mortgageProgramPages } from "@/lib/seo-content";
+import { company } from "@/lib/site-data";
+import { founderId, getFaqSchema, organizationId } from "@/lib/structured-data";
 
 export function BlogArticle({ post }: { post: BlogPost }) {
   const relatedPrograms = post.relatedProgramSlugs
     .map((slug) => mortgageProgramPages.find((program) => program.slug === slug))
     .filter((program): program is (typeof mortgageProgramPages)[number] => Boolean(program));
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: post.faq.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${company.siteUrl}/blog/${post.slug}#article`,
+    mainEntityOfPage: `${company.siteUrl}/blog/${post.slug}`,
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishDate,
     dateModified: post.publishDate,
     author: {
-      "@type": "Organization",
-      name: "Source One Home Loans",
+      "@id": founderId,
     },
     publisher: {
-      "@type": "Organization",
-      name: "Source One Home Loans",
+      "@id": organizationId,
     },
   };
 
   return (
     <>
       <JsonLd data={articleSchema} />
-      <JsonLd data={faqSchema} />
+      <JsonLd data={getFaqSchema(post.faq)} />
       <PageHero eyebrow={post.category} title={post.title} description={post.excerpt} />
       <section className="section-space bg-white">
         <article className="container-shell prose-content max-w-4xl">

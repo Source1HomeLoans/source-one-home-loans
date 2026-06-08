@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { company } from "@/lib/site-data";
+import { getFounderSchema, getMortgageBrokerSchema, getWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -55,25 +56,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const mortgageCompanySchema = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MortgageBroker"],
-    name: company.name,
-    url: company.siteUrl,
-    telephone: company.phoneDisplay,
-    email: company.email,
-    areaServed: ["Texas", "Dallas", "Fort Worth", "Houston", "Austin", "San Antonio", "Plano", "Frisco", "McKinney", "Arlington"],
-    founder: {
-      "@type": "Person",
-      name: company.individualName,
-    },
-  };
-
   return (
     <html lang="en" className={`${manrope.variable} ${playfair.variable}`}>
       <body>
         <Analytics />
-        <JsonLd data={mortgageCompanySchema} />
+        <JsonLd data={getMortgageBrokerSchema()} />
+        <JsonLd data={getFounderSchema()} />
+        <JsonLd data={getWebsiteSchema()} />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
