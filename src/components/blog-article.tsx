@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { blogPosts, type BlogPost } from "@/lib/blogPosts";
+import { getProgramContactHref } from "@/lib/program-contact-links";
 import { mortgageProgramPages } from "@/lib/seo-content";
 
 export function BlogArticle({ post }: { post: BlogPost }) {
@@ -80,7 +81,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           <h2>Related Mortgage Programs</h2>
           <div className="grid gap-3 md:grid-cols-2">
             {relatedPrograms.map((program) => (
-              <Link key={program.slug} href={`/mortgage-programs/${program.slug}`} className="rounded-sm border border-navy/10 p-4 transition hover:border-gold">
+              <Link key={program.slug} href={getProgramContactHref(program.slug)} className="rounded-sm border border-navy/10 p-4 transition hover:border-gold">
                 <span className="text-sm font-semibold text-navy">{program.title}</span>
                 <span className="mt-2 block text-xs leading-6 text-slate-600">{program.metaDescription}</span>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.14em] text-gold">

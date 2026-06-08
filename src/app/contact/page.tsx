@@ -3,6 +3,7 @@ import { Home, Mail, Phone } from "lucide-react";
 import { FounderImage } from "@/components/founder-image";
 import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
+import { getProgramInterestFromQuery } from "@/lib/program-contact-links";
 import { company, founder } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
   description: "Contact Source One Home Loans to discuss your home financing goals and get pre-qualified.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams?: Promise<{ program?: string | string[] }> }) {
+  const resolvedSearchParams = await searchParams;
+  const defaultProgramInterest = getProgramInterestFromQuery(resolvedSearchParams?.program);
+
   return (
     <>
       <PageHero
@@ -57,7 +61,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <LeadForm />
+            <LeadForm defaultProgramInterest={defaultProgramInterest} />
           </div>
         </div>
       </section>

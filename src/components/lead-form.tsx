@@ -35,9 +35,10 @@ function SubmitButton({ label }: { label: string }) {
 type LeadFormProps = {
   variant?: "full" | "consultation";
   sourcePage?: string;
+  defaultProgramInterest?: string;
 };
 
-export function LeadForm({ variant = "full", sourcePage = "/contact" }: LeadFormProps) {
+export function LeadForm({ variant = "full", sourcePage = "/contact", defaultProgramInterest = "" }: LeadFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction] = useActionState(submitLead, initialState);
   const isConsultation = variant === "consultation";
@@ -118,7 +119,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact" }: LeadForm
           <>
             <label className="grid gap-2 text-sm font-semibold text-navy">
               Loan Program Interest
-              <select className="form-field" name="loan_program_interest" defaultValue="">
+              <select className="form-field" name="loan_program_interest" defaultValue={defaultProgramInterest}>
                 <option value="" disabled>
                   Select a loan program
                 </option>

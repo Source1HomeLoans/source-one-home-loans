@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
+import { getProgramContactHref } from "@/lib/program-contact-links";
 import { company } from "@/lib/site-data";
 import type { SeoPage } from "@/lib/seo-content";
 
@@ -54,7 +55,7 @@ export function SeoProgramPage({ page }: { page: SeoPage }) {
             <h2>Related Mortgage Programs</h2>
             <div className="grid gap-3 md:grid-cols-3">
               {page.relatedProgramSlugs.map((slug) => (
-                <Link key={slug} href={`/mortgage-programs/${slug}`} className="rounded-sm border border-navy/10 p-4 text-sm font-semibold text-navy transition hover:border-gold hover:text-gold">
+                <Link key={slug} href={getProgramContactHref(slug)} className="rounded-sm border border-navy/10 p-4 text-sm font-semibold text-navy transition hover:border-gold hover:text-gold">
                   View related program <ArrowRight className="ml-1 inline h-4 w-4" />
                 </Link>
               ))}
