@@ -4,6 +4,7 @@ import { ArrowRight, BadgeCheck, Compass, MessageSquareText, ShieldCheck } from 
 import { ContactCta } from "@/components/contact-cta";
 import { FounderImage } from "@/components/founder-image";
 import { PageHero } from "@/components/page-hero";
+import { TrustBadges } from "@/components/trust-badges";
 import { company, founder } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -53,6 +54,9 @@ export default function AboutPage() {
                 </p>
               ))}
             </div>
+            <div className="mt-8">
+              <TrustBadges />
+            </div>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="button-navy">
@@ -67,20 +71,21 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-navy text-white">
-        <div className="container-shell grid gap-8 py-16 md:grid-cols-[0.35fr_1fr] md:items-start">
-          <div>
-            <p className="eyebrow text-gold">Military Service</p>
-            <h2 className="mt-4 text-3xl font-semibold">U.S. Navy Reserve</h2>
-          </div>
-          <div className="rounded-sm border border-white/10 bg-white/5 p-7">
-            <p className="text-base leading-8 text-white/75">
-              Before entering the mortgage and real estate industries, David Bates served in the U.S. Navy Reserve as a Jet Engine Mechanic. The discipline, attention to detail, and commitment to service developed during his military career continue to guide his approach to helping clients today.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.14em] text-gold">
-              <span>Veteran-Owned Business</span>
-              <span>VA Loan Guidance</span>
-              <span>Service-Focused Mortgage Support</span>
-            </div>
+        <div className="container-shell py-16">
+          <p className="eyebrow text-gold">Professional Background</p>
+          <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">Experience shaped by lending, real estate, quality, and service.</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {[
+              ["Mortgage Experience", "David helps borrowers compare loan options, organize documentation, and understand the mortgage process with clear, practical guidance."],
+              ["Real Estate Experience", "His real estate perspective helps connect financing decisions to property goals, market realities, and long-term ownership plans."],
+              ["Aerospace & Quality Background", "Aerospace quality assurance experience supports a detail-oriented approach to documentation, process, and follow-through."],
+              ["Military Service", "Before entering mortgage and real estate, David served in the U.S. Navy Reserve as a Jet Engine Mechanic. That experience remains an important part of his commitment to service, discipline, and accountability."],
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-sm border border-white/10 bg-white/5 p-7">
+                <h3 className="text-2xl font-semibold text-white">{title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/70">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -105,7 +110,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-navy text-white">
-        <div className="container-shell flex flex-col gap-4 py-10 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
+        <div className="container-shell flex flex-col gap-5 py-10 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-3">
             <BadgeCheck className="h-5 w-5 text-gold" />
             <span>Company NMLS #{company.nmls}</span>
@@ -114,6 +119,7 @@ export default function AboutPage() {
             <BadgeCheck className="h-5 w-5 text-gold" />
             <span>{founder.name} | Individual NMLS #{company.individualNmls}</span>
           </div>
+          <TrustBadges variant="dark" />
         </div>
       </section>
 

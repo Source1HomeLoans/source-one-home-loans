@@ -5,15 +5,14 @@ import { PageHero } from "@/components/page-hero";
 import { company, loanProgramCategories, loanPrograms } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Texas VA, Jumbo, and Conventional Loan Programs",
+  title: "Texas Mortgage Loan Programs",
   description:
-    "Explore Source One Home Loans mortgage programs, with a primary focus on Texas VA loans, jumbo loans, and conventional loans.",
+    "Explore Source One Home Loans mortgage programs, including conventional loans, jumbo loans, VA loans, investor property loans, and flexible borrower options.",
   keywords: [
-    "Texas VA Loans",
-    "Veteran Mortgage Texas",
-    "Texas Jumbo Loans",
     "Conventional Loans Texas",
-    "VA Mortgage Broker Texas",
+    "Texas Jumbo Loans",
+    "Texas VA Loans",
+    "Investor Property Loans Texas",
   ],
 };
 
@@ -22,8 +21,8 @@ export default function LoanProgramsPage() {
     <>
       <PageHero
         eyebrow="Loan Programs"
-        title="VA, jumbo, and conventional loans are our primary focus."
-        description="Explore mortgage options for veterans, active-duty service members, high-value homebuyers, conventional borrowers, first-time buyers, self-employed borrowers, and Texas real estate investors."
+        title="Mortgage options built around your goals."
+        description="Explore conventional, jumbo, VA, investor property, first-time homebuyer, self-employed, and flexible mortgage options for Texas borrowers."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell">

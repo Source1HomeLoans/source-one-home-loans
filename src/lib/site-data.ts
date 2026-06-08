@@ -46,10 +46,10 @@ export const founder = {
   image: "/images/david-bates-headshot.jpg",
   imageAlt: "David Bates, Mortgage Loan Originator at Source One Home Loans.",
   shortBio:
-    "As the founder of Source One Home Loans, David Bates is committed to helping veterans, active-duty service members, homebuyers, homeowners, and real estate investors navigate the mortgage process with confidence. He brings experience in mortgage lending, real estate, U.S. Navy Reserve service, and aerospace quality assurance to deliver clear, detail-focused guidance.",
+    "As the founder of Source One Home Loans, David Bates is committed to helping homebuyers, homeowners, and real estate investors navigate the mortgage process with confidence. He brings experience in mortgage lending, real estate, aerospace quality assurance, and U.S. Navy Reserve service to deliver clear, detail-focused guidance.",
   bio: [
     "As the founder of Source One Home Loans, David Bates is committed to helping homebuyers, homeowners, and real estate investors navigate the mortgage process with confidence.",
-    "David brings a unique combination of experience in mortgage lending, real estate, U.S. Navy Reserve service, and aerospace quality assurance. Throughout his career, he has built a reputation for attention to detail, professionalism, and a commitment to delivering exceptional service.",
+    "David brings a unique combination of experience in mortgage lending, real estate, aerospace quality assurance, and U.S. Navy Reserve service. Throughout his career, he has built a reputation for attention to detail, professionalism, and a commitment to delivering exceptional service.",
     "As a licensed Mortgage Loan Originator, NMLS #2038179, David specializes in helping borrowers find financing solutions that fit their individual goals. Whether you're purchasing your first home, refinancing an existing mortgage, investing in rental properties, or exploring alternative income programs such as Investor Property, Bank Statement, P&L, or Non-QM loans, David works to simplify the process and provide clear guidance every step of the way.",
     "At Source One Home Loans, the focus is simple: provide honest advice, responsive communication, and mortgage solutions tailored to your needs.",
     "Your Home. Your Future. Our Focus.",
@@ -65,11 +65,11 @@ export const founder = {
 
 export const loanPrograms = [
   {
-    title: "VA Loans",
-    description: "Home financing benefits for eligible veterans, active-duty service members, and qualifying spouses.",
-    icon: BadgeDollarSign,
+    title: "Conventional Loans",
+    description: "Flexible financing for qualified Texas buyers with competitive terms and a variety of down payment options.",
+    icon: Landmark,
     category: "Primary Focus Programs",
-    slug: "texas-va-loans",
+    slug: "texas-conventional-loans",
     featured: true,
   },
   {
@@ -81,11 +81,11 @@ export const loanPrograms = [
     featured: true,
   },
   {
-    title: "Conventional Loans",
-    description: "Flexible financing for qualified Texas buyers with competitive terms and a variety of down payment options.",
-    icon: Landmark,
+    title: "VA Loans",
+    description: "Home financing benefits for eligible veterans, active-duty service members, and qualifying spouses.",
+    icon: BadgeDollarSign,
     category: "Primary Focus Programs",
-    slug: "texas-conventional-loans",
+    slug: "texas-va-loans",
     featured: true,
   },
   {
@@ -161,13 +161,13 @@ export const loanProgramCategories = [
 ] as const;
 
 const featuredLoanProgramTitles = [
-  "VA Loans",
-  "Jumbo Loans",
   "Conventional Loans",
-  "First-Time Homebuyer Loans",
-  "Texas Self-Employed Mortgages",
+  "Jumbo Loans",
+  "VA Loans",
   "Real Estate Investor Loans",
+  "First-Time Homebuyer Loans",
   "FHA Loans",
+  "Texas Self-Employed Mortgages",
   "Bank Statement Loans",
   "Profit & Loss (P&L) Loans",
   "Non-QM Loans",

@@ -5,6 +5,7 @@ import { ContactCta } from "@/components/contact-cta";
 import { FounderImage } from "@/components/founder-image";
 import { LeadForm } from "@/components/lead-form";
 import { LoanCard } from "@/components/loan-card";
+import { TrustBadges } from "@/components/trust-badges";
 import { company, featuredLoanPrograms, founder } from "@/lib/site-data";
 
 const values = [
@@ -23,12 +24,12 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(13,27,42,0.45),transparent_45%)]" />
         <div className="container-shell relative flex min-h-[760px] items-center pt-20">
           <div className="max-w-3xl py-24">
-            <p className="eyebrow text-gold">Veteran-Owned Mortgage Company</p>
+            <p className="eyebrow text-gold">Texas Mortgage Solutions</p>
             <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.2rem]">
-              Veteran-Owned Mortgage Solutions for Texas Homebuyers and Real Estate Investors
+              Your Home. Your Future. <span className="text-gold">Our Focus.</span>
             </h1>
             <p className="mt-7 max-w-xl text-base leading-8 text-white/75 md:text-lg">
-              Helping veterans, active-duty service members, homebuyers, and investors secure financing with personalized service and expert guidance.
+              Personalized mortgage solutions for Texas homebuyers, homeowners, and real estate investors.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
@@ -56,21 +57,24 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="container-shell grid gap-12 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
-            <p className="eyebrow text-gold">Veteran-Owned Business</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Veteran-Owned. Service-Focused.</h2>
+            <p className="eyebrow text-gold">Professional Background</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Built on Service, Integrity, and Attention to Detail</h2>
             <p className="mt-6 text-base leading-8 text-slate-600">
-              As a veteran-owned mortgage company, Source One Home Loans understands the importance of integrity, accountability, and service. We are proud to help veterans, active-duty military personnel, and their families navigate the home financing process with confidence.
+              Source One Home Loans combines mortgage lending knowledge, real estate perspective, aerospace quality discipline, and U.S. Navy Reserve service to deliver clear, detail-focused mortgage guidance.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {["David Bates served in the U.S. Navy Reserve", "VA loan guidance for eligible military borrowers", "Company NMLS #2812359", "Equal Housing Opportunity"].map((item) => (
+              {["Mortgage lending experience", "Real estate experience", "Aerospace quality background", "U.S. Navy Reserve service"].map((item) => (
                 <div key={item} className="rounded-sm border border-navy/10 bg-light-gray p-4 text-sm font-semibold text-navy">
                   <ShieldCheck className="mb-3 h-5 w-5 text-gold" />
                   {item}
                 </div>
               ))}
             </div>
-            <Link href="/mortgage-programs/texas-va-loans" className="button-navy mt-9">
-              Explore VA Loans <ArrowRight className="h-4 w-4" />
+            <div className="mt-8">
+              <TrustBadges />
+            </div>
+            <Link href="/contact#lead-form" className="button-navy mt-9">
+              Schedule a Consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="rounded-2xl border border-gold/40 bg-navy p-3 shadow-[0_24px_70px_rgba(13,27,42,0.16)]">
@@ -104,7 +108,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow text-gold">Featured Programs</p>
-              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">VA, jumbo, and conventional mortgage solutions lead the way.</h2>
+              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Mortgage options for buyers, homeowners, and investors.</h2>
             </div>
             <Link href="/loan-programs" className="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-gold">
               View all loan programs <ArrowRight className="h-4 w-4" />
@@ -225,11 +229,11 @@ export default function HomePage() {
           <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Mortgage support that feels personal, fast, and practical.</h2>
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
             {[
-              ["Veteran-Owned Service", "Guidance shaped by military discipline, accountability, and attention to detail."],
               ["Personalized Service", "Loan guidance based on your goals, documentation, property type, and timeline."],
-              ["VA, Jumbo, and Conventional Focus", "Prominent support for Texas VA loans, high-value home financing, and conventional loan paths."],
+              ["Conventional Loan Guidance", "Support for qualified buyers comparing flexible mainstream mortgage options."],
+              ["Jumbo Loan Expertise", "Preparation for higher-value Texas homes, asset review, and reserve planning."],
+              ["VA Loan Options", "VA loan guidance remains available for eligible veterans, service members, and qualifying spouses."],
               ["Investor and Self-Employed Solutions", "Support for investor property, bank statement, P&L, and Non-QM conversations."],
-              ["Fast Communication", "Responsive next steps so borrowers know what is needed and why it matters."],
             ].map(([title, text]) => (
               <div key={title} className="rounded-sm bg-white p-7 shadow-[0_14px_40px_rgba(13,27,42,0.05)]">
                 <h3 className="text-xl font-semibold text-navy">{title}</h3>

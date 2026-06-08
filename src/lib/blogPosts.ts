@@ -26,7 +26,7 @@ export type BlogPost = {
 };
 
 export const blogCategories = [
-  "Veteran Homeownership",
+  "VA Loan Education",
   "Mortgage Education",
   "Home Buying Tips",
   "Self-Employed Borrowers",
@@ -110,12 +110,12 @@ export const blogPosts: BlogPost[] = [
     slug: "texas-va-loan-benefits-for-veterans",
     title: "Texas VA Loan Benefits for Veterans",
     excerpt: "A veteran-focused guide to VA loan advantages, Texas payment realities, eligibility conversations, and when to compare other programs.",
-    category: "Veteran Homeownership",
+    category: "VA Loan Education",
     publishDate: "2026-06-07",
     readTime: "9 min read",
     metaTitle: "Texas VA Loan Benefits for Veterans | Source One Home Loans",
-    metaDescription: "Explore Texas VA loan benefits for eligible veterans, active-duty service members, and qualifying spouses with a Veteran-Owned Mortgage Company.",
-    keywords: ["Texas VA Loans", "Veteran Mortgage Texas", "VA Mortgage Broker Texas", "Veteran-Owned Mortgage Company"],
+    metaDescription: "Explore Texas VA loan benefits for eligible veterans, active-duty service members, and qualifying spouses with Source One Home Loans.",
+    keywords: ["Texas VA Loans", "VA home loan Texas", "VA loan benefits", "Texas mortgage options"],
     takeaways: [
       "VA loans are a primary focus for Source One Home Loans.",
       "Eligible borrowers may benefit from VA features, but qualification and property approval still matter.",
@@ -127,7 +127,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Why VA Loans Deserve a First Look",
         paragraphs: [
           "For many eligible veterans, active-duty service members, and qualifying spouses, VA financing can be one of the strongest mortgage options available. The program was built around military service, and it can support homeownership with features that may reduce cash barriers compared with other paths.",
-          "Source One Home Loans is a Veteran-Owned Mortgage Company, and that matters in the way the conversation is handled. David Bates served in the U.S. Navy Reserve, and the company approaches VA lending with an emphasis on accountability, preparation, and respect for the borrower's service.",
+          "Source One Home Loans treats VA lending as an important part of a broader mortgage practice. David Bates' U.S. Navy Reserve background supports an approach built around accountability, preparation, and respect for the borrower's service.",
         ],
       },
       {
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     ],
     cta: {
       heading: "Use your VA benefit with a plan.",
-      body: "Talk with a veteran-owned mortgage company about eligibility, payment comfort, and whether VA is the right path for your Texas home purchase.",
+      body: "Talk with Source One Home Loans about eligibility, payment comfort, and whether VA is the right path for your Texas home purchase.",
       primaryLabel: "Explore VA Loan Options",
       secondaryLabel: "Schedule a VA Consultation",
     },
@@ -179,7 +179,7 @@ export const blogPosts: BlogPost[] = [
     slug: "va-loans-vs-conventional-loans",
     title: "VA Loans vs Conventional Loans",
     excerpt: "A comparison guide for eligible military borrowers deciding whether VA or conventional financing better fits a Texas purchase.",
-    category: "Veteran Homeownership",
+    category: "VA Loan Education",
     publishDate: "2026-06-07",
     readTime: "8 min read",
     metaTitle: "VA Loans vs Conventional Loans | Source One Home Loans",

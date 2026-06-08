@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Home, Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { TrustBadges } from "@/components/trust-badges";
 import { company, navigation } from "@/lib/site-data";
 
 const legalLinks = [
@@ -52,6 +53,9 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <div className="container-shell py-7">
+          <div className="mb-5">
+            <TrustBadges variant="dark" />
+          </div>
           <p className="text-xs leading-6 text-white/50">{company.compliance}</p>
           <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-xs text-white/50">
             <span>(c) {new Date().getFullYear()} Source One Home Loans. All rights reserved.</span>

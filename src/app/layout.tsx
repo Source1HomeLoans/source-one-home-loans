@@ -13,11 +13,11 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 export const metadata: Metadata = {
   metadataBase: new URL(company.siteUrl),
   title: {
-    default: "Source One Home Loans | Veteran-Owned Mortgage Company in Texas",
+    default: "Source One Home Loans | Texas Mortgage Solutions",
     template: "%s | Source One Home Loans",
   },
   description:
-    "Veteran-owned Texas mortgage company focused on VA loans, jumbo loans, conventional loans, and personalized financing guidance. Company NMLS #2812359.",
+    "Source One Home Loans provides personalized mortgage solutions for Texas homebuyers, homeowners, and real estate investors. Company NMLS #2812359.",
   robots: {
     index: true,
     follow: true,
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Source One Home Loans | Veteran-Owned Mortgage Company in Texas",
-    description: "Texas VA loans, jumbo loans, conventional loans, and mortgage guidance for homebuyers and real estate investors.",
+    title: "Source One Home Loans | Texas Mortgage Solutions",
+    description: "Personalized conventional, jumbo, VA, and investor property loan guidance for Texas borrowers.",
     url: company.siteUrl,
     siteName: "Source One Home Loans",
     images: [
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Source One Home Loans | Veteran-Owned Mortgage Company in Texas",
-    description: "Texas VA loans, jumbo loans, conventional loans, and mortgage guidance for homebuyers and real estate investors.",
+    title: "Source One Home Loans | Texas Mortgage Solutions",
+    description: "Personalized conventional, jumbo, VA, and investor property loan guidance for Texas borrowers.",
     images: ["/brand/source-one-hero.png"],
   },
 };
