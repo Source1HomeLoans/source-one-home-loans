@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogArticle } from "@/components/blog-article";
+import { blogPosts, getBlogPostBySlug } from "@/lib/blogPosts";
 import { company } from "@/lib/site-data";
-import { blogPosts } from "@/lib/seo-content";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return {};
@@ -28,13 +29,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       url: `${company.domain}/blog/${post.slug}`,
       siteName: company.name,
       type: "article",
-      publishedTime: post.date,
+      publishedTime: post.publishDate,
     },
   };
 }
 
-export default function BlogArticlePage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

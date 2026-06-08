@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
-import { blogPosts, mortgageProgramPages, type BlogPost } from "@/lib/seo-content";
+import { blogPosts, type BlogPost } from "@/lib/blogPosts";
+import { mortgageProgramPages } from "@/lib/seo-content";
 
 export function BlogArticle({ post }: { post: BlogPost }) {
   const relatedPrograms = post.relatedProgramSlugs
@@ -12,7 +13,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: post.faqs.map((faq) => ({
+    mainEntity: post.faq.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -27,8 +28,8 @@ export function BlogArticle({ post }: { post: BlogPost }) {
     "@type": "Article",
     headline: post.title,
     description: post.metaDescription,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: post.publishDate,
+    dateModified: post.publishDate,
     author: {
       "@type": "Organization",
       name: "Source One Home Loans",
@@ -47,7 +48,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
       <section className="section-space bg-white">
         <article className="container-shell prose-content max-w-4xl">
           <div className="mb-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-            <span>{post.date}</span>
+            <span>{post.publishDate}</span>
             <span>{post.readTime}</span>
             <span>{post.category}</span>
           </div>
@@ -60,7 +61,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
               </div>
             ))}
           </div>
-          {post.sections.map((section) => (
+          {post.content.map((section) => (
             <section key={section.heading}>
               <h2>{section.heading}</h2>
               {section.paragraphs.map((paragraph) => (
@@ -90,7 +91,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           </div>
           <h2>Frequently Asked Questions</h2>
           <div className="grid gap-4">
-            {post.faqs.map((faq) => (
+            {post.faq.map((faq) => (
               <details key={faq.question} className="rounded-sm border border-navy/10 bg-white p-5">
                 <summary className="cursor-pointer font-semibold text-navy">{faq.question}</summary>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{faq.answer}</p>
@@ -120,7 +121,11 @@ export function BlogArticle({ post }: { post: BlogPost }) {
 }
 
 function RelatedArticles({ currentSlug }: { currentSlug: string }) {
-  const related = blogPosts.filter((post) => post.slug !== currentSlug).slice(0, 3);
+  const current = blogPosts.find((post) => post.slug === currentSlug);
+  const relatedSlugs = current?.relatedPosts ?? [];
+  const related = relatedSlugs
+    .map((slug) => blogPosts.find((post) => post.slug === slug))
+    .filter((post): post is BlogPost => Boolean(post));
 
   return (
     <div className="grid gap-4 md:grid-cols-3">

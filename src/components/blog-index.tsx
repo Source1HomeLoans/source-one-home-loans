@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
-import { blogCategories, blogPosts } from "@/lib/seo-content";
+import { blogCategories, blogPosts } from "@/lib/blogPosts";
 
 export function BlogIndex({ basePath = "/blog" }: { basePath?: string }) {
   return (

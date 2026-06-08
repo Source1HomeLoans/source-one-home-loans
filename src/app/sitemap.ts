@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blogPosts";
 import { company } from "@/lib/site-data";
-import { blogPosts, locationPages, mortgageProgramPages } from "@/lib/seo-content";
+import { locationPages, mortgageProgramPages } from "@/lib/seo-content";
 
 const routes = [
   "",
