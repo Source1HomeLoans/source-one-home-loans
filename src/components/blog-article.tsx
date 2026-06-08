@@ -100,16 +100,16 @@ export function BlogArticle({ post }: { post: BlogPost }) {
             ))}
           </div>
           <div className="mt-12 rounded-sm bg-navy p-7 text-white">
-            <h2 className="m-0 text-3xl font-semibold text-white">Ready to explore your options?</h2>
+            <h2 className="m-0 text-3xl font-semibold text-white">{post.cta.heading}</h2>
             <p className="mt-4 text-sm leading-7 text-white/70">
-              Talk with Source One Home Loans about your goals, documentation, and next steps.
+              {post.cta.body}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
-                Get Pre-Qualified
+                {post.cta.primaryLabel}
               </Link>
               <Link href="/contact#lead-form" className="button-outline" data-analytics-event="schedule_consultation_click">
-                Schedule a Consultation
+                {post.cta.secondaryLabel}
               </Link>
             </div>
           </div>
