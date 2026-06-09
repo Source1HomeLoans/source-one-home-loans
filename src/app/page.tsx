@@ -97,8 +97,23 @@ export default function HomePage() {
               Schedule a Consultation <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="rounded-2xl border border-gold/40 bg-navy p-3 shadow-[0_24px_70px_rgba(13,27,42,0.16)]">
-            <FounderImage variant="home" />
+          <div className="overflow-hidden rounded-2xl border border-gold/40 bg-navy p-3 shadow-[0_24px_70px_rgba(13,27,42,0.16)]">
+            <div className="relative min-h-[420px] overflow-hidden rounded-xl">
+              <Image
+                src="/brand/source-one-hero.png"
+                alt="Modern Texas home exterior representing homeownership and mortgage financing."
+                fill
+                sizes="(min-width: 1024px) 44vw, 100vw"
+                className="object-cover object-[62%_center]"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,42,0.06)_0%,rgba(13,27,42,0.78)_100%)]" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Mortgage Guidance</p>
+                <p className="mt-3 max-w-sm font-serif text-3xl leading-tight">
+                  Clear financing conversations for Texas buyers, homeowners, and investors.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
