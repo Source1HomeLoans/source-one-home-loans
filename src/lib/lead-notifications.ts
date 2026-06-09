@@ -1,128 +1,18 @@
 import { Resend } from "resend";
-import { company, founder } from "@/lib/site-data";
+import {
+  buildBorrowerConfirmationHtml,
+  buildBorrowerConfirmationText,
+  buildLeadNotificationHtml,
+  buildLeadNotificationText,
+  type LeadEmailPayload,
+} from "@/lib/email-templates";
 
-type LeadNotificationPayload = {
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  loan_program_interest: string | null;
-  message: string | null;
-  lead_source: string;
-  source_page: string;
-  submitted_at_display: string;
-};
+type LeadNotificationPayload = LeadEmailPayload;
 
 const notificationRecipients = ["david@sourceonehomeloans.com", "support@sourceonehomeloans.com"];
 const notificationSubject = "New Website Lead - Source One Home Loans";
-const confirmationSubject = "We've Received Your Inquiry - Source One Home Loans";
-const notificationFrom = "noreply@sourceonehomeloans.com";
-
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function formatValue(value: string | null) {
-  return value && value.trim() ? value.trim() : "Not provided";
-}
-
-function buildTextEmail(lead: LeadNotificationPayload) {
-  const name = `${lead.first_name} ${lead.last_name}`.trim();
-
-  return [
-    "A new website lead was submitted.",
-    "",
-    `Name: ${name}`,
-    `Email: ${lead.email}`,
-    `Phone: ${lead.phone}`,
-    `Loan Program Interest: ${formatValue(lead.loan_program_interest)}`,
-    `Message: ${formatValue(lead.message)}`,
-    `Timestamp: ${lead.submitted_at_display}`,
-    `Lead Source: ${lead.lead_source}`,
-  ].join("\n");
-}
-
-function buildHtmlEmail(lead: LeadNotificationPayload) {
-  const name = `${lead.first_name} ${lead.last_name}`.trim();
-  const rows = [
-    ["Name", name],
-    ["Email", lead.email],
-    ["Phone", lead.phone],
-    ["Loan Program Interest", formatValue(lead.loan_program_interest)],
-    ["Message", formatValue(lead.message)],
-    ["Timestamp", lead.submitted_at_display],
-    ["Lead Source", lead.lead_source],
-  ];
-
-  return `
-    <div style="font-family: Arial, sans-serif; color: #0D1B2A; line-height: 1.5;">
-      <h1 style="font-size: 22px; margin-bottom: 16px;">New Website Lead</h1>
-      <p>A new Source One Home Loans website lead was submitted.</p>
-      <table cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 640px;">
-        <tbody>
-          ${rows
-            .map(
-              ([label, value]) => `
-                <tr>
-                  <th align="left" style="border: 1px solid #E5E7EB; background: #F2F4F7; width: 210px;">${escapeHtml(label)}</th>
-                  <td style="border: 1px solid #E5E7EB;">${escapeHtml(value)}</td>
-                </tr>
-              `,
-            )
-            .join("")}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function buildConfirmationTextEmail(lead: LeadNotificationPayload) {
-  const name = `${lead.first_name} ${lead.last_name}`.trim();
-
-  return [
-    `Hi ${name || "there"},`,
-    "",
-    "Thank you for contacting Source One Home Loans. We have received your inquiry and will follow up soon to discuss your mortgage goals.",
-    "",
-    "Contact Information:",
-    `Business Phone: ${company.phoneDisplay}`,
-    `${founder.name}`,
-    `${founder.title}`,
-    `Email: ${company.email}`,
-    `Company NMLS #${company.nmls}`,
-    `Individual NMLS #${company.individualNmls}`,
-    "",
-    "Submitting an inquiry does not constitute a loan application or guarantee approval. Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements.",
-  ].join("\n");
-}
-
-function buildConfirmationHtmlEmail(lead: LeadNotificationPayload) {
-  const name = `${lead.first_name} ${lead.last_name}`.trim();
-
-  return `
-    <div style="font-family: Arial, sans-serif; color: #0D1B2A; line-height: 1.6;">
-      <h1 style="font-size: 22px; margin-bottom: 16px;">We&apos;ve Received Your Inquiry</h1>
-      <p>Hi ${escapeHtml(name || "there")},</p>
-      <p>Thank you for contacting Source One Home Loans. We have received your inquiry and will follow up soon to discuss your mortgage goals.</p>
-      <div style="margin-top: 24px; padding: 18px; border: 1px solid #E5E7EB; background: #F2F4F7;">
-        <p style="margin: 0 0 8px;"><strong>Business Phone:</strong> ${escapeHtml(company.phoneDisplay)}</p>
-        <p style="margin: 0 0 8px;"><strong>${escapeHtml(founder.name)}</strong></p>
-        <p style="margin: 0 0 8px;">${escapeHtml(founder.title)}</p>
-        <p style="margin: 0 0 8px;"><strong>Email:</strong> ${escapeHtml(company.email)}</p>
-        <p style="margin: 0 0 8px;"><strong>Company NMLS #${escapeHtml(company.nmls)}</strong></p>
-        <p style="margin: 0;"><strong>Individual NMLS #${escapeHtml(company.individualNmls)}</strong></p>
-      </div>
-      <p style="margin-top: 24px; font-size: 12px; color: #475569;">
-        Submitting an inquiry does not constitute a loan application or guarantee approval. Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements.
-      </p>
-    </div>
-  `;
-}
+const confirmationSubject = "Thank you for contacting Source One Home Loans";
+const notificationFrom = "Source One Home Loans <noreply@sourceonehomeloans.com>";
 
 function createResendClient() {
   if (!process.env.RESEND_API_KEY) {
@@ -145,8 +35,8 @@ export async function sendLeadNotification(lead: LeadNotificationPayload) {
       from: notificationFrom,
       to: notificationRecipients,
       subject: notificationSubject,
-      text: buildTextEmail(lead),
-      html: buildHtmlEmail(lead),
+      text: buildLeadNotificationText(lead),
+      html: buildLeadNotificationHtml(lead),
     });
 
     if (error) {
@@ -189,8 +79,8 @@ export async function sendLeadConfirmation(lead: LeadNotificationPayload) {
       from: notificationFrom,
       to: lead.email,
       subject: confirmationSubject,
-      text: buildConfirmationTextEmail(lead),
-      html: buildConfirmationHtmlEmail(lead),
+      text: buildBorrowerConfirmationText(lead),
+      html: buildBorrowerConfirmationHtml(lead),
     });
 
     if (error) {
