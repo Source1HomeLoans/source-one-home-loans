@@ -36,9 +36,10 @@ type LeadFormProps = {
   variant?: "full" | "consultation";
   sourcePage?: string;
   defaultProgramInterest?: string;
+  fixedProgramInterest?: boolean;
 };
 
-export function LeadForm({ variant = "full", sourcePage = "/contact", defaultProgramInterest = "" }: LeadFormProps) {
+export function LeadForm({ variant = "full", sourcePage = "/contact", defaultProgramInterest = "", fixedProgramInterest = false }: LeadFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction] = useActionState(submitLead, initialState);
   const isConsultation = variant === "consultation";
@@ -115,6 +116,20 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
               </select>
             </label>
           </div>
+        ) : fixedProgramInterest && defaultProgramInterest ? (
+          <>
+            <div className="grid gap-2 text-sm font-semibold text-navy">
+              Loan Program Interest
+              <input type="hidden" name="loan_program_interest" value={defaultProgramInterest} />
+              <div className="rounded-sm border border-navy/10 bg-white px-4 py-3 text-sm font-normal text-slate-700">
+                {defaultProgramInterest}
+              </div>
+            </div>
+            <label className="grid gap-2 text-sm font-semibold text-navy">
+              Message
+              <textarea className="form-field min-h-36 resize-y" name="message" placeholder="Tell us about your goals, timeline, or questions." />
+            </label>
+          </>
         ) : (
           <>
             <label className="grid gap-2 text-sm font-semibold text-navy">

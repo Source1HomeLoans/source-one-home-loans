@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blogPosts";
+import { loanProgramPages } from "@/lib/loan-program-pages";
 import { company } from "@/lib/site-data";
 import { locationPages, mortgageProgramPages } from "@/lib/seo-content";
 
@@ -23,6 +24,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const dynamicRoutes = [
     ...mortgageProgramPages.map((page) => `/mortgage-programs/${page.slug}`),
+    ...loanProgramPages.map((page) => `/loan-programs/${page.slug}`),
     ...locationPages.map((page) => `/locations/${page.slug}`),
     ...blogPosts.map((post) => `/learning-center/blog/${post.slug}`),
     ...blogPosts.map((post) => `/blog/${post.slug}`),

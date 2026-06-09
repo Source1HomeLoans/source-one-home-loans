@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SeoProgramPage } from "@/components/seo-page-template";
-import { getProgramBySlug, mortgageProgramPages } from "@/lib/seo-content";
+import { getProgramBySlug } from "@/lib/seo-content";
 
-export function generateStaticParams() {
-  return mortgageProgramPages.map((page) => ({ slug: page.slug }));
-}
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const page = getProgramBySlug(params.slug);
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const page = getProgramBySlug(slug);
 
   if (!page) {
     return {};
@@ -21,8 +24,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function MortgageProgramPage({ params }: { params: { slug: string } }) {
-  const page = getProgramBySlug(params.slug);
+export default async function MortgageProgramPage({ params }: PageProps) {
+  const { slug } = await params;
+  const page = getProgramBySlug(slug);
 
   if (!page) {
     notFound();

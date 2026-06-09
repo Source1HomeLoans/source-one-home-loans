@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LocationPageTemplate } from "@/components/location-page-template";
-import { getLocationBySlug, locationPages } from "@/lib/seo-content";
+import { getLocationBySlug } from "@/lib/seo-content";
 
-export function generateStaticParams() {
-  return locationPages.map((page) => ({ slug: page.slug }));
-}
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const page = getLocationBySlug(params.slug);
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const page = getLocationBySlug(slug);
 
   if (!page) {
     return {};
@@ -20,8 +23,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function LocationPage({ params }: { params: { slug: string } }) {
-  const page = getLocationBySlug(params.slug);
+export default async function LocationPage({ params }: PageProps) {
+  const { slug } = await params;
+  const page = getLocationBySlug(slug);
 
   if (!page) {
     notFound();
