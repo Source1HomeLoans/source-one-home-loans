@@ -4,7 +4,8 @@ import Script from "next/script";
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { submitLead, type LeadFormState } from "@/lib/lead-actions";
-import { company, loanPrograms } from "@/lib/site-data";
+import { publicFormCopy } from "@/lib/public-form-copy";
+import { publicLoanProgramOptions } from "@/lib/public-loan-program-options";
 
 const initialState: LeadFormState = {
   status: "idle",
@@ -138,9 +139,9 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
                 <option value="" disabled>
                   Select a loan program
                 </option>
-                {loanPrograms.map((program) => (
-                  <option key={program.title} value={program.title}>
-                    {program.title}
+                {publicLoanProgramOptions.map((program) => (
+                  <option key={program} value={program}>
+                    {program}
                   </option>
                 ))}
                 <option value="Other">Other / Not Sure Yet</option>
@@ -154,7 +155,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
         )}
         <label className="flex gap-3 rounded-sm border border-navy/10 bg-light-gray p-4 text-xs leading-6 text-slate-600">
           <input type="checkbox" name="consent_to_contact" required className="mt-1 h-4 w-4 shrink-0 accent-gold" />
-          <span>{company.formConsent}</span>
+          <span>{publicFormCopy.consent}</span>
         </label>
         {turnstileSiteKey ? <div className="cf-turnstile" data-sitekey={turnstileSiteKey} /> : null}
         <SubmitButton label={isConsultation ? "Schedule My Consultation" : "Send My Inquiry"} />
@@ -168,7 +169,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
             {state.message}
           </p>
         ) : null}
-        <p className="text-xs leading-6 text-slate-500">{company.formDisclaimer}</p>
+        <p className="text-xs leading-6 text-slate-500">{publicFormCopy.disclaimer}</p>
         <p className="text-xs leading-6 text-slate-500">
           This form stores your inquiry for follow-up and future CRM/LOS workflow integration. Please do not submit sensitive personal information.
         </p>

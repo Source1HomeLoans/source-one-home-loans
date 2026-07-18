@@ -1,3 +1,5 @@
+import { isPublicWhenVaDisabled, omitVaFaqs, omitVaStrings, scrubVaText, stripVaCategories, stripVaRelatedSlugs } from "@/lib/va-visibility";
+
 export type SeoPage = {
   slug: string;
   title: string;
@@ -44,7 +46,7 @@ export type BlogPost = {
   relatedProgramSlugs: string[];
 };
 
-export const blogCategories = [
+const allBlogCategories = [
   "VA Loan Education",
   "Mortgage Education",
   "Home Buying Tips",
@@ -53,6 +55,8 @@ export const blogCategories = [
   "Refinancing",
   "Market Updates",
 ];
+
+export const blogCategories = stripVaCategories(allBlogCategories);
 
 const baseFaqs = (topic: string) => [
   {
@@ -72,7 +76,7 @@ const baseFaqs = (topic: string) => [
   },
 ];
 
-export const mortgageProgramPages: SeoPage[] = [
+const allMortgageProgramPages: SeoPage[] = [
   {
     slug: "texas-dscr-loans",
     title: "Texas DSCR Loans",
@@ -390,6 +394,28 @@ export const mortgageProgramPages: SeoPage[] = [
   },
 ];
 
+function publicSeoPage(page: SeoPage): SeoPage {
+  return {
+    ...page,
+    title: scrubVaText(page.title),
+    metaTitle: scrubVaText(page.metaTitle),
+    metaDescription: scrubVaText(page.metaDescription),
+    keywords: omitVaStrings(page.keywords),
+    eyebrow: scrubVaText(page.eyebrow),
+    intro: scrubVaText(page.intro),
+    primaryTopic: scrubVaText(page.primaryTopic),
+    audience: scrubVaText(page.audience),
+    benefits: omitVaStrings(page.benefits),
+    relatedProgramSlugs: stripVaRelatedSlugs(page.relatedProgramSlugs),
+    faqs: omitVaFaqs(page.faqs),
+  };
+}
+
+export const mortgageProgramPages = allMortgageProgramPages
+  .filter(isPublicWhenVaDisabled)
+  .map(publicSeoPage)
+  .filter((page) => page.faqs.length > 0);
+
 const cityFaqs = (city: string) => [
   {
     question: `Can Source One Home Loans help with mortgages in ${city}?`,
@@ -398,7 +424,7 @@ const cityFaqs = (city: string) => [
   {
     question: `What loan programs are available in ${city}?`,
     answer:
-      "Program availability depends on borrower qualification, property type, loan purpose, and underwriting guidelines. Conventional, FHA, VA, jumbo, refinance, self-employed, Non-QM, and investor property options may be reviewed.",
+      "Program availability depends on borrower qualification, property type, loan purpose, and underwriting guidelines. Conventional, FHA, jumbo, refinance, self-employed, Non-QM, and investor property options may be reviewed.",
   },
   {
     question: "How do I get started?",

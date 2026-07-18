@@ -1,11 +1,13 @@
+import { enableVaLoans } from "@/lib/feature-flags";
+
 export const programQueryToInterest: Record<string, string> = {
-  va: "VA Loans",
+  ...(enableVaLoans ? { va: "VA Loans" } : {}),
   conventional: "Conventional Loans",
   jumbo: "Jumbo Loans",
 };
 
 const programSlugToQuery: Record<string, string> = {
-  "texas-va-loans": "va",
+  ...(enableVaLoans ? { "texas-va-loans": "va" } : {}),
   "texas-conventional-loans": "conventional",
   "texas-jumbo-loans": "jumbo",
 };

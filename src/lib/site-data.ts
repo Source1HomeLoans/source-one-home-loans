@@ -10,6 +10,8 @@ import {
   Landmark,
   RefreshCcw,
 } from "lucide-react";
+import { enableVaLoans } from "@/lib/feature-flags";
+import { isPublicWhenVaDisabled } from "@/lib/va-visibility";
 
 export const company = {
   name: "Source One Home Loans",
@@ -63,7 +65,7 @@ export const founder = {
   ],
 };
 
-export const loanPrograms = [
+export const allLoanPrograms = [
   {
     title: "Conventional Loans",
     description: "Flexible financing for qualified Texas buyers with competitive terms and a variety of down payment options.",
@@ -160,20 +162,25 @@ export const loanProgramCategories = [
   "Secondary Programs",
 ] as const;
 
+export const loanPrograms = allLoanPrograms.filter(isPublicWhenVaDisabled);
+
 const featuredLoanProgramTitles = [
   "Conventional Loans",
   "Jumbo Loans",
-  "VA Loans",
-  "Investor Property Loans",
   "FHA Loans",
+  "Investor Property Loans",
   "Bank Statement Loans",
   "Profit & Loss (P&L) Loans",
   "Non-QM Loans",
 ];
 
-export const featuredLoanPrograms = featuredLoanProgramTitles.map(
-  (title) => loanPrograms.find((program) => program.title === title)!,
-);
+const enabledFeaturedLoanProgramTitles = enableVaLoans
+  ? ["Conventional Loans", "Jumbo Loans", "VA Loans", "Investor Property Loans", "FHA Loans", "Bank Statement Loans", "Profit & Loss (P&L) Loans", "Non-QM Loans"]
+  : featuredLoanProgramTitles;
+
+export const featuredLoanPrograms = enabledFeaturedLoanProgramTitles
+  .map((title) => loanPrograms.find((program) => program.title === title))
+  .filter((program): program is (typeof loanPrograms)[number] => Boolean(program));
 
 export const navigation = [
   { href: "/", label: "Home" },

@@ -1,3 +1,6 @@
+import { enableVaLoans } from "@/lib/feature-flags";
+import { isPublicWhenVaDisabled, omitVaStrings, scrubVaText } from "@/lib/va-visibility";
+
 export type LoanProgramPage = {
   slug: string;
   title: string;
@@ -9,7 +12,7 @@ export type LoanProgramPage = {
   documentation: string[];
 };
 
-export const loanProgramPages: LoanProgramPage[] = [
+export const allLoanProgramPages: LoanProgramPage[] = [
   {
     slug: "conventional-loans",
     title: "Conventional Loans",
@@ -220,8 +223,27 @@ export const loanProgramPages: LoanProgramPage[] = [
   },
 ];
 
+function publicLoanProgramPage(page: LoanProgramPage): LoanProgramPage {
+  return {
+    ...page,
+    title: scrubVaText(page.title),
+    description: scrubVaText(page.description),
+    metaTitle: scrubVaText(page.metaTitle),
+    metaDescription: scrubVaText(page.metaDescription),
+    goodFit: omitVaStrings(page.goodFit),
+    notIdeal: omitVaStrings(page.notIdeal),
+    documentation: omitVaStrings(page.documentation),
+  };
+}
+
+export const loanProgramPages = allLoanProgramPages.filter(isPublicWhenVaDisabled).map(publicLoanProgramPage);
+
 export function getLoanProgramPageBySlug(slug: string) {
   return loanProgramPages.find((page) => page.slug === slug);
+}
+
+export function getAnyLoanProgramPageBySlug(slug: string) {
+  return allLoanProgramPages.find((page) => page.slug === slug);
 }
 
 export const loanProgramSlugByTitle = new Map(
@@ -229,5 +251,6 @@ export const loanProgramSlugByTitle = new Map(
     ...loanProgramPages.map((page) => [page.title, page.slug] as const),
     ["Real Estate Investor Loans", "investor-property-loans"] as const,
     ["Profit & Loss (P&L) Loans", "profit-and-loss-loans"] as const,
-  ],
+    ...(enableVaLoans ? ([["VA Loans", "va-loans"] as const] as const) : []),
+  ].filter(([title]) => enableVaLoans || title !== "VA Loans"),
 );

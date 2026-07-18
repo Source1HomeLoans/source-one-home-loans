@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, FileText, HelpCircle, XCircle } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
 import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
-import { getLoanProgramPageBySlug } from "@/lib/loan-program-pages";
+import { getAnyLoanProgramPageBySlug, getLoanProgramPageBySlug } from "@/lib/loan-program-pages";
 import { company } from "@/lib/site-data";
+import { isVaSlug } from "@/lib/va-visibility";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -19,6 +20,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const page = getLoanProgramPageBySlug(slug);
 
   if (!page) {
+    if (isVaSlug(slug) && getAnyLoanProgramPageBySlug(slug)) {
+      return {
+        title: "Loan Programs | Source One Home Loans",
+        description: "Explore current Source One Home Loans mortgage program options.",
+        robots: {
+          index: false,
+          follow: true,
+        },
+      };
+    }
+
     return {};
   }
 
@@ -43,6 +55,10 @@ export default async function LoanProgramDetailPage({ params }: PageProps) {
   const page = getLoanProgramPageBySlug(slug);
 
   if (!page) {
+    if (isVaSlug(slug) && getAnyLoanProgramPageBySlug(slug)) {
+      redirect("/loan-programs");
+    }
+
     notFound();
   }
 

@@ -52,7 +52,7 @@ export function LocationPageTemplate({ page }: { page: LocationPage }) {
             </div>
             <h2>Loan Options in {page.city}</h2>
             <p>
-              Source One Home Loans can help review conventional, FHA, VA, jumbo, refinance, self-employed, Non-QM, and real estate investor loan options. Program availability, rates, and terms are subject to qualification and underwriting approval. The value of working with a mortgage professional is not just finding a program name; it is understanding which path may fit the borrower&apos;s full scenario.
+              Source One Home Loans can help review conventional, FHA, jumbo, refinance, self-employed, Non-QM, and real estate investor loan options. Program availability, rates, and terms are subject to qualification and underwriting approval. The value of working with a mortgage professional is not just finding a program name; it is understanding which path may fit the borrower&apos;s full scenario.
             </p>
             <h2>Frequently Asked Questions</h2>
             <div className="grid gap-4">

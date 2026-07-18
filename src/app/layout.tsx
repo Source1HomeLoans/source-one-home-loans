@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   verification: webmasterVerification,
   openGraph: {
     title: "Source One Home Loans | Texas Mortgage Solutions",
-    description: "Personalized conventional, jumbo, VA, and investor property loan guidance for Texas borrowers.",
+    description: "Personalized conventional, jumbo, FHA, and investor property loan guidance for Texas borrowers.",
     url: company.siteUrl,
     siteName: "Source One Home Loans",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Source One Home Loans | Texas Mortgage Solutions",
-    description: "Personalized conventional, jumbo, VA, and investor property loan guidance for Texas borrowers.",
+    description: "Personalized conventional, jumbo, FHA, and investor property loan guidance for Texas borrowers.",
     images: ["/brand/source-one-hero.png"],
   },
 };

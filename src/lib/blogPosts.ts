@@ -1,3 +1,6 @@
+import { enableVaLoans } from "@/lib/feature-flags";
+import { hasVaLoanReference, isPublicWhenVaDisabled, omitVaFaqs, omitVaStrings, scrubVaText, stripVaCategories, stripVaRelatedSlugs } from "@/lib/va-visibility";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -25,7 +28,7 @@ export type BlogPost = {
   relatedProgramSlugs: string[];
 };
 
-export const blogCategories = [
+const allBlogCategories = [
   "VA Loan Education",
   "Mortgage Education",
   "Home Buying Tips",
@@ -34,9 +37,11 @@ export const blogCategories = [
   "Jumbo Loans",
 ];
 
-const primaryProgramLinks = ["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans"];
+export const blogCategories = stripVaCategories(allBlogCategories);
 
-export const blogPosts: BlogPost[] = [
+const primaryProgramLinks = stripVaRelatedSlugs(["texas-va-loans", "texas-conventional-loans", "texas-jumbo-loans"]);
+
+const allBlogPosts: BlogPost[] = [
   {
     slug: "how-texas-buyers-can-prepare-for-pre-qualification",
     title: "How Texas Buyers Can Prepare for Mortgage Pre-Qualification",
@@ -719,6 +724,51 @@ export const blogPosts: BlogPost[] = [
     relatedProgramSlugs: primaryProgramLinks,
   },
 ];
+
+function scrubContentSections(post: BlogPost): BlogPost["content"] {
+  return post.content
+    .filter((section) => enableVaLoans || !hasVaLoanReference(section.heading))
+    .map((section) => ({
+      ...section,
+      heading: scrubVaText(section.heading),
+      paragraphs: omitVaStrings(section.paragraphs),
+      subheadings: section.subheadings
+        ?.filter((subheading) => enableVaLoans || !hasVaLoanReference(subheading.heading))
+        .map((subheading) => ({
+          ...subheading,
+          heading: scrubVaText(subheading.heading),
+          paragraphs: omitVaStrings(subheading.paragraphs),
+        }))
+        .filter((subheading) => subheading.paragraphs.length > 0),
+    }))
+    .filter((section) => section.paragraphs.length > 0 || (section.subheadings?.length ?? 0) > 0);
+}
+
+function publicBlogPost(post: BlogPost): BlogPost {
+  return {
+    ...post,
+    excerpt: scrubVaText(post.excerpt),
+    metaTitle: scrubVaText(post.metaTitle),
+    metaDescription: scrubVaText(post.metaDescription),
+    keywords: omitVaStrings(post.keywords),
+    takeaways: omitVaStrings(post.takeaways),
+    content: scrubContentSections(post),
+    faq: omitVaFaqs(post.faq),
+    cta: {
+      heading: scrubVaText(post.cta.heading),
+      body: scrubVaText(post.cta.body),
+      primaryLabel: scrubVaText(post.cta.primaryLabel),
+      secondaryLabel: scrubVaText(post.cta.secondaryLabel),
+    },
+    relatedPosts: stripVaRelatedSlugs(post.relatedPosts),
+    relatedProgramSlugs: stripVaRelatedSlugs(post.relatedProgramSlugs),
+  };
+}
+
+export const blogPosts = allBlogPosts
+  .filter(isPublicWhenVaDisabled)
+  .map(publicBlogPost)
+  .filter((post) => post.content.length > 0 && post.faq.length > 0);
 
 export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);

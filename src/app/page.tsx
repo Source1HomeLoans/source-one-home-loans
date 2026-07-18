@@ -27,7 +27,7 @@ const borrowerChoiceCards = [
   ],
   [
     "Flexible Loan Solutions",
-    "From conventional and jumbo financing to VA and investor property loans, we offer a range of mortgage solutions.",
+    "From conventional and jumbo financing to FHA and investor property loans, we offer a range of mortgage solutions.",
   ],
   [
     "Local Market Knowledge",
