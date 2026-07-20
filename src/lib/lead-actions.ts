@@ -116,6 +116,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   }
 
   const consentToContact = formData.get("consent_to_contact") === "on";
+  const consentDisclosureVersion = readRequiredText(formData, "consent_disclosure_version");
   const turnstileToken = readRequiredText(formData, "cf-turnstile-response");
   const fullName = readRequiredText(formData, "name");
   const [fallbackFirstName = "", ...fallbackLastNameParts] = fullName.split(/\s+/).filter(Boolean);
@@ -128,22 +129,30 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   ]
     .filter(Boolean)
     .join("\n\n");
+  const formattedPhone = formatUsPhone(readRequiredText(formData, "phone"));
   const leadDetails = {
     first_name: readRequiredText(formData, "first_name") || fallbackFirstName,
     last_name: readRequiredText(formData, "last_name") || fallbackLastNameParts.join(" ") || "Not provided",
     email: readRequiredText(formData, "email"),
-    phone: formatUsPhone(readRequiredText(formData, "phone")),
+    phone: formattedPhone,
     loan_program_interest: readRequiredText(formData, "loan_program_interest") || loanGoal || null,
     message: enhancedMessage || null,
     consent_to_contact: consentToContact,
+    consent_submitted_at: submittedAtIso,
+    consent_disclosure_version: consentDisclosureVersion || "sms-telephone-consent-2026-07-19",
+    consent_phone_number: formattedPhone,
     source_page: readRequiredText(formData, "source_page") || "/contact",
+    form_source: readRequiredText(formData, "source_page") || "/contact",
+    lead_source: leadSource,
+    ip_address: ipAddress,
+    user_agent: userAgent,
     lead_status: "new",
   };
 
-  if (!leadDetails.first_name || !leadDetails.last_name || !leadDetails.email || !leadDetails.phone || !consentToContact) {
+  if (!leadDetails.first_name || !leadDetails.last_name || !leadDetails.email || !leadDetails.phone) {
     return {
       status: "error",
-      message: "Please complete the required fields and consent checkbox before submitting.",
+      message: "Please complete the required fields before submitting.",
     };
   }
 

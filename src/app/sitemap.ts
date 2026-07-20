@@ -21,6 +21,7 @@ const routes = [
   "/accessibility",
   "/licensing-disclosures",
   "/texas-disclosure",
+  "/sms-terms",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

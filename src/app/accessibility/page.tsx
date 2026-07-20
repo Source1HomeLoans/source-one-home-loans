@@ -31,6 +31,7 @@ const sections = [
     content: [
       `If you need assistance using this website or want to report an accessibility concern, please contact Source One Home Loans by phone at ${company.phoneDisplay} or by email at ${company.supportEmail}.`,
       "When reporting an issue, please describe the page or feature involved, the issue you encountered, the assistive technology or browser you were using if relevant, and the best way to contact you for follow-up.",
+      "Where reasonably practicable, Source One Home Loans will work to provide assistance through an alternative communication method so you can access the information or service you were seeking.",
     ],
   },
   {

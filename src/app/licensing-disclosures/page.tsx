@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Home } from "lucide-react";
 import { LegalPage } from "@/components/legal-page";
 import { company } from "@/lib/site-data";
 
@@ -55,7 +55,7 @@ export default function LicensingDisclosuresPage() {
       />
       <section className="bg-light-gray pb-20">
         <div className="container-shell grid max-w-4xl gap-4 sm:grid-cols-2">
-          <Link href={company.nmlsConsumerAccessUrl} className="button-navy text-center" target="_blank" rel="noreferrer">
+          <Link href={company.nmlsConsumerAccessUrl} className="button-navy text-center" target="_blank" rel="noopener noreferrer">
             Verify Licensing Through NMLS Consumer Access
           </Link>
           <Link href="/texas-disclosure" className="button-outline text-center">
@@ -63,7 +63,13 @@ export default function LicensingDisclosuresPage() {
           </Link>
           <div className="sm:col-span-2 rounded-2xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-600">
             <p className="flex items-start gap-3">
-              <Home className="mt-0.5 h-5 w-5 shrink-0 text-gold" aria-hidden="true" />
+              <Image
+                src="/images/equal-housing-opportunity.png"
+                alt="Equal Housing Opportunity"
+                width={28}
+                height={28}
+                className="mt-0.5 h-7 w-7 shrink-0 object-contain"
+              />
               <span>
                 <strong className="text-navy">Equal Housing Opportunity.</strong> Source One Home Loans supports fair and
                 responsible access to mortgage information and services.

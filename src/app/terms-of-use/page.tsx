@@ -22,20 +22,20 @@ const sections = [
     title: "No Promise Of Loan Approval, Rates, Terms, Or Availability",
     content: [
       "Nothing on this website constitutes a commitment to lend, a loan approval, a rate lock, or a promise that any rate, term, payment, or program will be available. Loan approvals are subject to credit approval, underwriting guidelines, property approval, verification, investor requirements, and program requirements.",
-      "Rates, terms, fees, loan programs, guidelines, and availability may change without notice. Not all applicants will qualify, and not all products are available in all states.",
+      "Interest rates, fees, loan terms, program guidelines, and availability may change without notice. Loan terms remain subject to application, documentation, underwriting, verification, and applicable requirements. Not all applicants will qualify, and not all products are available in all states.",
     ],
   },
   {
     title: "No Financial, Legal, Tax, Or Investment Advice",
     content: [
-      "Website content is educational in nature and should not be treated as legal, tax, financial, accounting, investment, or real estate advice. You should consult appropriate licensed professionals for advice specific to your situation.",
+      "Website content is educational in nature and should not be treated as legal, tax, accounting, financial-planning, investment, or real estate advice. You should consult your own advisers when appropriate for advice specific to your situation.",
     ],
   },
   {
     title: "Accuracy And Availability Limitations",
     content: [
       "Source One Home Loans works to keep website information helpful and current, but content may contain errors, omissions, outdated information, or general examples that do not apply to every borrower or property.",
-      "The website may be changed, interrupted, or unavailable at any time without notice.",
+      "Website availability is not guaranteed. The website may be changed, interrupted, or unavailable at any time without notice.",
     ],
   },
   {
@@ -71,7 +71,7 @@ const sections = [
   {
     title: "Governing Law",
     content: [
-      "To the extent consistent with applicable law and confirmed company information, these terms are governed by the laws of the State of Texas, without regard to conflict-of-law principles.",
+      "These Terms are governed by the laws of the State of Texas, without regard to its conflict-of-laws principles, except where applicable law requires otherwise.",
     ],
   },
   {

@@ -26,10 +26,7 @@ const sections = [
   },
   {
     title: "Texas Department Of Savings And Mortgage Lending",
-    content: [
-      "The Texas disclosure language below was restored from the existing approved disclosure text stored in this project.",
-      ...company.texasDisclosure,
-    ],
+    content: company.texasDisclosure,
   },
   {
     title: "Important Mortgage Disclosure",
@@ -49,10 +46,10 @@ export default function TexasDisclosurePage() {
       />
       <section className="bg-light-gray pb-20">
         <div className="container-shell flex max-w-4xl flex-wrap gap-3">
-          <Link href={texasRegulatorUrl} className="button-navy" target="_blank" rel="noreferrer">
+          <Link href={texasRegulatorUrl} className="button-navy" target="_blank" rel="noopener noreferrer">
             Texas SML Website
           </Link>
-          <Link href={company.nmlsConsumerAccessUrl} className="button-outline" target="_blank" rel="noreferrer">
+          <Link href={company.nmlsConsumerAccessUrl} className="button-outline" target="_blank" rel="noopener noreferrer">
             NMLS Consumer Access
           </Link>
         </div>

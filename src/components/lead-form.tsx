@@ -63,6 +63,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
       {turnstileSiteKey ? <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" /> : null}
       <form id={isConsultation ? "consultation-form" : "lead-form"} ref={formRef} action={formAction} className="grid gap-5" aria-label={isConsultation ? "Free mortgage consultation form" : "Mortgage inquiry form"}>
         <input type="hidden" name="source_page" value={sourcePage} />
+        <input type="hidden" name="consent_disclosure_version" value={publicFormCopy.consentVersion} />
         {isConsultation ? (
           <label className="grid gap-2 text-sm font-semibold text-navy">
             Name
@@ -154,7 +155,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
           </>
         )}
         <label className="flex gap-3 rounded-sm border border-navy/10 bg-light-gray p-4 text-xs leading-6 text-slate-600">
-          <input type="checkbox" name="consent_to_contact" required className="mt-1 h-4 w-4 shrink-0 accent-gold" />
+          <input type="checkbox" name="consent_to_contact" className="mt-1 h-4 w-4 shrink-0 accent-gold" />
           <span>{publicFormCopy.consent}</span>
         </label>
         {turnstileSiteKey ? <div className="cf-turnstile" data-sitekey={turnstileSiteKey} /> : null}

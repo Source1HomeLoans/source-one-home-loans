@@ -31,7 +31,7 @@ export const company = {
   compliance:
     "Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements. Not all applicants will qualify. Rates, terms, and loan programs are subject to change without notice. This website is for informational purposes only and does not constitute a commitment to lend.",
   equalHousing:
-    "Source One Home Loans is an Equal Housing Opportunity mortgage company. We do not discriminate on the basis of race, color, religion, national origin, sex, marital status, age, receipt of public assistance, disability, or any other protected status under applicable law.",
+    "Source One Home Loans is committed to equal housing opportunity and does not discriminate in mortgage lending on any basis prohibited by applicable federal or state law, including race, color, religion, national origin, sex, familial status, disability, marital status, age, because an applicant receives income from a public-assistance program, or because an applicant has exercised rights under the Consumer Credit Protection Act.",
   consumerAccess:
     "Consumers may verify licensing information through NMLS Consumer Access.",
   texasDisclosure: [
@@ -39,7 +39,7 @@ export const company = {
     "THE DEPARTMENT MAINTAINS A RECOVERY FUND TO MAKE PAYMENTS OF CERTAIN ACTUAL OUT OF POCKET DAMAGES SUSTAINED BY BORROWERS CAUSED BY ACTS OF LICENSED RESIDENTIAL MORTGAGE LOAN ORIGINATORS. A WRITTEN APPLICATION FOR REIMBURSEMENT FROM THE RECOVERY FUND MUST BE FILED WITH AND INVESTIGATED BY THE DEPARTMENT PRIOR TO THE PAYMENT OF A CLAIM. FOR MORE INFORMATION ABOUT THE RECOVERY FUND, PLEASE CONSULT THE DEPARTMENT’S WEBSITE AT WWW.SML.TEXAS.GOV.",
   ],
   formConsent:
-    "I consent to be contacted by Source One Home Loans by phone, text, or email. Message and data rates may apply.",
+    "By checking this box, I agree that Source One Home Loans may contact me at the telephone number provided by call or text message regarding my inquiry. Message and data rates may apply. Message frequency varies. Reply STOP to opt out of text messages and HELP for help. Consent is not a condition of obtaining mortgage services.",
   formDisclaimer:
     "Submitting this form does not constitute a loan application or guarantee approval.",
 };

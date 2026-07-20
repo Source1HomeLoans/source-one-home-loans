@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Home, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone } from "lucide-react";
 import { FounderImage } from "@/components/founder-image";
 import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
@@ -39,11 +40,17 @@ export default async function ContactPage({ searchParams }: { searchParams?: Pro
               </a>
               <p className="border-t border-white/10 pt-5 text-sm text-white/75"><strong className="block text-white">Company NMLS</strong>#{company.nmls}</p>
               <p className="border-t border-white/10 pt-5 text-sm text-white/75"><strong className="block text-white">{company.individualName}</strong>NMLS #{company.individualNmls}</p>
-              <a href={company.nmlsConsumerAccessUrl} className="border-t border-white/10 pt-5 text-sm font-semibold text-gold hover:text-white" target="_blank" rel="noreferrer">
+              <a href={company.nmlsConsumerAccessUrl} className="border-t border-white/10 pt-5 text-sm font-semibold text-gold hover:text-white" target="_blank" rel="noopener noreferrer">
                 Verify licensing through NMLS Consumer Access
               </a>
               <p className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75">
-                <Home className="mt-0.5 h-5 w-5 text-gold" />
+                <Image
+                  src="/images/equal-housing-opportunity.png"
+                  alt="Equal Housing Opportunity"
+                  width={20}
+                  height={20}
+                  className="mt-0.5 h-5 w-5 shrink-0 object-contain"
+                />
                 <span><strong className="block text-white">Equal Housing Opportunity</strong>{company.equalHousing}</span>
               </p>
             </div>

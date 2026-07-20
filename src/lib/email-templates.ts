@@ -188,7 +188,7 @@ export function buildBorrowerConfirmationText(lead: LeadEmailPayload) {
     `Company NMLS #${company.nmls}`,
     `${founder.name} | Individual NMLS #${company.individualNmls}`,
     "",
-    "Source One Home Loans is an Equal Housing Opportunity mortgage company.",
+    company.equalHousing,
     "Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements. Not all applicants will qualify.",
   ].join("\n");
 }
@@ -213,7 +213,7 @@ export function buildBorrowerConfirmationHtml(lead: LeadEmailPayload) {
         ${escapeHtml(founder.name)} | Individual NMLS #${escapeHtml(company.individualNmls)}
       </p>
       <p style="margin:14px 0 0; font-size:12px; line-height:1.7; color:${colors.slate};">
-        Source One Home Loans is an Equal Housing Opportunity mortgage company. Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements. Not all applicants will qualify.
+        ${escapeHtml(company.equalHousing)} Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements. Not all applicants will qualify.
       </p>
     `,
   });

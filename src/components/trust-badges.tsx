@@ -3,7 +3,7 @@ import { BadgeCheck, Home, ShieldCheck } from "lucide-react";
 const badges = [
   { label: "Veteran-Owned Business", icon: BadgeCheck },
   { label: "Equal Housing Opportunity", icon: Home },
-  { label: "NMLS Licensed", icon: ShieldCheck },
+  { label: "Company NMLS #2812359", icon: ShieldCheck },
 ];
 
 export function TrustBadges({ variant = "light" }: { variant?: "light" | "dark" }) {

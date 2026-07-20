@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Home, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { TrustBadges } from "@/components/trust-badges";
 import { company, navigation } from "@/lib/site-data";
@@ -10,6 +11,7 @@ const legalLinks: { href: string; label: string; external?: boolean }[] = [
   { href: "/accessibility", label: "Accessibility" },
   { href: "/licensing-disclosures", label: "Licensing & Disclosures" },
   { href: "/texas-disclosure", label: "Texas Disclosure" },
+  { href: "/sms-terms", label: "SMS Terms" },
   { href: company.nmlsConsumerAccessUrl, label: "NMLS Consumer Access", external: true },
 ];
 
@@ -44,11 +46,18 @@ export function SiteFooter() {
             </a>
             <p className="text-sm text-white/60">Company NMLS #{company.nmls}</p>
             <p className="text-sm text-white/60">{company.individualName} | NMLS #{company.individualNmls}</p>
-            <a href={company.nmlsConsumerAccessUrl} className="text-sm font-semibold text-gold transition hover:text-white" target="_blank" rel="noreferrer">
+            <a href={company.nmlsConsumerAccessUrl} className="text-sm font-semibold text-gold transition hover:text-white" target="_blank" rel="noopener noreferrer">
               Verify licensing through NMLS Consumer Access
             </a>
             <p className="flex items-center gap-3 text-sm text-white/60">
-              <Home className="h-4 w-4 shrink-0 text-gold" /> Equal Housing Opportunity
+              <Image
+                src="/images/equal-housing-opportunity.png"
+                alt="Equal Housing Opportunity"
+                width={20}
+                height={20}
+                className="h-5 w-5 shrink-0 object-contain"
+              />
+              Equal Housing Opportunity
             </p>
           </div>
         </div>
@@ -65,7 +74,7 @@ export function SiteFooter() {
               <span>&copy; {new Date().getFullYear()} Source One Home Loans. All rights reserved.</span>
               {legalLinks.map((item) => (
                 item.external ? (
-                  <a key={item.href} href={item.href} className="transition hover:text-gold" target="_blank" rel="noreferrer">
+                  <a key={item.href} href={item.href} className="transition hover:text-gold" target="_blank" rel="noopener noreferrer">
                     {item.label}
                   </a>
                 ) : (
