@@ -19,6 +19,8 @@ export const company = {
   phoneHref: "tel:+14693100042",
   email: "david@sourceonehomeloans.com",
   emailHref: "mailto:david@sourceonehomeloans.com",
+  supportEmail: "support@sourceonehomeloans.com",
+  supportEmailHref: "mailto:support@sourceonehomeloans.com",
   nmls: "2812359",
   individualName: "David Bates",
   individualNmls: "2038179",

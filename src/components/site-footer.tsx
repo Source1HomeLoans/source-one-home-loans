@@ -4,11 +4,13 @@ import { Logo } from "@/components/logo";
 import { TrustBadges } from "@/components/trust-badges";
 import { company, navigation } from "@/lib/site-data";
 
-const legalLinks = [
+const legalLinks: { href: string; label: string; external?: boolean }[] = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-of-use", label: "Terms of Use" },
+  { href: "/accessibility", label: "Accessibility" },
   { href: "/licensing-disclosures", label: "Licensing & Disclosures" },
-  { href: "/contact", label: "Contact" },
+  { href: "/texas-disclosure", label: "Texas Disclosure" },
+  { href: company.nmlsConsumerAccessUrl, label: "NMLS Consumer Access", external: true },
 ];
 
 export function SiteFooter() {
@@ -57,13 +59,22 @@ export function SiteFooter() {
             <TrustBadges variant="dark" />
           </div>
           <p className="text-xs leading-6 text-white/50">{company.compliance}</p>
-          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-xs text-white/50">
-            <span>(c) {new Date().getFullYear()} Source One Home Loans. All rights reserved.</span>
-            {legalLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-gold">
-                {item.label}
-              </Link>
-            ))}
+          <div className="mt-5 border-t border-white/10 pt-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">Legal</p>
+            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/50">
+              <span>&copy; {new Date().getFullYear()} Source One Home Loans. All rights reserved.</span>
+              {legalLinks.map((item) => (
+                item.external ? (
+                  <a key={item.href} href={item.href} className="transition hover:text-gold" target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link key={item.href} href={item.href} className="transition hover:text-gold">
+                    {item.label}
+                  </Link>
+                )
+              ))}
+            </div>
           </div>
         </div>
       </div>

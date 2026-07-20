@@ -18,7 +18,9 @@ const routes = [
   "/contact",
   "/privacy-policy",
   "/terms-of-use",
+  "/accessibility",
   "/licensing-disclosures",
+  "/texas-disclosure",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
