@@ -1,6 +1,9 @@
+import { enableVaLoans } from "@/lib/feature-flags";
+
 export const publicLoanProgramOptions = [
   "Conventional Loans",
   "Jumbo Loans",
+  ...(enableVaLoans ? ["VA Loans"] : []),
   "FHA Loans",
   "Investor Property Loans",
   "First-Time Homebuyer Loans",
@@ -10,4 +13,3 @@ export const publicLoanProgramOptions = [
   "Non-QM Loans",
   "Refinance Loans",
 ];
-
