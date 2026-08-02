@@ -10,60 +10,67 @@ export const metadata: Metadata = {
   },
 };
 
-// Uses the approved email logo crop and white Equal Housing Opportunity mark.
-// Do not relabel the Equal Housing image as an ECOA logo.
-const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:480px;border-collapse:collapse;background:#071B35;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">
+// Uses the approved email logo crop and compact PNG social icons.
+const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:400px;border-collapse:collapse;background:#071B35;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">
   <tr>
-    <td style="padding:10px 12px;">
+    <td style="padding:8px 10px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
         <tr>
-          <td valign="middle" style="width:170px;padding:0 12px 0 0;">
+          <td valign="middle" style="width:125px;padding:0 10px 0 0;">
             <a href="https://www.sourceonehomeloans.com" style="text-decoration:none;">
-              <img src="https://www.sourceonehomeloans.com/branding/logo/source-one-email-logo.png" width="155" alt="Source One Home Loans" style="display:block;width:155px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;">
+              <img src="https://www.sourceonehomeloans.com/branding/logo/source-one-email-logo.png" width="115" alt="Source One Home Loans" style="display:block;width:115px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;">
             </a>
           </td>
-          <td valign="middle" style="padding:0 0 0 12px;border-left:1px solid #D4A017;word-break:break-word;">
+          <td valign="middle" style="padding:0 0 0 10px;border-left:1px solid #D4A017;word-break:break-word;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
               <tr>
-                <td style="padding:0 0 2px 0;font-size:19px;line-height:22px;font-weight:bold;color:#FFFFFF;">David Bates</td>
+                <td style="padding:0 0 1px 0;font-size:17px;line-height:20px;font-weight:bold;color:#FFFFFF;">David Bates</td>
               </tr>
               <tr>
-                <td style="padding:0 0 4px 0;font-size:11px;line-height:14px;color:#D4A017;font-weight:bold;">Broker | Mortgage Loan Originator</td>
+                <td style="padding:0 0 3px 0;font-size:10.5px;line-height:13px;color:#D4A017;font-weight:bold;">Broker | Mortgage Loan Originator</td>
               </tr>
               <tr>
-                <td style="padding:0 0 5px 0;font-size:10px;line-height:13px;color:#FFFFFF;">Your Goal. Our Focus.</td>
+                <td style="padding:0 0 4px 0;font-size:9.5px;line-height:12px;color:#FFFFFF;">Your Goal. Our Focus.</td>
               </tr>
               <tr>
-                <td style="padding:0 0 1px 0;font-size:10.5px;line-height:14px;color:#FFFFFF;">
+                <td style="padding:0;font-size:9.5px;line-height:13px;color:#FFFFFF;">
                   <span style="color:#D4A017;font-weight:bold;">P:</span>
                   <a href="tel:+14693100042" style="color:#FFFFFF;text-decoration:none;">(469) 310-0042</a>
                 </td>
               </tr>
               <tr>
-                <td style="padding:0 0 1px 0;font-size:10.5px;line-height:14px;color:#FFFFFF;">
-                  <span style="color:#D4A017;font-weight:bold;">E:</span>
-                  <a href="mailto:david@sourceonehomeloans.com" style="color:#FFFFFF;text-decoration:none;word-break:break-word;">david@sourceonehomeloans.com</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:0 0 4px 0;font-size:10.5px;line-height:14px;color:#FFFFFF;">
+                <td style="padding:0 0 3px 0;font-size:9.5px;line-height:13px;color:#FFFFFF;">
                   <span style="color:#D4A017;font-weight:bold;">W:</span>
                   <a href="https://www.sourceonehomeloans.com" style="color:#FFFFFF;text-decoration:none;word-break:break-word;">www.sourceonehomeloans.com</a>
                 </td>
               </tr>
               <tr>
-                <td style="padding:0;font-size:9.5px;line-height:13px;color:#FFFFFF;">
+                <td style="padding:0;font-size:8.5px;line-height:11px;color:#FFFFFF;">
                   Company NMLS #2812359<br>
                   David Bates | Individual NMLS #2038179
                 </td>
               </tr>
               <tr>
-                <td style="padding:5px 0 0 0;font-size:9.5px;line-height:13px;color:#FFFFFF;">
-                  <a href="https://www.facebook.com/profile.php?id=61592025545198" style="color:#D4A017;text-decoration:none;font-weight:bold;">Facebook</a>
-                  <span style="color:#D4A017;"> | </span>
-                  <a href="https://www.instagram.com/sourceonehomeloans/" style="color:#D4A017;text-decoration:none;font-weight:bold;">Instagram</a>
-                  <span style="color:#D4A017;"> | </span>
-                  <a href="https://www.linkedin.com/in/dbates4800" style="color:#D4A017;text-decoration:none;font-weight:bold;">LinkedIn</a>
+                <td style="padding:5px 0 0 0;">
+                  <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+                    <tr>
+                      <td style="padding:0 6px 0 0;">
+                        <a href="https://www.facebook.com/profile.php?id=61592025545198" style="text-decoration:none;">
+                          <img src="https://www.sourceonehomeloans.com/branding/social/facebook-email.png" width="19" alt="Facebook" style="display:block;width:19px;height:19px;border:0;outline:none;text-decoration:none;">
+                        </a>
+                      </td>
+                      <td style="padding:0 6px 0 0;">
+                        <a href="https://www.instagram.com/sourceonehomeloans/" style="text-decoration:none;">
+                          <img src="https://www.sourceonehomeloans.com/branding/social/instagram-email.png" width="19" alt="Instagram" style="display:block;width:19px;height:19px;border:0;outline:none;text-decoration:none;">
+                        </a>
+                      </td>
+                      <td style="padding:0;">
+                        <a href="https://www.linkedin.com/in/dbates4800" style="text-decoration:none;">
+                          <img src="https://www.sourceonehomeloans.com/branding/social/linkedin-email.png" width="19" alt="LinkedIn" style="display:block;width:19px;height:19px;border:0;outline:none;text-decoration:none;">
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>
@@ -73,7 +80,7 @@ const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0
     </td>
   </tr>
   <tr>
-    <td style="padding:0 12px;">
+    <td style="padding:0 10px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
         <tr>
           <td style="border-top:1px solid #D4A017;font-size:1px;line-height:1px;">&nbsp;</td>
@@ -82,30 +89,18 @@ const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0
     </td>
   </tr>
   <tr>
-    <td style="padding:7px 12px 10px 12px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
-        <tr>
-          <td valign="middle" style="width:72px;padding:0 9px 0 0;">
-            <img src="https://www.sourceonehomeloans.com/images/equal-housing-opportunity.png" width="62" alt="Equal Housing Opportunity" style="display:block;width:62px;max-width:62px;height:auto;border:0;outline:none;text-decoration:none;">
-          </td>
-          <td valign="middle" style="padding:0;font-size:8px;line-height:11px;color:#D9E2EC;">
-            Equal Housing Opportunity. Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.
-          </td>
-        </tr>
-      </table>
+    <td style="padding:6px 10px 8px 10px;font-size:7.8px;line-height:10px;color:#D9E2EC;">
+      Equal Housing Opportunity. Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.
     </td>
   </tr>
 </table>`;
 
 const plainText = `David Bates
 Broker | Mortgage Loan Originator
-Source One Home Loans
-
 Your Goal. Our Focus.
 
-Phone: (469) 310-0042
-Email: david@sourceonehomeloans.com
-Website: https://www.sourceonehomeloans.com
+P: (469) 310-0042
+W: https://www.sourceonehomeloans.com
 
 Company NMLS #2812359
 David Bates | Individual NMLS #2038179
@@ -114,11 +109,7 @@ Facebook: https://www.facebook.com/profile.php?id=61592025545198
 Instagram: https://www.instagram.com/sourceonehomeloans/
 LinkedIn: https://www.linkedin.com/in/dbates4800
 
-Equal Housing Opportunity.
-
-Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law.
-
-Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.`;
+Equal Housing Opportunity. Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.`;
 
 export default function EmailSignaturePage() {
   return (
@@ -144,24 +135,24 @@ export default function EmailSignaturePage() {
               <li>Open Gmail settings and select <strong>See all settings</strong>.</li>
               <li>Under <strong>Signature</strong>, create or edit David Bates&apos; signature.</li>
               <li>Paste into the signature editor and save changes.</li>
-              <li>Send a test email to confirm links, email logo, Equal Housing image, and fair-lending wording render correctly.</li>
+              <li>Send a test email to confirm links, email logo, social icons, and fair-lending wording render correctly.</li>
             </ol>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-[#071B35]">Test Checklist</h2>
             <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-700">
-              <li>Email-specific logo and Equal Housing image load from public HTTPS URLs.</li>
-              <li>Signature max width is 480px so it stays compact in normal Gmail messages.</li>
+              <li>Email-specific logo and social icons load from public HTTPS URLs.</li>
+              <li>Signature max width is 400px so it stays compact in normal Gmail messages.</li>
               <li>Main logo has no circular border or black square background.</li>
-              <li>Equal Housing image is the white mark and is not placed inside a square background.</li>
-              <li>No unofficial ECOA logo is used.</li>
-              <li>Fair-lending text is visible beside the Equal Housing mark.</li>
+              <li>Visible email address row is removed from the signature.</li>
+              <li>Equal Housing footer is text-only with no signature-specific image.</li>
+              <li>Fair-lending text remains visible and readable.</li>
               <li>Formatting remains intact after pasting into Gmail.</li>
               <li>Signature remains readable on mobile email screens.</li>
               <li>Outlook renders the table layout without CSS Grid or Flexbox.</li>
               <li>Copy Signature writes both text/html and text/plain clipboard formats when supported by the browser.</li>
-              <li>Phone, email, website, and social links are clickable.</li>
+              <li>Phone, website, and social icon links are clickable.</li>
               <li>Plain-text fallback matches the HTML signature details.</li>
             </ul>
           </div>
