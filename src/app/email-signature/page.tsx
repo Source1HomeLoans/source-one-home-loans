@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   },
 };
 
+// Uses the existing approved black Equal Housing Opportunity mark at
+// /images/equal-housing-opportunity.png. Do not relabel this as an ECOA logo.
 const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;border-collapse:collapse;background:#071B35;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">
   <tr>
     <td style="padding:18px;">
@@ -83,11 +85,17 @@ const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0
     <td style="padding:12px 18px 18px 18px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
         <tr>
-          <td valign="middle" style="width:96px;padding:0 12px 0 0;">
-            <img src="https://www.sourceonehomeloans.com/images/ecoa.png" width="82" alt="Equal Housing Opportunity" style="display:block;width:82px;max-width:82px;height:auto;border:0;outline:none;text-decoration:none;">
+          <td valign="middle" style="width:76px;padding:0 12px 0 0;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;background:#FFFFFF;">
+              <tr>
+                <td style="padding:6px;">
+                  <img src="https://www.sourceonehomeloans.com/images/equal-housing-opportunity.png" width="60" alt="Equal Housing Opportunity" style="display:block;width:60px;max-width:60px;height:auto;border:0;outline:none;text-decoration:none;">
+                </td>
+              </tr>
+            </table>
           </td>
           <td valign="middle" style="padding:0;font-size:10px;line-height:14px;color:#D9E2EC;">
-            Source One Home Loans is an Equal Housing Opportunity mortgage broker. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.
+            Equal Housing Opportunity. Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.
           </td>
         </tr>
       </table>
@@ -112,7 +120,11 @@ Facebook: https://www.facebook.com/profile.php?id=61592025545198
 Instagram: https://www.instagram.com/sourceonehomeloans/
 LinkedIn: https://www.linkedin.com/in/dbates4800
 
-Source One Home Loans is an Equal Housing Opportunity mortgage broker. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.`;
+Equal Housing Opportunity.
+
+Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law.
+
+Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.`;
 
 export default function EmailSignaturePage() {
   return (
@@ -138,7 +150,7 @@ export default function EmailSignaturePage() {
               <li>Open Gmail settings and select <strong>See all settings</strong>.</li>
               <li>Under <strong>Signature</strong>, create or edit David Bates&apos; signature.</li>
               <li>Paste into the signature editor and save changes.</li>
-              <li>Send a test email to confirm links, logo, and Equal Housing image render correctly.</li>
+              <li>Send a test email to confirm links, logo, Equal Housing image, and fair-lending wording render correctly.</li>
             </ol>
           </div>
 
@@ -146,6 +158,8 @@ export default function EmailSignaturePage() {
             <h2 className="text-xl font-semibold text-[#071B35]">Test Checklist</h2>
             <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-700">
               <li>Approved logo and Equal Housing image load from public HTTPS URLs.</li>
+              <li>No unofficial ECOA logo is used.</li>
+              <li>Fair-lending text is visible beside the Equal Housing mark.</li>
               <li>Formatting remains intact after pasting into Gmail.</li>
               <li>Signature remains readable on mobile email screens.</li>
               <li>Outlook renders the table layout without CSS Grid or Flexbox.</li>
