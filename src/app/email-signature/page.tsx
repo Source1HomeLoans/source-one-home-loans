@@ -10,16 +10,16 @@ export const metadata: Metadata = {
   },
 };
 
-// Uses the existing approved black Equal Housing Opportunity mark at
-// /images/equal-housing-opportunity.png. Do not relabel this as an ECOA logo.
+// Uses the approved email logo crop and white Equal Housing Opportunity mark.
+// Do not relabel the Equal Housing image as an ECOA logo.
 const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:640px;border-collapse:collapse;background:#071B35;font-family:Arial,Helvetica,sans-serif;color:#FFFFFF;">
   <tr>
     <td style="padding:18px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
         <tr>
-          <td valign="middle" style="width:154px;padding:0 18px 0 0;">
+          <td valign="middle" style="width:270px;padding:0 20px 0 0;">
             <a href="https://www.sourceonehomeloans.com" style="text-decoration:none;">
-              <img src="https://www.sourceonehomeloans.com/branding/logo/source-one-approved-logo-400.png" width="136" alt="Source One Home Loans" style="display:block;width:136px;max-width:136px;height:auto;border:0;outline:none;text-decoration:none;">
+              <img src="https://www.sourceonehomeloans.com/branding/logo/source-one-email-logo.png" width="240" alt="Source One Home Loans" style="display:block;width:240px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;">
             </a>
           </td>
           <td valign="middle" style="padding:0 0 0 18px;border-left:2px solid #D4A017;">
@@ -85,14 +85,8 @@ const signatureHtml = `<table role="presentation" cellpadding="0" cellspacing="0
     <td style="padding:12px 18px 18px 18px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
         <tr>
-          <td valign="middle" style="width:76px;padding:0 12px 0 0;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;background:#FFFFFF;">
-              <tr>
-                <td style="padding:6px;">
-                  <img src="https://www.sourceonehomeloans.com/images/equal-housing-opportunity.png" width="60" alt="Equal Housing Opportunity" style="display:block;width:60px;max-width:60px;height:auto;border:0;outline:none;text-decoration:none;">
-                </td>
-              </tr>
-            </table>
+          <td valign="middle" style="width:124px;padding:0 14px 0 0;">
+            <img src="https://www.sourceonehomeloans.com/images/equal-housing-opportunity.png" width="110" alt="Equal Housing Opportunity" style="display:block;width:110px;max-width:110px;height:auto;border:0;outline:none;text-decoration:none;">
           </td>
           <td valign="middle" style="padding:0;font-size:10px;line-height:14px;color:#D9E2EC;">
             Equal Housing Opportunity. Source One Home Loans provides equal credit opportunity and does not discriminate in any credit transaction on a basis prohibited by applicable federal or state law. Loans are subject to credit approval, underwriting guidelines, property eligibility, and program requirements. Rates, terms, and programs are subject to change without notice.
@@ -150,19 +144,22 @@ export default function EmailSignaturePage() {
               <li>Open Gmail settings and select <strong>See all settings</strong>.</li>
               <li>Under <strong>Signature</strong>, create or edit David Bates&apos; signature.</li>
               <li>Paste into the signature editor and save changes.</li>
-              <li>Send a test email to confirm links, logo, Equal Housing image, and fair-lending wording render correctly.</li>
+              <li>Send a test email to confirm links, email logo, Equal Housing image, and fair-lending wording render correctly.</li>
             </ol>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-xl font-semibold text-[#071B35]">Test Checklist</h2>
             <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-700">
-              <li>Approved logo and Equal Housing image load from public HTTPS URLs.</li>
+              <li>Email-specific logo and Equal Housing image load from public HTTPS URLs.</li>
+              <li>Main logo has no circular border or black square background.</li>
+              <li>Equal Housing image is the white mark and is not placed inside a square background.</li>
               <li>No unofficial ECOA logo is used.</li>
               <li>Fair-lending text is visible beside the Equal Housing mark.</li>
               <li>Formatting remains intact after pasting into Gmail.</li>
               <li>Signature remains readable on mobile email screens.</li>
               <li>Outlook renders the table layout without CSS Grid or Flexbox.</li>
+              <li>Copy Signature writes both text/html and text/plain clipboard formats when supported by the browser.</li>
               <li>Phone, email, website, and social links are clickable.</li>
               <li>Plain-text fallback matches the HTML signature details.</li>
             </ul>

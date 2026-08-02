@@ -68,7 +68,7 @@ export default function LicensingDisclosuresPage() {
                 alt="Equal Housing Opportunity"
                 width={28}
                 height={28}
-                className="mt-0.5 h-7 w-7 shrink-0 object-contain"
+                className="mt-0.5 h-7 w-7 shrink-0 rounded-sm bg-navy p-1 object-contain"
               />
               <span>
                 <strong className="text-navy">Equal Housing Opportunity.</strong> Source One Home Loans supports fair and
