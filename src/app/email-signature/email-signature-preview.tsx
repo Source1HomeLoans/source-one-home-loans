@@ -51,7 +51,7 @@ export function EmailSignaturePreview({ html, plainText }: EmailSignaturePreview
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>
