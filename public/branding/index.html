@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Source One Home Loans Branding Assets</title>
+    <meta
+      name="description"
+      content="Public branding asset directory for Source One Home Loans logos, icons, email assets, social media graphics, and downloadable documents."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #0d1b2a;
+        --gold: #d4af37;
+        --gray: #f2f4f7;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--gray);
+        color: var(--navy);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        width: min(960px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 64px 0;
+      }
+
+      .card {
+        overflow: hidden;
+        border: 1px solid rgba(13, 27, 42, 0.1);
+        border-radius: 24px;
+        background: var(--white);
+        box-shadow: 0 24px 70px rgba(13, 27, 42, 0.12);
+      }
+
+      .hero {
+        background: var(--navy);
+        color: var(--white);
+        padding: 40px;
+      }
+
+      .accent {
+        width: 72px;
+        height: 4px;
+        margin: 0 0 20px;
+        border-radius: 999px;
+        background: var(--gold);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 16px 0 0;
+      }
+
+      .content {
+        padding: 32px 40px 40px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      a {
+        display: block;
+        min-height: 120px;
+        border: 1px solid rgba(13, 27, 42, 0.1);
+        border-radius: 18px;
+        padding: 20px;
+        color: inherit;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        border-color: var(--gold);
+        box-shadow: 0 16px 34px rgba(13, 27, 42, 0.1);
+        transform: translateY(-2px);
+        outline: none;
+      }
+
+      strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      span {
+        color: rgba(13, 27, 42, 0.72);
+        font-size: 0.95rem;
+      }
+
+      footer {
+        margin-top: 24px;
+        color: rgba(13, 27, 42, 0.7);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 24px, 960px);
+          padding: 32px 0;
+        }
+
+        .hero,
+        .content {
+          padding: 28px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card" aria-labelledby="page-title">
+        <div class="hero">
+          <div class="accent" aria-hidden="true"></div>
+          <h1 id="page-title">Source One Home Loans Branding Assets</h1>
+          <p>
+            Public asset directory prepared for approved logos, icons, HTML
+            email assets, social graphics, and downloadable documents.
+          </p>
+        </div>
+        <div class="content">
+          <p>
+            Add finalized files to the folders below and reference them with
+            public URLs beginning with <strong>/branding/</strong>.
+          </p>
+          <div class="grid" aria-label="Branding asset folders">
+            <a href="/branding/logo/">
+              <strong>Logo</strong>
+              <span>Primary, alternate, light, dark, and transparent logo files.</span>
+            </a>
+            <a href="/branding/icons/">
+              <strong>Icons</strong>
+              <span>Favicons, app icons, compliance icons, and UI marks.</span>
+            </a>
+            <a href="/branding/email/">
+              <strong>Email</strong>
+              <span>HTML email images, signature assets, and notification graphics.</span>
+            </a>
+            <a href="/branding/social/">
+              <strong>Social</strong>
+              <span>Open Graph images, profile graphics, and social share assets.</span>
+            </a>
+            <a href="/branding/documents/">
+              <strong>Documents</strong>
+              <span>Downloadable PDFs, disclosures, and public brand documents.</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <footer>
+        Source One Home Loans | Company NMLS #2812359 | Equal Housing Opportunity
+      </footer>
+    </main>
+  </body>
+</html>
