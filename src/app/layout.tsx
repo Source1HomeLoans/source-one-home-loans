@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Playfair_Display } from "next/font/google";
 import { Analytics } from "@/components/analytics";
+import { AppShell } from "@/components/app-shell";
 import { JsonLd } from "@/components/json-ld";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { company } from "@/lib/site-data";
 import { getFounderSchema, getMortgageBrokerSchema, getWebsiteSchema } from "@/lib/structured-data";
 import "./globals.css";
@@ -72,9 +71,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <JsonLd data={getMortgageBrokerSchema()} />
         <JsonLd data={getFounderSchema()} />
         <JsonLd data={getWebsiteSchema()} />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
