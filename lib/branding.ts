@@ -16,7 +16,7 @@ export const fontPrimary = "Playfair Display";
 
 export const fontSecondary = "Inter";
 
-export const logoPath = "/images/source-one-logo.png";
+export const logoPath = "/branding/logo/source-one-horizontal-dark.svg";
 
 export const equalHousingLogoPath = "/images/equal-housing-opportunity.png";
 
@@ -25,4 +25,3 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/sourceonehomeloans/",
   linkedin: "https://www.linkedin.com/in/dbates4800",
 } as const;
-
