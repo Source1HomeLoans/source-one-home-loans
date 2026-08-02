@@ -16,7 +16,7 @@ export const fontPrimary = "Playfair Display";
 
 export const fontSecondary = "Inter";
 
-export const logoPath = "/branding/logo/source-one-horizontal-dark.svg";
+export const logoPath = "/branding/logo/source-one-approved-logo-800.png";
 
 export const equalHousingLogoPath = "/images/equal-housing-opportunity.png";
 
