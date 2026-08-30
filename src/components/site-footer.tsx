@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
+import { Logo } from "@/components/logo";
 import { TrustBadges } from "@/components/trust-badges";
 import { company, navigation } from "@/lib/site-data";
 
@@ -19,16 +20,7 @@ export function SiteFooter() {
     <footer className="bg-navy text-white">
       <div className="container-shell grid gap-10 py-14 md:grid-cols-[1.4fr_0.8fr_1fr]">
         <div>
-          <Link href="/" aria-label="Source One Home Loans home" className="inline-block">
-            <Image
-              src="/branding/logo/source-one-approved-logo-400.png"
-              alt="Source One Home Loans"
-              width={144}
-              height={144}
-              className="h-36 w-36 object-contain"
-              priority={false}
-            />
-          </Link>
+          <Logo variant="footer" />
           <p className="mt-5 max-w-md text-sm leading-7 text-white/60">
             Smart mortgage solutions for homebuyers, investors, and self-employed borrowers.
           </p>
