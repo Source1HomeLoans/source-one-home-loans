@@ -5,11 +5,11 @@ export function Logo({ variant = "header" }: { variant?: "header" | "footer" }) 
   return (
     <Link href="/" className="inline-flex shrink-0 items-center" aria-label="Source One Home Loans home">
       <Image
-        src="/branding/logo/source-one-horizontal-dark.svg"
+        src="/branding/logo/source-one-approved-horizontal.svg"
         alt="Source One Home Loans"
-        width={variant === "footer" ? 270 : 210}
-        height={variant === "footer" ? 90 : 70}
-        className={variant === "footer" ? "h-auto w-[250px]" : "h-auto w-[185px] sm:w-[210px]"}
+        width={variant === "footer" ? 300 : 220}
+        height={variant === "footer" ? 90 : 66}
+        className={variant === "footer" ? "h-auto w-[280px] max-w-full" : "h-auto w-[190px] sm:w-[220px]"}
         priority={variant === "header"}
       />
     </Link>
