@@ -1,6 +1,8 @@
 SOURCE ONE HOME LOANS — VECTOR BRAND ASSET PACKAGE
 
 Included:
+- source-one-approved-logo.png (primary approved circular master)
+- source-one-approved-horizontal.svg (approved transparent horizontal companion)
 - source-one-icon.svg
 - source-one-icon-transparent.svg
 - source-one-stacked-dark.svg
@@ -20,6 +22,8 @@ Color palette:
 - White: #FFFFFF
 
 Recommended use:
+- Approved circular master: square placements, social profiles, and large-format brand use
+- Approved horizontal companion: website headers, footers, email signatures, and wide placements
 - Horizontal dark: website headers, email signatures, dark backgrounds
 - Horizontal light: white documents and print
 - Stacked: social profiles and square placements
