@@ -282,6 +282,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...savedLead,
+            phone: leadDetails.phone.replace(/\D/g, "").slice(-10),
             loan_purpose: loanPurpose,
             preferred_contact_method: preferredContactMethod || null,
             consent_to_contact: leadDetails.consent_to_contact,
