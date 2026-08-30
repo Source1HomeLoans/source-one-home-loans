@@ -193,26 +193,26 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
     if (!response.ok) {
       const errorBody = await response.text();
-      const isMissingConsentEvidenceColumn =
+      const isMissingLeadColumn =
         response.status === 400 &&
         errorBody.includes("PGRST204") &&
-        [
-          "consent_submitted_at",
-          "consent_disclosure_version",
-          "consent_phone_number",
-          "form_source",
-        ].some((column) => errorBody.includes(column));
+        errorBody.includes("column") &&
+        errorBody.includes("leads");
 
-      if (isMissingConsentEvidenceColumn) {
-        const {
-          consent_submitted_at: _consentSubmittedAt,
-          consent_disclosure_version: _consentDisclosureVersion,
-          consent_phone_number: _consentPhoneNumber,
-          form_source: _formSource,
-          ...legacyLeadDetails
-        } = leadDetails;
+      if (isMissingLeadColumn) {
+        const legacyLeadDetails = {
+          first_name: leadDetails.first_name,
+          last_name: leadDetails.last_name,
+          email: leadDetails.email,
+          phone: leadDetails.phone,
+          loan_program_interest: leadDetails.loan_program_interest,
+          message: leadDetails.message,
+          consent_to_contact: leadDetails.consent_to_contact,
+          source_page: leadDetails.source_page,
+          lead_status: leadDetails.lead_status,
+        };
 
-        console.warn("Supabase consent-evidence columns are unavailable; retrying with the legacy lead schema.", {
+        console.warn("Supabase lead columns are unavailable; retrying with the original lead schema.", {
           errorBody,
           sourcePage: leadDetails.source_page,
           submittedAt: submittedAtIso,
