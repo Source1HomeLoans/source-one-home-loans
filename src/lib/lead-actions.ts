@@ -122,10 +122,12 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   const fullName = readRequiredText(formData, "name");
   const [fallbackFirstName = "", ...fallbackLastNameParts] = fullName.split(/\s+/).filter(Boolean);
   const preferredContactMethod = readRequiredText(formData, "preferred_contact_method");
+  const loanPurpose = readRequiredText(formData, "loan_purpose");
   const loanGoal = readRequiredText(formData, "loan_goal");
   const rawMessage = readRequiredText(formData, "message");
   const enhancedMessage = [
     rawMessage,
+    loanPurpose ? `Loan Purpose: ${loanPurpose}` : "",
     preferredContactMethod ? `Preferred Contact Method: ${preferredContactMethod}` : "",
   ]
     .filter(Boolean)
@@ -150,7 +152,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
     lead_status: "new",
   };
 
-  if (!leadDetails.first_name || !leadDetails.last_name || !leadDetails.email || !leadDetails.phone) {
+  if (!leadDetails.first_name || !leadDetails.last_name || !leadDetails.email || !leadDetails.phone || !loanPurpose) {
     return {
       status: "error",
       message: "Please complete the required fields before submitting.",
@@ -280,6 +282,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...savedLead,
+            loan_purpose: loanPurpose,
             preferred_contact_method: preferredContactMethod || null,
             consent_to_contact: leadDetails.consent_to_contact,
             consent_submitted_at: leadDetails.consent_submitted_at,
