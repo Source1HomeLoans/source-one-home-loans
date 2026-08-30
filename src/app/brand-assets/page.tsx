@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Brand Assets Preview",
-  description: "Preview approved Source One Home Loans raster logo assets before production header use.",
+  description: "Preview approved Source One Home Loans circular and horizontal brand assets.",
   robots: {
     index: false,
     follow: false,
@@ -30,6 +30,14 @@ const approvedMaster: BrandAsset = {
 };
 
 const approvedAssets: BrandAsset[] = [
+  {
+    name: "Approved Horizontal Logo",
+    path: "/branding/logo/source-one-approved-horizontal.svg",
+    type: "SVG",
+    dimensions: "1200x360 transparent horizontal layout",
+    width: 520,
+    height: 156,
+  },
   {
     name: "Approved Logo 1200",
     path: "/branding/logo/source-one-approved-logo-1200.png",
@@ -296,19 +304,20 @@ export default function BrandAssetsPage() {
             Source One Home Loans Brand Assets
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-700">
-            Review the approved circular raster logo and derived PNG/ICO assets before the production header is changed.
+            Review the approved circular master logo, approved horizontal companion logo, and derived PNG/ICO assets.
           </p>
         </div>
 
         <div className="mb-12 rounded-2xl border border-[#D4A017]/30 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-semibold text-[#071B35]">Approved Usage Paths</h2>
           <div className="mt-4 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
-            <p><strong className="text-[#071B35]">Future website logo:</strong> /branding/logo/source-one-approved-logo-800.png</p>
+            <p><strong className="text-[#071B35]">Approved horizontal logo:</strong> /branding/logo/source-one-approved-horizontal.svg</p>
+            <p><strong className="text-[#071B35]">Approved circular website logo:</strong> /branding/logo/source-one-approved-logo-800.png</p>
             <p><strong className="text-[#071B35]">Master raster logo:</strong> /branding/logo/source-one-approved-logo.png</p>
             <p><strong className="text-[#071B35]">Favicon:</strong> /branding/logo/source-one-approved-favicon.ico</p>
             <p><strong className="text-[#071B35]">Apple touch icon:</strong> /branding/logo/source-one-approved-apple-touch-icon.png</p>
             <p><strong className="text-[#071B35]">App icons:</strong> /branding/logo/source-one-approved-icon-192.png and /branding/logo/source-one-approved-icon-512.png</p>
-            <p><strong className="text-[#071B35]">Note:</strong> No vector SVG was auto-traced from the approved raster logo.</p>
+            <p><strong className="text-[#071B35]">Note:</strong> The horizontal asset preserves the approved circular raster seal without auto-tracing it.</p>
           </div>
         </div>
 
@@ -322,7 +331,7 @@ export default function BrandAssetsPage() {
           </section>
 
           <section aria-labelledby="approved-derived-assets">
-            <h2 id="approved-derived-assets" className="mb-5 text-2xl font-semibold text-[#071B35]">Approved Derived PNG and Icon Assets</h2>
+            <h2 id="approved-derived-assets" className="mb-5 text-2xl font-semibold text-[#071B35]">Approved Horizontal, PNG, and Icon Assets</h2>
             <AssetGrid assets={approvedAssets} />
           </section>
 
