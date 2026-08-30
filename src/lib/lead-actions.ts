@@ -236,6 +236,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
             form_source: leadDetails.form_source,
           }),
           cache: "no-store",
+          signal: AbortSignal.timeout(5000),
         }).then(async (zapierResponse) => {
           if (!zapierResponse.ok) {
             throw new Error(`Zapier webhook failed with status ${zapierResponse.status}`);
