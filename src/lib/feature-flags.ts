@@ -1,1 +1,1 @@
-export const enableVaLoans = process.env.ENABLE_VA_LOANS !== "false";
+export const enableVaLoans = process.env.ENABLE_VA_LOANS === "true";
