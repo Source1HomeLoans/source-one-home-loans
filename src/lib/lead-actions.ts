@@ -176,17 +176,68 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
       submittedAt: submittedAtIso,
     });
 
-    const response = await fetch(`${supabaseUrl.replace(/\/$/, "")}/rest/v1/leads`, {
-      method: "POST",
-      headers: {
-        apikey: supabaseAnonKey,
-        Authorization: `Bearer ${supabaseAnonKey}`,
-        "Content-Type": "application/json",
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify(leadDetails),
-      cache: "no-store",
-    });
+    const insertLead = (payload: Record<string, unknown>) =>
+      fetch(`${supabaseUrl.replace(/\/$/, "")}/rest/v1/leads`, {
+        method: "POST",
+        headers: {
+          apikey: supabaseAnonKey,
+          Authorization: `Bearer ${supabaseAnonKey}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(payload),
+        cache: "no-store",
+      });
+
+    let response = await insertLead(leadDetails);
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      const isMissingConsentEvidenceColumn =
+        response.status === 400 &&
+        errorBody.includes("PGRST204") &&
+        [
+          "consent_submitted_at",
+          "consent_disclosure_version",
+          "consent_phone_number",
+          "form_source",
+        ].some((column) => errorBody.includes(column));
+
+      if (isMissingConsentEvidenceColumn) {
+        const {
+          consent_submitted_at: _consentSubmittedAt,
+          consent_disclosure_version: _consentDisclosureVersion,
+          consent_phone_number: _consentPhoneNumber,
+          form_source: _formSource,
+          ...legacyLeadDetails
+        } = leadDetails;
+
+        console.warn("Supabase consent-evidence columns are unavailable; retrying with the legacy lead schema.", {
+          errorBody,
+          sourcePage: leadDetails.source_page,
+          submittedAt: submittedAtIso,
+        });
+
+        response = await insertLead(legacyLeadDetails);
+      } else {
+        console.error("Supabase lead insert failed.", {
+          status: response.status,
+          statusText: response.statusText,
+          errorBody,
+          payloadColumns: Object.keys(leadDetails),
+          leadSource,
+          sourcePage: leadDetails.source_page,
+          ipAddress,
+          userAgent,
+          submittedAt: submittedAtIso,
+        });
+
+        return {
+          status: "error",
+          message: "We could not submit your inquiry. Please call or email Source One Home Loans directly.",
+        };
+      }
+    }
 
     if (!response.ok) {
       const errorBody = await response.text();
@@ -205,7 +256,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
       return {
         status: "error",
-        message: `Supabase insert failed: ${errorBody || response.statusText}`,
+        message: "We could not submit your inquiry. Please call or email Source One Home Loans directly.",
       };
     }
 
