@@ -91,6 +91,16 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
             <input className="form-field" type="tel" name="phone" autoComplete="tel" required />
           </label>
         </div>
+        <label className="grid gap-2 text-sm font-semibold text-navy">
+          What would you like to do?
+          <select className="form-field" name="loan_purpose" defaultValue="" required>
+            <option value="" disabled>
+              Select purchase or refinance
+            </option>
+            <option value="Purchase">Purchase a property</option>
+            <option value="Refinance">Refinance a property</option>
+          </select>
+        </label>
         {isConsultation ? (
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-semibold text-navy">
