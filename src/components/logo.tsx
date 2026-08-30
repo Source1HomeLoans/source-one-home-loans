@@ -11,6 +11,7 @@ export function Logo({ variant = "header" }: { variant?: "header" | "footer" }) 
         height={variant === "footer" ? 90 : 66}
         className={variant === "footer" ? "h-auto w-[280px] max-w-full" : "h-auto w-[190px] sm:w-[220px]"}
         priority={variant === "header"}
+        unoptimized
       />
     </Link>
   );
