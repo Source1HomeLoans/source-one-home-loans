@@ -44,6 +44,9 @@ export function SiteFooter() {
             <a href={company.emailHref} className="flex items-center gap-3 text-sm text-white/60 transition hover:text-white" data-analytics-event="email_click">
               <Mail className="h-4 w-4 text-gold" /> {company.email}
             </a>
+            <a href={company.borrowerLoginUrl} className="text-sm font-semibold text-gold transition hover:text-white" target="_blank" rel="noopener noreferrer">
+              Borrower Login
+            </a>
             <p className="text-sm text-white/60">Company NMLS #{company.nmls}</p>
             <p className="text-sm text-white/60">{company.individualName} | NMLS #{company.individualNmls}</p>
             <a href={company.nmlsConsumerAccessUrl} className="text-sm font-semibold text-gold transition hover:text-white" target="_blank" rel="noopener noreferrer">
