@@ -27,6 +27,8 @@ export const company = {
   domain: "www.sourceonehomeloans.com",
   crmDomain: "crm.sourceonehomeloans.com",
   siteUrl: "https://www.sourceonehomeloans.com",
+  borrowerLoginUrl: "https://sourceone.my1003app.com/2038179/login",
+  borrowerRegisterUrl: "https://sourceone.my1003app.com/2038179/register",
   nmlsConsumerAccessUrl: "https://www.nmlsconsumeraccess.org/",
   compliance:
     "Loan approvals are subject to credit approval, underwriting guidelines, property approval, and program requirements. Not all applicants will qualify. Rates, terms, and loan programs are subject to change without notice. This website is for informational purposes only and does not constitute a commitment to lend.",
