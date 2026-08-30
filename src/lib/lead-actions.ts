@@ -101,6 +101,7 @@ async function verifyTurnstile(token: string, remoteIp: string) {
 export async function submitLead(_previousState: LeadFormState, formData: FormData): Promise<LeadFormState> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const zapierWebhookUrl = process.env.ZAPIER_LEAD_WEBHOOK_URL;
   const submittedAt = new Date();
   const submittedAtIso = submittedAt.toISOString();
   const submittedAtDisplay = formatArizonaTimestamp(submittedAt);
@@ -222,7 +223,40 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
       submitted_at_display: submittedAtDisplay,
     };
 
+    const zapierDelivery = zapierWebhookUrl
+      ? fetch(zapierWebhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...savedLead,
+            preferred_contact_method: preferredContactMethod || null,
+            consent_to_contact: leadDetails.consent_to_contact,
+            consent_submitted_at: leadDetails.consent_submitted_at,
+            consent_disclosure_version: leadDetails.consent_disclosure_version,
+            form_source: leadDetails.form_source,
+          }),
+          cache: "no-store",
+        }).then(async (zapierResponse) => {
+          if (!zapierResponse.ok) {
+            throw new Error(`Zapier webhook failed with status ${zapierResponse.status}`);
+          }
+
+          console.info("Website lead delivered to Zapier.", {
+            sourcePage: leadDetails.source_page,
+            submittedAt: submittedAtIso,
+          });
+        }).catch((error) => {
+          console.error("Website lead delivery to Zapier failed.", {
+            error,
+            sourcePage: leadDetails.source_page,
+            submittedAt: submittedAtIso,
+          });
+          throw error;
+        })
+      : Promise.resolve();
+
     await Promise.allSettled([
+      zapierDelivery,
       sendLeadNotification(savedLead),
       sendLeadConfirmation(savedLead),
     ]);
