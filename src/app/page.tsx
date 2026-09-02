@@ -183,23 +183,16 @@ export default function HomePage() {
       </section>
 
       <section className="section-space bg-white">
-        <div className="container-shell grid gap-10 rounded-sm border border-navy/10 bg-light-gray p-8 md:p-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
-          <div>
+        <div className="container-shell">
+          <div className="rounded-sm border border-navy/10 bg-light-gray p-8 md:p-10">
             <p className="eyebrow text-gold">Mortgage Calculator</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Estimate your monthly mortgage payment.</h2>
-            <p className="mt-6 text-base leading-8 text-slate-600">
-              Use the Source One Home Loans mortgage calculator to estimate principal, interest, taxes, insurance, HOA dues, and PMI before scheduling a more personalized review.
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-navy md:text-5xl">Estimate your monthly mortgage payment.</h2>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600">
+              Use the Source One Home Loans mortgage calculator to explore estimated principal, interest, taxes, insurance, HOA dues, and mortgage insurance based on the information you enter.
             </p>
             <Link href="/mortgage-calculator" className="button-navy mt-8">
               Try the Mortgage Calculator <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
-          <div className="rounded-sm bg-navy p-7 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">Payment Planning</p>
-            <p className="mt-5 text-4xl font-semibold">Estimate your monthly payment</p>
-            <p className="mt-3 text-sm leading-7 text-white/65">
-              Use the mortgage calculator to review principal, interest, taxes, insurance, HOA dues, and PMI without relying on fixed promotional payment examples.
-            </p>
           </div>
         </div>
       </section>
