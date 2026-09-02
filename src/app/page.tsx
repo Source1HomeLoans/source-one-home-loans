@@ -195,10 +195,10 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="rounded-sm bg-navy p-7 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">Sample Estimate</p>
-            <p className="mt-5 text-4xl font-semibold">$2,900/mo</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">Payment Planning</p>
+            <p className="mt-5 text-4xl font-semibold">Estimate your monthly payment</p>
             <p className="mt-3 text-sm leading-7 text-white/65">
-              Example only. Your actual payment depends on the property, loan terms, taxes, insurance, HOA dues, mortgage insurance, and underwriting guidelines.
+              Use the mortgage calculator to review principal, interest, taxes, insurance, HOA dues, and PMI without relying on fixed promotional payment examples.
             </p>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function HomePage() {
             <p className="eyebrow text-gold">Free Mortgage Consultation</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Explore your loan options with a focused consultation.</h2>
             <p className="mt-6 text-base leading-8 text-slate-600">
-              Share your name, contact details, loan goal, and preferred contact method. Your submission is stored for follow-up in the shared lead pipeline.
+              Share your name, contact details, loan goal, and preferred contact method. Your information is securely submitted to Source One Home Loans so we can review your request and follow up with you.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/loan-programs" className="button-navy">Explore Your Loan Options</Link>

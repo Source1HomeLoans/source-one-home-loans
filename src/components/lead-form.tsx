@@ -182,7 +182,7 @@ export function LeadForm({ variant = "full", sourcePage = "/contact", defaultPro
         ) : null}
         <p className="text-xs leading-6 text-slate-500">{publicFormCopy.disclaimer}</p>
         <p className="text-xs leading-6 text-slate-500">
-          This form stores your inquiry for follow-up and future CRM/LOS workflow integration. Please do not submit sensitive personal information.
+          Your information is securely submitted to Source One Home Loans for review and follow-up. Please do not submit sensitive personal information.
         </p>
       </form>
     </>

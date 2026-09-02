@@ -49,14 +49,14 @@ const sections = [
   {
     title: "How Information May Be Shared",
     content: [
-      "Information may be disclosed to service providers that support website hosting, database infrastructure, email delivery, business communications, analytics, customer relationship management, security, and operational support.",
+      "Information may be disclosed to service providers that support website hosting, secure data storage, email delivery, business communications, analytics, security, and operational support.",
       "Source One Home Loans does not sell personal information in the ordinary course of its mortgage business. Information may be disclosed to service providers, business partners, regulators, law-enforcement authorities, or other parties when permitted or required by law or when necessary to respond to a consumer's request.",
     ],
   },
   {
     title: "Security And Retention",
     content: [
-      "Source One Home Loans uses reasonable administrative, technical, and organizational safeguards designed to protect information. No website, internet transmission, email, database, or electronic storage method can be promised to be completely secure.",
+      "Source One Home Loans uses reasonable administrative, technical, and organizational safeguards designed to protect information. No website, internet transmission, email, or electronic storage method can be promised to be completely secure.",
       "Records may be retained for as long as reasonably necessary for business, legal, regulatory, dispute-resolution, fraud-prevention, and recordkeeping purposes. No specific retention period is published by this website policy.",
     ],
   },

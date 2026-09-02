@@ -1,4 +1,5 @@
-import { isPublicWhenVaDisabled, omitVaFaqs, omitVaStrings, scrubVaText, stripVaCategories, stripVaRelatedSlugs } from "@/lib/va-visibility";
+import { enableVaLoans } from "@/lib/feature-flags";
+import { hasVaLoanReference, isPublicWhenVaDisabled, omitVaFaqs, omitVaStrings, scrubVaText, stripVaCategories, stripVaRelatedSlugs } from "@/lib/va-visibility";
 
 export type SeoPage = {
   slug: string;
@@ -415,6 +416,10 @@ export const mortgageProgramPages = allMortgageProgramPages
   .filter(isPublicWhenVaDisabled)
   .map(publicSeoPage)
   .filter((page) => page.faqs.length > 0);
+
+export function getAnyProgramBySlug(slug: string) {
+  return allMortgageProgramPages.find((page) => page.slug === slug);
+}
 
 const cityFaqs = (city: string) => [
   {
@@ -1024,7 +1029,7 @@ const veteranHomeownershipPosts: BlogPost[] = [
   },
 ];
 
-export const blogPosts: BlogPost[] = [
+const allSeoBlogPosts: BlogPost[] = [
   ...veteranHomeownershipPosts,
   {
     slug: "how-texas-buyers-can-prepare-for-pre-qualification",
@@ -1302,6 +1307,42 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+function publicSeoBlogPost(post: BlogPost): BlogPost {
+  return {
+    ...post,
+    title: scrubVaText(post.title),
+    metaTitle: scrubVaText(post.metaTitle),
+    metaDescription: scrubVaText(post.metaDescription),
+    category: scrubVaText(post.category),
+    excerpt: scrubVaText(post.excerpt),
+    keywords: omitVaStrings(post.keywords),
+    takeaways: omitVaStrings(post.takeaways),
+    relatedProgramSlugs: stripVaRelatedSlugs(post.relatedProgramSlugs),
+    sections: post.sections
+      .filter((section) => enableVaLoans || !hasVaLoanReference(section.heading))
+      .map((section) => ({
+        ...section,
+        heading: scrubVaText(section.heading),
+        paragraphs: omitVaStrings(section.paragraphs),
+        subheadings: section.subheadings
+          ?.filter((subheading) => enableVaLoans || !hasVaLoanReference(subheading.heading))
+          .map((subheading) => ({
+            ...subheading,
+            heading: scrubVaText(subheading.heading),
+            paragraphs: omitVaStrings(subheading.paragraphs),
+          }))
+          .filter((subheading) => subheading.paragraphs.length > 0),
+      }))
+      .filter((section) => section.paragraphs.length > 0 || (section.subheadings?.length ?? 0) > 0),
+    faqs: omitVaFaqs(post.faqs),
+  };
+}
+
+export const blogPosts: BlogPost[] = allSeoBlogPosts
+  .filter(isPublicWhenVaDisabled)
+  .map(publicSeoBlogPost)
+  .filter((post) => post.sections.length > 0 && post.faqs.length > 0);
 
 export function getProgramBySlug(slug: string) {
   return mortgageProgramPages.find((page) => page.slug === slug);

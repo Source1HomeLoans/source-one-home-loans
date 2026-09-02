@@ -169,7 +169,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
   }
 
   try {
-    console.info("Submitting website lead to Supabase.", {
+    console.info("Submitting website inquiry.", {
       payloadColumns: Object.keys(leadDetails),
       leadSource,
       sourcePage: leadDetails.source_page,
@@ -214,7 +214,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
           lead_status: leadDetails.lead_status,
         };
 
-        console.warn("Supabase lead columns are unavailable; retrying with the original lead schema.", {
+        console.warn("Expanded lead columns are unavailable; retrying with the original lead schema.", {
           errorBody,
           sourcePage: leadDetails.source_page,
           submittedAt: submittedAtIso,
@@ -222,7 +222,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
 
         response = await insertLead(legacyLeadDetails);
       } else {
-        console.error("Supabase lead insert failed.", {
+        console.error("Website inquiry submission failed.", {
           status: response.status,
           statusText: response.statusText,
           errorBody,
@@ -244,7 +244,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
     if (!response.ok) {
       const errorBody = await response.text();
 
-      console.error("Supabase lead insert failed.", {
+      console.error("Website inquiry submission failed.", {
         status: response.status,
         statusText: response.statusText,
         errorBody,
@@ -263,7 +263,7 @@ export async function submitLead(_previousState: LeadFormState, formData: FormDa
     }
 
     // TODO: Add spam protection before launch scale-up, such as Turnstile, reCAPTCHA, rate limiting, or a honeypot.
-    // TODO: Add CRM assignment/routing logic when the CRM dashboard and LOS workflow are connected.
+    // TODO: Add future team assignment rules as inquiry volume grows.
     const savedLead = {
       first_name: leadDetails.first_name,
       last_name: leadDetails.last_name,

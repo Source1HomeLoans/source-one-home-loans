@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { BlogArticle } from "@/components/blog-article";
-import { getBlogPostBySlug } from "@/lib/blogPosts";
+import { getAnyBlogPostBySlug, getBlogPostBySlug } from "@/lib/blogPosts";
 import { company } from "@/lib/site-data";
+import { isVaSlug } from "@/lib/va-visibility";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
+    if (isVaSlug(slug) && getAnyBlogPostBySlug(slug)) {
+      return {
+        title: "Blog | Source One Home Loans",
+        description: "Explore current Source One Home Loans mortgage education articles.",
+        robots: {
+          index: false,
+          follow: true,
+        },
+      };
+    }
+
     return {};
   }
 
@@ -37,6 +49,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
+    if (isVaSlug(slug) && getAnyBlogPostBySlug(slug)) {
+      redirect("/blog");
+    }
+
     notFound();
   }
 

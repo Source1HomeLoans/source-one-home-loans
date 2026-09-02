@@ -369,7 +369,7 @@ export function RelationshipHubClient() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-xl font-semibold">Contact Files</h2>
-                <p className="mt-1 text-sm text-slate-500">Designed for Supabase Storage attachments by contact.</p>
+                <p className="mt-1 text-sm text-slate-500">Designed for organized contact attachments and relationship notes.</p>
               </div>
               <button type="button" className="inline-flex items-center gap-2 rounded-full bg-[#0B1F3A] px-4 py-2 text-sm font-semibold text-white">
                 <Upload className="h-4 w-4" /> Upload File

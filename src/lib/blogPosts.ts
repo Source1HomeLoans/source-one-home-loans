@@ -773,3 +773,7 @@ export const blogPosts = allBlogPosts
 export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
 }
+
+export function getAnyBlogPostBySlug(slug: string) {
+  return allBlogPosts.find((post) => post.slug === slug);
+}

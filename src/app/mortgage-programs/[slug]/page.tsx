@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { SeoProgramPage } from "@/components/seo-page-template";
-import { getProgramBySlug } from "@/lib/seo-content";
+import { getAnyProgramBySlug, getProgramBySlug } from "@/lib/seo-content";
+import { isVaSlug } from "@/lib/va-visibility";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -14,6 +15,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const page = getProgramBySlug(slug);
 
   if (!page) {
+    if (isVaSlug(slug) && getAnyProgramBySlug(slug)) {
+      return {
+        title: "Mortgage Programs | Source One Home Loans",
+        description: "Explore current Source One Home Loans mortgage program guides.",
+        robots: {
+          index: false,
+          follow: true,
+        },
+      };
+    }
+
     return {};
   }
 
@@ -29,6 +41,10 @@ export default async function MortgageProgramPage({ params }: PageProps) {
   const page = getProgramBySlug(slug);
 
   if (!page) {
+    if (isVaSlug(slug) && getAnyProgramBySlug(slug)) {
+      redirect("/mortgage-programs");
+    }
+
     notFound();
   }
 
