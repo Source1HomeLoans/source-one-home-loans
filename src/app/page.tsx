@@ -256,7 +256,7 @@ export default function HomePage() {
             <p className="eyebrow text-gold">Free Mortgage Consultation</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Explore your loan options with a focused consultation.</h2>
             <p className="mt-6 text-base leading-8 text-slate-600">
-              Share your name, contact details, loan goal, and preferred contact method. Your information is securely submitted to Source One Home Loans so we can review your request and follow up with you.
+              Share your name, contact details, loan goal, and preferred contact method. We&apos;ll use this information to follow up and help you explore your mortgage options.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/loan-programs" className="button-navy">Explore Your Loan Options</Link>
