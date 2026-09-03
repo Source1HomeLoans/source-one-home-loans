@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "npm run qa:protected-integrations && next build --webpack",
     "start": "next start",
     "lint": "eslint",
+    "qa:protected-integrations": "node scripts/qa-protected-integrations.mjs",
     "qa:blog": "node scripts/qa-blog-routes.mjs"
   },
   "dependencies": {

@@ -101,6 +101,7 @@ async function verifyTurnstile(token: string, remoteIp: string) {
 export async function submitLead(_previousState: LeadFormState, formData: FormData): Promise<LeadFormState> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // PROTECTED INTEGRATION: server-side website lead delivery. Enforced by qa:protected-integrations.
   const zapierWebhookUrl = process.env.ZAPIER_LEAD_WEBHOOK_URL;
   const submittedAt = new Date();
   const submittedAtIso = submittedAt.toISOString();

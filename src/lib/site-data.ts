@@ -27,6 +27,7 @@ export const company = {
   domain: "www.sourceonehomeloans.com",
   crmDomain: "crm.sourceonehomeloans.com",
   siteUrl: "https://www.sourceonehomeloans.com",
+  // PROTECTED INTEGRATION: do not change without explicit owner approval. Enforced by qa:protected-integrations.
   borrowerLoginUrl: "https://sourceone.my1003app.com/2038179/register",
   borrowerRegisterUrl: "https://sourceone.my1003app.com/2038179/register",
   nmlsConsumerAccessUrl: "https://www.nmlsconsumeraccess.org/",
