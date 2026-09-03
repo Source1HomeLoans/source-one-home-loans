@@ -29,7 +29,7 @@ const sections = [
       "Loan approval is subject to underwriting, verification, credit approval, property approval, program requirements, and property eligibility. Not all applicants will qualify.",
       "Advertised terms, rates, fees, examples, program guidelines, and loan availability are subject to change without notice.",
       "This website is provided for informational purposes only and does not constitute a commitment to lend, a loan application, a rate lock, or a credit decision.",
-      "Not all products are available in all states. State-specific licensing information will be added as applicable when confirmed by company licensing records.",
+      "Mortgage services advertised on this website are currently offered to eligible borrowers in Texas, subject to licensing, program availability, underwriting, investor requirements, and applicable law.",
     ],
   },
   {
@@ -39,8 +39,8 @@ const sections = [
   {
     title: "State Licensing Information",
     content: [
-      "Texas-specific disclosure information is provided on the Texas Disclosure page. Additional state licensing sections may be added later as Source One Home Loans expands or confirms state-specific licensing details.",
-      "This section is intentionally limited to licensing information currently available in the project and should not be read as a claim of licensing in any unlisted state.",
+      "Texas-specific disclosure information is provided on the Texas Disclosure page.",
+      "This website is currently limited to mortgage services advertised for eligible borrowers in Texas and should not be read as a claim of licensing or authority in any other state.",
     ],
   },
 ];
