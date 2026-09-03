@@ -27,7 +27,7 @@ export const company = {
   domain: "www.sourceonehomeloans.com",
   crmDomain: "crm.sourceonehomeloans.com",
   siteUrl: "https://www.sourceonehomeloans.com",
-  borrowerLoginUrl: "https://sourceone.my1003app.com/2038179/login",
+  borrowerLoginUrl: "https://sourceone.my1003app.com/2038179/register",
   borrowerRegisterUrl: "https://sourceone.my1003app.com/2038179/register",
   nmlsConsumerAccessUrl: "https://www.nmlsconsumeraccess.org/",
   compliance:
