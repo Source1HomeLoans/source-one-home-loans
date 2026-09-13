@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { company } from "@/lib/site-data";
 import { useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
@@ -153,11 +154,11 @@ export function MortgageCalculator() {
             A personalized review can account for loan program, credit profile, taxes, insurance, and property details.
           </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-            <Link href="/contact#lead-form" className="button-navy" data-analytics-event="get_prequalified_click">
+            <Link href={company.borrowerInquiryUrl} className="button-navy" data-analytics-event="get_prequalified_click">
               Get Pre-Qualified
             </Link>
-            <Link href="/contact#lead-form" className="button-navy" data-analytics-event="schedule_consultation_click">
-              Schedule a Consultation <ArrowRight className="h-4 w-4" />
+            <Link href={company.borrowerInquiryUrl} className="button-navy" data-analytics-event="schedule_consultation_click">
+              Start a Mortgage Inquiry <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

@@ -16,7 +16,7 @@ export function ContactCta() {
           <a href={company.phoneHref} className="button-navy shrink-0">
             Call Now <Phone className="h-4 w-4" />
           </a>
-          <Link href="/contact#lead-form" className="button-navy shrink-0" data-analytics-event="get_prequalified_click">
+          <Link href={company.borrowerInquiryUrl} className="button-navy shrink-0" data-analytics-event="get_prequalified_click">
             Get Pre-Qualified <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

@@ -27,6 +27,7 @@ export const company = {
   domain: "www.sourceonehomeloans.com",
   crmDomain: "crm.sourceonehomeloans.com",
   siteUrl: "https://www.sourceonehomeloans.com",
+  borrowerInquiryUrl: "https://sourceone.my1003app.com/inquiry",
   // PROTECTED INTEGRATION: do not change without explicit owner approval. Enforced by qa:protected-integrations.
   borrowerLoginUrl: "https://sourceone.my1003app.com/2038179/register",
   borrowerRegisterUrl: "https://sourceone.my1003app.com/2038179/register",
@@ -40,10 +41,6 @@ export const company = {
   texasDisclosure: [
     "TEXAS RESIDENTS: CONSUMERS WISHING TO FILE A COMPLAINT AGAINST A MORTGAGE COMPANY OR RESIDENTIAL MORTGAGE LOAN ORIGINATOR LICENSED IN TEXAS SHOULD SEND A COMPLETED COMPLAINT FORM TO THE DEPARTMENT OF SAVINGS AND MORTGAGE LENDING (SML): 2601 N. LAMAR BLVD., SUITE 201, AUSTIN, TEXAS 78705; TEL: 1-877-276-5550. INFORMATION AND FORMS ARE AVAILABLE ON SML'S WEBSITE: SML.TEXAS.GOV.",
   ],
-  formConsent:
-    "By checking this box, I agree that Source One Home Loans may contact me at the telephone number provided by call or text message regarding my inquiry. Message and data rates may apply. Message frequency varies. Reply STOP to opt out of text messages and HELP for help. Consent is not a condition of obtaining mortgage services.",
-  formDisclaimer:
-    "Submitting this form does not constitute a loan application or guarantee approval.",
 };
 
 export const founder = {

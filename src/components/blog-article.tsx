@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { blogPosts, type BlogPost } from "@/lib/blogPosts";
-import { getProgramContactHref } from "@/lib/program-contact-links";
+import { getProgramEducationHref } from "@/lib/program-contact-links";
 import { mortgageProgramPages } from "@/lib/seo-content";
 import { company } from "@/lib/site-data";
 import { founderId, getFaqSchema, organizationId } from "@/lib/structured-data";
@@ -70,7 +70,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           <h2>Related Mortgage Programs</h2>
           <div className="grid gap-3 md:grid-cols-2">
             {relatedPrograms.map((program) => (
-              <Link key={program.slug} href={getProgramContactHref(program.slug)} className="rounded-sm border border-navy/10 p-4 transition hover:border-gold">
+              <Link key={program.slug} href={getProgramEducationHref(program.slug)} className="rounded-sm border border-navy/10 p-4 transition hover:border-gold">
                 <span className="text-sm font-semibold text-navy">{program.title}</span>
                 <span className="mt-2 block text-xs leading-6 text-slate-600">{program.metaDescription}</span>
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.14em] text-gold">
@@ -94,10 +94,10 @@ export function BlogArticle({ post }: { post: BlogPost }) {
               {post.cta.body}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
+              <Link href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">
                 {post.cta.primaryLabel}
               </Link>
-              <Link href="/contact#lead-form" className="button-outline" data-analytics-event="schedule_consultation_click">
+              <Link href={company.borrowerInquiryUrl} className="button-outline" data-analytics-event="schedule_consultation_click">
                 {post.cta.secondaryLabel}
               </Link>
             </div>

@@ -71,7 +71,7 @@ export function LocationPageTemplate({ page }: { page: LocationPage }) {
               Discuss your loan goals with Source One Home Loans.
             </p>
             <div className="mt-7 grid gap-3">
-              <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
+              <Link href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">
                 Get Pre-Qualified
               </Link>
               <Link href="/loan-programs" className="button-outline">

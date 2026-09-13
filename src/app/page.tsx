@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, ChartNoAxesCombined, Handshake, Headphones, House, ShieldCheck, TrendingUp } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
 import { FounderImage } from "@/components/founder-image";
-import { LeadForm } from "@/components/lead-form";
 import { LoanCard } from "@/components/loan-card";
 import { Reviews } from "@/components/reviews";
 import { TrustBadges } from "@/components/trust-badges";
@@ -52,8 +51,8 @@ export default function HomePage() {
               Personalized mortgage solutions for Texas homebuyers, homeowners, and real estate investors.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
-              <Link href="#free-consultation" className="button-outline" data-analytics-event="schedule_consultation_click">Schedule a Consultation</Link>
+              <Link href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></Link>
+              <Link href={company.borrowerInquiryUrl} className="button-outline" data-analytics-event="schedule_consultation_click">Explore Your Mortgage Options</Link>
             </div>
           </div>
         </div>
@@ -93,8 +92,8 @@ export default function HomePage() {
             <div className="mt-8">
               <TrustBadges />
             </div>
-            <Link href="/contact#lead-form" className="button-navy mt-9">
-              Schedule a Consultation <ArrowRight className="h-4 w-4" />
+            <Link href={company.borrowerInquiryUrl} className="button-navy mt-9">
+              Explore Your Mortgage Options <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="overflow-hidden rounded-2xl border border-gold/40 bg-navy p-3 shadow-[0_24px_70px_rgba(13,27,42,0.16)]">
@@ -128,8 +127,8 @@ export default function HomePage() {
             <p className="mt-6 text-sm font-semibold text-gold">
               {founder.title} | Individual NMLS #{company.individualNmls}
             </p>
-            <Link href="/contact#lead-form" className="button-gold mt-9">
-              Schedule a Consultation <ArrowRight className="h-4 w-4" />
+            <Link href={company.borrowerInquiryUrl} className="button-gold mt-9">
+              Explore Your Mortgage Options <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="rounded-2xl border border-gold/40 bg-white/5 p-3 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
@@ -170,7 +169,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <Link href="/contact#lead-form" className="button-navy mt-9">Discuss Your Options</Link>
+            <Link href={company.borrowerInquiryUrl} className="button-navy mt-9">Discuss Your Options</Link>
           </div>
           <div className="relative rounded-sm bg-navy p-10 text-white shadow-[0_24px_60px_rgba(13,27,42,0.16)] md:p-14">
             <div className="absolute right-8 top-8 h-28 w-28 rounded-full border border-gold/20" />
@@ -219,7 +218,7 @@ export default function HomePage() {
             <p className="mt-6 text-base leading-8 text-slate-600">
               Financing solutions for real estate investors purchasing or refinancing rental properties, including DSCR and investor-focused lending programs.
             </p>
-            <Link href="/contact#lead-form" className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
+            <Link href={company.borrowerInquiryUrl} className="button-navy mt-9">Talk To An Investor Loan Specialist</Link>
           </div>
         </div>
       </section>
@@ -243,21 +242,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="free-consultation" className="section-space bg-white">
-        <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p className="eyebrow text-gold">Free Mortgage Consultation</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-navy md:text-5xl">Explore your loan options with a focused consultation.</h2>
-            <p className="mt-6 text-base leading-8 text-slate-600">
-              Share your name, contact details, loan goal, and preferred contact method. We&apos;ll use this information to follow up and help you explore your mortgage options.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/loan-programs" className="button-navy">Explore Your Loan Options</Link>
-              <a href={company.phoneHref} className="button-gold" data-analytics-event="phone_call_click">Call Now</a>
-            </div>
-          </div>
+      <section className="section-space bg-white">
+        <div className="container-shell">
           <div className="rounded-sm border border-navy/10 bg-light-gray p-7 md:p-10">
-            <LeadForm variant="consultation" sourcePage="/#free-consultation" />
+            <h2 className="text-4xl font-semibold tracking-tight text-navy md:text-5xl">Ready to Explore Your Mortgage Options?</h2>
+            <p className="mt-6 text-base leading-8 text-slate-600">
+              Answer a few questions about your financing goals to get started.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">Get Pre-Qualified <ArrowRight className="h-4 w-4" /></a>
+              <Link href="/loan-programs" className="button-navy">Explore Loan Programs</Link>
+              <a href={company.phoneHref} className="button-navy" data-analytics-event="phone_call_click">Call Source One</a>
+            </div>
           </div>
         </div>
       </section>

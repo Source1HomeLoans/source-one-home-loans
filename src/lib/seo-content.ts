@@ -172,7 +172,7 @@ const allMortgageProgramPages: SeoPage[] = [
     slug: "texas-first-time-homebuyer-loans",
     title: "Texas First-Time Homebuyer Loans",
     metaTitle: "Texas First-Time Homebuyer Loans | Source One Home Loans",
-    metaDescription: "Guidance for Texas first-time homebuyers comparing FHA, VA, conventional, down payment, and pre-qualification options.",
+    metaDescription: "Guidance for Texas first-time homebuyers comparing FHA, conventional, down payment, and pre-qualification options.",
     keywords: ["Texas First-Time Homebuyer Loans", "first-time homebuyer Texas", "home loan Texas"],
     eyebrow: "Home Buying Tips",
     intro:
@@ -388,7 +388,7 @@ const allMortgageProgramPages: SeoPage[] = [
     intro:
       "First-time homebuyer conventional loans may fit qualified Texas buyers who want a mainstream mortgage option with flexible down payment and mortgage insurance possibilities.",
     primaryTopic: "conventional loans for Texas first-time buyers",
-    audience: "first-time homebuyers comparing conventional, FHA, and VA options",
+    audience: "first-time homebuyers comparing conventional and FHA options",
     benefits: ["First-time buyer planning", "Conventional option comparison", "Pre-qualification guidance"],
     relatedProgramSlugs: ["texas-conventional-loans", "texas-first-time-homebuyer-loans", "conventional-loan-requirements"],
     faqs: baseFaqs("first-time homebuyer conventional loans"),

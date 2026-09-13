@@ -59,7 +59,7 @@ export default function GoogleBusinessProfilePage() {
                 </span>
               ))}
             </div>
-            <Link href="/contact#lead-form" className="button-gold mt-9">
+            <Link href={company.borrowerInquiryUrl} className="button-gold mt-9">
               Get Pre-Qualified
             </Link>
           </div>

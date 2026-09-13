@@ -3,7 +3,6 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, FileText, HelpCircle, XCircle } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
-import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
 import { getAnyLoanProgramPageBySlug, getLoanProgramPageBySlug } from "@/lib/loan-program-pages";
 import { company } from "@/lib/site-data";
@@ -91,20 +90,18 @@ export default async function LoanProgramDetailPage({ params }: PageProps) {
             </div>
           </article>
 
-          <aside id="lead-form" className="rounded-sm border border-navy/10 bg-light-gray p-6 md:p-8">
+          <aside className="rounded-sm border border-navy/10 bg-light-gray p-6 md:p-8">
             <p className="eyebrow text-gold">Get Pre-Qualified</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-navy">
               Want to see if this loan program fits your situation?
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-600">
-              Share a few details and Source One Home Loans will follow up about {page.title.toLowerCase()}.
+              Start a mortgage inquiry to explore whether {page.title.toLowerCase()} could fit your financing goals.
             </p>
             <div className="mt-8">
-              <LeadForm
-                sourcePage={`/loan-programs/${page.slug}`}
-                defaultProgramInterest={page.title}
-                fixedProgramInterest
-              />
+              <a href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">
+                Get Pre-Qualified <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </aside>
         </div>
@@ -116,7 +113,7 @@ export default async function LoanProgramDetailPage({ params }: PageProps) {
             <p className="eyebrow text-gold">Next Step</p>
             <h2 className="mt-3 text-3xl font-semibold">Compare your loan options with clear guidance.</h2>
           </div>
-          <Link href="/contact#lead-form" className="button-gold shrink-0">
+          <Link href={company.borrowerInquiryUrl} className="button-gold shrink-0">
             Contact Source One <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

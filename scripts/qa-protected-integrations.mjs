@@ -1,112 +1,94 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import ts from "typescript";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, "..");
-const expectedBorrowerPortalUrl = "https://sourceone.my1003app.com/2038179/register";
-const obsoleteBorrowerPortalUrl = "https://sourceone.my1003app.com/2038179/login";
-
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 const failures = [];
-
-function readProjectFile(relativePath) {
-  return fs.readFileSync(path.join(root, relativePath), "utf8");
+function check(condition, message) {
+  if (!condition) failures.push(message);
+}
+function filesIn(directory) {
+  return fs.readdirSync(path.join(root, directory), { withFileTypes: true }).flatMap((entry) => {
+    const file = `${directory}/${entry.name}`;
+    return entry.isDirectory() ? filesIn(file) : [file];
+  });
+}
+const inquiryUrl = "https://sourceone.my1003app.com/inquiry";
+const portalUrl = "https://sourceone.my1003app.com/2038179/register";
+const siteData = read("src/lib/site-data.ts");
+const configString = (key) => siteData.match(new RegExp(`${key}:\\s*["']([^"']+)["']`))?.[1];
+check(configString("borrowerInquiryUrl") === inquiryUrl, "ARIVE inquiry URL must remain the approved native inquiry URL.");
+for (const key of ["borrowerLoginUrl", "borrowerRegisterUrl"]) {
+  check(configString(key) === portalUrl, `${key} must remain the approved Borrower Login configuration.`);
 }
 
-function fail(message) {
-  failures.push(`Protected integration QA failed: ${message}`);
-}
-
-function assert(condition, message) {
-  if (!condition) {
-    fail(message);
+// Negative regression guards only: none of these may be required at runtime.
+const retiredTokens = /\b(?:submitLead|LeadForm|ZAPIER_LEAD_WEBHOOK_URL|NEXT_PUBLIC_SUPABASE_URL|NEXT_PUBLIC_SUPABASE_ANON_KEY|RESEND_API_KEY|TURNSTILE_SECRET_KEY|NEXT_PUBLIC_TURNSTILE_SITE_KEY)\b|hooks\.zapier\.com|\/rest\/v1\/leads|public\.leads|@supabase\/|\bfrom\s*["']resend["']|challenges\.cloudflare\.com\/turnstile|@\/lib\/(?:lead-actions|lead-notifications|email-templates|public-form-copy|public-loan-program-options)/;
+const oldAnchors = /#(?:lead-form|free-consultation)/;
+const inquiryCounts = new Map();
+const portalCounts = new Map();
+for (const file of [...filesIn("src"), ...filesIn("lib")].filter((file) => /\.[cm]?[jt]sx?$/.test(file))) {
+  const source = read(file);
+  check(!oldAnchors.test(source), `${file}: obsolete mortgage form anchor.`);
+  // The dormant hub has no intake role; historical schema is outside these runtime folders.
+  check(!retiredTokens.test(source), `${file}: retired website intake dependency.`);
+  if (!file.endsWith("site-data.ts")) {
+    check(!source.includes("my1003app.com"), `${file}: use shared ARIVE configuration rather than a hard-coded URL.`);
   }
-}
-
-function matchConfigString(source, key) {
-  const match = source.match(new RegExp(`${key}:\\s*["']([^"']+)["']`));
-  return match?.[1] ?? null;
-}
-
-function countMatches(source, pattern) {
-  return source.match(pattern)?.length ?? 0;
-}
-
-const siteData = readProjectFile("src/lib/site-data.ts");
-const siteHeader = readProjectFile("src/components/site-header.tsx");
-const siteFooter = readProjectFile("src/components/site-footer.tsx");
-const leadForm = readProjectFile("src/components/lead-form.tsx");
-const leadActions = readProjectFile("src/lib/lead-actions.ts");
-
-assert(
-  matchConfigString(siteData, "borrowerLoginUrl") === expectedBorrowerPortalUrl,
-  "borrowerLoginUrl must remain the approved ARIVE borrower portal register URL.",
-);
-assert(
-  matchConfigString(siteData, "borrowerRegisterUrl") === expectedBorrowerPortalUrl,
-  "borrowerRegisterUrl must remain the approved ARIVE borrower portal register URL.",
-);
-assert(!siteData.includes(obsoleteBorrowerPortalUrl), "obsolete ARIVE borrower portal login URL must not appear in site-data.");
-
-assert(
-  countMatches(siteHeader, /href=\{company\.borrowerLoginUrl\}/g) >= 2,
-  "desktop and mobile header Borrower Login links must derive from company.borrowerLoginUrl.",
-);
-assert(!/my1003app\.com/.test(siteHeader), "site-header must not hard-code a borrower portal URL.");
-assert(/Borrower Login/.test(siteHeader), "site-header must still render Borrower Login links.");
-
-assert(
-  countMatches(siteFooter, /href=\{company\.borrowerLoginUrl\}/g) >= 1,
-  "footer Borrower Login link must derive from company.borrowerLoginUrl.",
-);
-assert(!/my1003app\.com/.test(siteFooter), "site-footer must not hard-code a borrower portal URL.");
-assert(/Borrower Login/.test(siteFooter), "site-footer must still render the Borrower Login link.");
-
-assert(
-  /import\s*\{\s*submitLead\b[\s\S]*\}\s*from\s*["']@\/lib\/lead-actions["']/.test(leadForm),
-  "LeadForm must import submitLead from @/lib/lead-actions.",
-);
-assert(
-  /useActionState\s*\(\s*submitLead\s*,/.test(leadForm),
-  "LeadForm submission state/action must continue using submitLead.",
-);
-
-assert(
-  /process\.env\.ZAPIER_LEAD_WEBHOOK_URL/.test(leadActions),
-  "submitLead must read the server-side ZAPIER_LEAD_WEBHOOK_URL environment variable.",
-);
-assert(
-  !/NEXT_PUBLIC_ZAPIER_LEAD_WEBHOOK_URL/.test(leadActions),
-  "Zapier lead webhook must not be exposed as NEXT_PUBLIC_ZAPIER_LEAD_WEBHOOK_URL.",
-);
-assert(
-  /\/rest\/v1\/leads/.test(leadActions),
-  "submitLead must continue writing website leads to the Supabase /rest/v1/leads endpoint.",
-);
-assert(
-  /fetch\s*\(\s*zapierWebhookUrl\s*,[\s\S]*?method:\s*["']POST["']/.test(leadActions),
-  "Zapier lead delivery must continue performing a server-side POST using zapierWebhookUrl.",
-);
-assert(
-  /zapierDelivery[\s\S]*Promise\.allSettled[\s\S]*zapierDelivery/.test(leadActions),
-  "protected Zapier delivery code must remain wired into the lead submission flow.",
-);
-
-if (process.env.VERCEL_ENV === "production") {
-  const zapierWebhookUrl = process.env.ZAPIER_LEAD_WEBHOOK_URL;
-
-  try {
-    const parsedUrl = new URL(zapierWebhookUrl ?? "");
-    assert(parsedUrl.protocol === "https:", "production Zapier lead webhook must use HTTPS.");
-    assert(parsedUrl.hostname === "hooks.zapier.com", "production Zapier lead webhook hostname must be hooks.zapier.com.");
-  } catch {
-    fail("production Zapier lead webhook is missing or invalid.");
+  const syntax = ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true);
+  function visit(node) {
+    if (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node)) {
+      const tag = node.tagName.getText(syntax);
+      if (!file.includes("relationship-hub")) {
+        check(tag !== "form", `${file}: public website intake must link to ARIVE, not render a form.`);
+      }
+      const attrs = new Map(node.attributes.properties.filter(ts.isJsxAttribute).map((attr) => [attr.name.getText(syntax), attr.initializer]));
+      const href = attrs.get("href");
+      const expression = href && ts.isJsxExpression(href) ? href.expression?.getText(syntax) : undefined;
+      if (expression === "company.borrowerInquiryUrl") inquiryCounts.set(file, (inquiryCounts.get(file) ?? 0) + 1);
+      if (expression === "company.borrowerLoginUrl") portalCounts.set(file, (portalCounts.get(file) ?? 0) + 1);
+      const event = attrs.get("data-analytics-event");
+      if (event && ts.isStringLiteral(event) && ["get_prequalified_click", "schedule_consultation_click"].includes(event.text)) {
+        check(expression === "company.borrowerInquiryUrl", `${file}: borrower conversion CTA must use the shared ARIVE inquiry URL.`);
+      }
+    }
+    ts.forEachChild(node, visit);
   }
+  visit(syntax);
 }
-
-if (failures.length > 0) {
-  console.error(failures.join("\n"));
+// Protect every current borrower conversion placement, including untagged links.
+for (const [file, minimum] of Object.entries({
+  "src/app/page.tsx": 7,
+  "src/app/contact/page.tsx": 1,
+  "src/app/loan-programs/[slug]/page.tsx": 2,
+  "src/app/google-business-profile/page.tsx": 1,
+  "src/components/site-header.tsx": 2,
+  "src/components/contact-cta.tsx": 1,
+  "src/components/blog-article.tsx": 2,
+  "src/components/seo-page-template.tsx": 2,
+  "src/components/location-page-template.tsx": 1,
+  "src/components/mortgage-calculator.tsx": 2,
+})) {
+  check((inquiryCounts.get(file) ?? 0) >= minimum, `${file}: borrower inquiry CTA missing or redirected away from shared ARIVE configuration.`);
+}
+check(portalCounts.get("src/components/site-header.tsx") === 2, "Desktop and mobile Borrower Login must use company.borrowerLoginUrl.");
+check(portalCounts.get("src/components/site-footer.tsx") === 1, "Footer Borrower Login must use company.borrowerLoginUrl.");
+for (const file of ["src/components/site-header.tsx", "src/components/site-footer.tsx"]) {
+  check(read(file).includes("Borrower Login"), `${file}: preserve Borrower Login label.`);
+}
+for (const file of filesIn("public").filter((file) => /\.(?:html|txt)$/.test(file))) {
+  const source = read(file);
+  check(!/<form\b/i.test(source) && !retiredTokens.test(source) && !oldAnchors.test(source), `${file}: retired public intake content.`);
+}
+for (const file of [".env.example", "next.config.ts", "vercel.json"]) {
+  check(!retiredTokens.test(read(file)), `${file}: retired lead service configuration.`);
+}
+const manifest = JSON.parse(read("package.json"));
+check(![...Object.keys(manifest.dependencies ?? {}), ...Object.keys(manifest.devDependencies ?? {})].some((name) => /resend|supabase|turnstile|zapier/i.test(name)), "Retired intake packages must not remain application dependencies.");
+if (failures.length) {
+  console.error(failures.map((failure) => `Protected integration QA failed: ${failure}`).join("\n"));
   process.exit(1);
 }
-
-console.log("Protected integration QA passed.");
+console.log("Protected integration QA passed: ARIVE inquiry, Borrower Login, borrower CTAs, and retired intake checks.");

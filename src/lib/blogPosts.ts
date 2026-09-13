@@ -55,7 +55,7 @@ const allBlogPosts: BlogPost[] = [
     takeaways: [
       "Pre-qualification is an early planning conversation, not a final approval.",
       "Texas buyers should review taxes, insurance, HOA dues, and payment comfort before shopping seriously.",
-      "Veterans, self-employed borrowers, and jumbo buyers usually benefit from earlier documentation review.",
+      "Self-employed borrowers and jumbo buyers usually benefit from earlier documentation review.",
       "A better pre-qualification starts with accurate income, asset, debt, and property-goal information.",
     ],
     content: [
@@ -63,7 +63,7 @@ const allBlogPosts: BlogPost[] = [
         heading: "What Mortgage Pre-Qualification Actually Does",
         paragraphs: [
           "Mortgage pre-qualification helps a Texas buyer move from guessing to planning. It gives the borrower a practical starting point by reviewing income, debts, assets, credit profile, expected down payment, and the type of property they want to buy. It is not a final underwriting decision, but it can help a buyer understand what documents are likely needed and which loan programs deserve a closer look.",
-          "For Source One Home Loans, pre-qualification is also a strategy conversation. A first-time buyer in Arlington may need help understanding cash to close. A veteran relocating to San Antonio may need a VA loan review. A buyer shopping higher-value homes in Frisco or Austin may need jumbo loan preparation. The point is to shape the next step around the borrower, not force every file into one checklist.",
+          "For Source One Home Loans, pre-qualification is also a strategy conversation. A first-time buyer in Arlington may need help understanding cash to close. A buyer shopping higher-value homes in Frisco or Austin may need jumbo loan preparation. The point is to shape the next step around the borrower, not force every file into one checklist.",
         ],
       },
       {
@@ -76,7 +76,7 @@ const allBlogPosts: BlogPost[] = [
       {
         heading: "Documents to Gather Before the Call",
         paragraphs: [
-          "W-2 employees can usually start with recent pay stubs, W-2s, bank statements, identification, and a list of monthly debts. Self-employed borrowers should prepare tax returns if available, business bank statements, profit and loss information, and an explanation of how income flows through the business. Veterans and active-duty borrowers may need to discuss service history, Certificate of Eligibility questions, orders, allowances, and occupancy timing.",
+          "W-2 employees can usually start with recent pay stubs, W-2s, bank statements, identification, and a list of monthly debts. Self-employed borrowers should prepare tax returns if available, business bank statements, profit and loss information, and an explanation of how income flows through the business.",
           "Jumbo loan buyers should be ready for a more detailed asset and reserve conversation. Higher-value home financing often requires stronger documentation, more careful review of the full payment, and a realistic discussion about property taxes and insurance.",
         ],
       },
@@ -84,7 +84,7 @@ const allBlogPosts: BlogPost[] = [
         heading: "Common Pre-Qualification Mistakes",
         paragraphs: [
           "The biggest mistake is treating a quick estimate as a buying strategy. Texas borrowers should not ignore property taxes, homeowners insurance, HOA dues, credit card balances, student loans, or car payments. Debt-to-income considerations can change the conversation quickly.",
-          "Another mistake is waiting to disclose complexity. A recent job change, self-employed income, business funds, gift funds, military relocation, or high-balance purchase should be discussed early. Source One Home Loans can help organize the file before a contract timeline creates pressure.",
+          "Another mistake is waiting to disclose complexity. A recent job change, self-employed income, business funds, gift funds, relocation, or high-balance purchase should be discussed early. Source One Home Loans can help organize the file before a contract timeline creates pressure.",
         ],
       },
     ],
@@ -104,7 +104,7 @@ const allBlogPosts: BlogPost[] = [
     ],
     cta: {
       heading: "Start with a clearer number.",
-      body: "Share your goals and documents so Source One Home Loans can help you compare VA, conventional, and jumbo paths before you shop.",
+      body: "Share your goals and documents so Source One Home Loans can help you compare conventional and jumbo paths before you shop.",
       primaryLabel: "Get Pre-Qualified",
       secondaryLabel: "Ask a Pre-Qualification Question",
     },
@@ -455,7 +455,7 @@ const allBlogPosts: BlogPost[] = [
   {
     slug: "texas-self-employed-mortgage-options",
     title: "Texas Self-Employed Mortgage Options",
-    excerpt: "A mortgage planning guide for Texas entrepreneurs comparing conventional, bank statement, P&L, Non-QM, VA, and jumbo options.",
+    excerpt: "A mortgage planning guide for Texas entrepreneurs comparing conventional, bank statement, P&L, Non-QM, and jumbo options.",
     category: "Self-Employed Borrowers",
     publishDate: "2026-06-07",
     readTime: "9 min read",
@@ -513,7 +513,7 @@ const allBlogPosts: BlogPost[] = [
     ],
     cta: {
       heading: "Build a mortgage plan around your business.",
-      body: "Source One Home Loans can help compare conventional, VA, jumbo, bank statement, P&L, and Non-QM paths.",
+      body: "Source One Home Loans can help compare conventional, jumbo, bank statement, P&L, and Non-QM paths.",
       primaryLabel: "Review Self-Employed Options",
       secondaryLabel: "Schedule a Business Owner Consultation",
     },
@@ -596,7 +596,7 @@ const allBlogPosts: BlogPost[] = [
     publishDate: "2026-06-07",
     readTime: "8 min read",
     metaTitle: "Mortgage Pre-Approval vs Pre-Qualification | Source One Home Loans",
-    metaDescription: "Compare mortgage pre-approval and pre-qualification for Texas homebuyers preparing for VA, conventional, jumbo, or self-employed mortgage options.",
+    metaDescription: "Compare mortgage pre-approval and pre-qualification for Texas homebuyers preparing for conventional, jumbo, or self-employed mortgage options.",
     keywords: ["mortgage pre-approval vs pre-qualification", "Texas mortgage pre-approval", "Get Pre-Qualified"],
     takeaways: [
       "Pre-qualification is usually earlier and less documented than pre-approval.",
@@ -658,7 +658,7 @@ const allBlogPosts: BlogPost[] = [
   {
     slug: "first-time-homebuyer-guide-texas",
     title: "First-Time Homebuyer Guide Texas",
-    excerpt: "A Texas first-time homebuyer guide focused on readiness, cash to close, VA benefits, conventional loans, and common mistakes.",
+    excerpt: "A Texas first-time homebuyer guide focused on readiness, cash to close, conventional loans, and common mistakes.",
     category: "Home Buying Tips",
     publishDate: "2026-06-07",
     readTime: "9 min read",
@@ -689,7 +689,7 @@ const allBlogPosts: BlogPost[] = [
       {
         heading: "Loan Options for First-Time Buyers",
         paragraphs: [
-          "Eligible veterans and active-duty service members should ask about VA loans. Many first-time buyers also compare conventional loans, FHA loans, or alternative paths if they are self-employed. In higher-priced areas, jumbo preparation may be relevant even for a first purchase.",
+          "Many first-time buyers compare conventional loans, FHA loans, or alternative paths if they are self-employed. In higher-priced areas, jumbo preparation may be relevant even for a first purchase.",
           "The right program depends on credit, income, assets, property type, loan amount, and long-term goals.",
         ],
       },

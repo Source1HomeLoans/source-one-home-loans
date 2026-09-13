@@ -17,7 +17,7 @@ export function SiteHeader() {
           <a href={company.borrowerLoginUrl} className="text-sm font-semibold text-gold transition hover:text-white" target="_blank" rel="noopener noreferrer">
             Borrower Login
           </a>
-          <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
+          <Link href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">
             Get Pre-Qualified
           </Link>
         </nav>
@@ -35,7 +35,7 @@ export function SiteHeader() {
             <a href={company.borrowerLoginUrl} className="block rounded-sm px-4 py-3 text-sm font-semibold text-gold hover:bg-white/5 hover:text-white" target="_blank" rel="noopener noreferrer">
               Borrower Login
             </a>
-            <Link href="/contact#lead-form" className="button-gold mt-2 w-full" data-analytics-event="get_prequalified_click">
+            <Link href={company.borrowerInquiryUrl} className="button-gold mt-2 w-full" data-analytics-event="get_prequalified_click">
               Get Pre-Qualified
             </Link>
           </nav>

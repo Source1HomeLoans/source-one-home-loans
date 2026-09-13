@@ -13,12 +13,13 @@ export function isVaSlug(slug: string) {
   return vaSlugPattern.test(slug);
 }
 
+// Keywords may mention a program incidentally; only the page topic determines exclusion.
+// Public content transforms separately remove incidental lending references.
 export function isVaContent(value: { slug?: string; title?: string; category?: string; keywords?: string[] }) {
   return Boolean(
     (value.slug && isVaSlug(value.slug)) ||
       (value.title && hasVaLoanReference(value.title)) ||
-      (value.category && hasVaLoanReference(value.category)) ||
-      value.keywords?.some((keyword) => hasVaLoanReference(keyword)),
+      (value.category && hasVaLoanReference(value.category)),
   );
 }
 

@@ -1,5 +1,7 @@
 # Source One Relationship Hub Migration Report
 
+> Historical / dormant: this report records an abandoned project. ARIVE is now the CRM/system of record. The implementation checklist and follow-up proposals below are historical context, not current instructions. Preserve the schema and records; do not resume this work as part of website intake migration.
+
 ## Summary
 
 The current repository did not include an existing CRM route or legacy CRM screens. This update adds a new internal-facing Relationship Hub at `/relationship-hub` and introduces an additive Supabase migration for the unified contact model.

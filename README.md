@@ -2,6 +2,17 @@
 
 Next.js App Router website for Source One Home Loans.
 
+## Borrower Intake
+
+The approved flow is website → ARIVE native inquiry → ARIVE Lead / ARIVE CRM.
+Borrower CTAs use `company.borrowerInquiryUrl` in `src/lib/site-data.ts`.
+The existing Borrower Login configuration is separate and must remain unchanged.
+The public website has no local mortgage intake form or lead-service credential requirement.
+
+Historical database migrations are retained for recordkeeping; do not apply or delete them as part of this retirement. The Relationship Hub and its migration report are dormant historical work, not the active CRM or a development plan.
+
+`npm run qa:protected-integrations` guards the inquiry URL, Borrower Login, borrower CTA destinations, and absence of the retired intake dependencies. It also runs before every production build.
+
 ## Development
 
 ```bash

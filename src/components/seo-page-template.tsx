@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { ContactCta } from "@/components/contact-cta";
 import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
-import { getProgramContactHref } from "@/lib/program-contact-links";
+import { getProgramEducationHref } from "@/lib/program-contact-links";
 import { company } from "@/lib/site-data";
 import type { SeoPage } from "@/lib/seo-content";
 import { getFaqSchema } from "@/lib/structured-data";
@@ -43,7 +43,7 @@ export function SeoProgramPage({ page }: { page: SeoPage }) {
             <h2>Related Mortgage Programs</h2>
             <div className="grid gap-3 md:grid-cols-3">
               {page.relatedProgramSlugs.map((slug) => (
-                <Link key={slug} href={getProgramContactHref(slug)} className="rounded-sm border border-navy/10 p-4 text-sm font-semibold text-navy transition hover:border-gold hover:text-gold">
+                <Link key={slug} href={getProgramEducationHref(slug)} className="rounded-sm border border-navy/10 p-4 text-sm font-semibold text-navy transition hover:border-gold hover:text-gold">
                   View related program <ArrowRight className="ml-1 inline h-4 w-4" />
                 </Link>
               ))}
@@ -65,11 +65,11 @@ export function SeoProgramPage({ page }: { page: SeoPage }) {
               Talk with {company.individualName} about your goals, documentation, and next steps.
             </p>
             <div className="mt-7 grid gap-3">
-              <Link href="/contact#lead-form" className="button-gold" data-analytics-event="get_prequalified_click">
+              <Link href={company.borrowerInquiryUrl} className="button-gold" data-analytics-event="get_prequalified_click">
                 Get Pre-Qualified
               </Link>
-              <Link href="/contact#lead-form" className="button-outline" data-analytics-event="schedule_consultation_click">
-                Schedule a Free Mortgage Consultation
+              <Link href={company.borrowerInquiryUrl} className="button-outline" data-analytics-event="schedule_consultation_click">
+                Start a Mortgage Inquiry
               </Link>
             </div>
           </aside>

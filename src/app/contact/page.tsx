@@ -2,34 +2,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { FounderImage } from "@/components/founder-image";
-import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
-import { getProgramInterestFromQuery } from "@/lib/program-contact-links";
 import { company, founder } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Source One Home Loans to discuss your home financing goals and get pre-qualified.",
+  description: "Contact Source One Home Loans for mortgage inquiries, general questions, business inquiries, and referral opportunities.",
 };
 
-export default async function ContactPage({ searchParams }: { searchParams?: Promise<{ program?: string | string[] }> }) {
-  const resolvedSearchParams = await searchParams;
-  const defaultProgramInterest = getProgramInterestFromQuery(resolvedSearchParams?.program);
-
+export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Get Pre-Qualified"
-        title="Schedule a free mortgage consultation."
-        description="Tell us a little about what you are planning. Source One Home Loans will follow up to help you explore your loan options."
+        eyebrow="Contact Source One"
+        title="How can we help?"
+        description="Start a mortgage inquiry or contact Source One Home Loans directly for general, business, and referral questions."
       />
       <section className="section-space bg-light-gray">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <aside className="rounded-sm bg-navy p-8 text-white md:p-10">
             <p className="eyebrow text-gold">Connect Directly</p>
-            <h2 className="mt-4 text-3xl font-semibold">We are ready when you are.</h2>
+            <h2 className="mt-4 text-3xl font-semibold">General / Business / Referral Inquiry</h2>
             <p className="mt-5 text-sm leading-7 text-white/65">
-              Reach out by phone or email, or send a message through the form to start your pre-qualification conversation.
+              For general questions, business opportunities, or referral inquiries, reach out by phone or email.
             </p>
             <div className="mt-9 grid gap-5">
               <a href={company.phoneHref} className="flex items-start gap-4 border-t border-white/10 pt-5 text-sm text-white/75 hover:text-gold" data-analytics-event="phone_call_click">
@@ -68,7 +63,13 @@ export default async function ContactPage({ searchParams }: { searchParams?: Pro
                 </div>
               </div>
             </div>
-            <LeadForm defaultProgramInterest={defaultProgramInterest} />
+            <h2 className="text-3xl font-semibold text-navy">Mortgage / Borrower Inquiry</h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Buying a home, refinancing, or exploring financing for an investment property? Answer a few questions about your goals to start your mortgage inquiry.
+            </p>
+            <a href={company.borrowerInquiryUrl} className="button-gold mt-7" data-analytics-event="get_prequalified_click">
+              Get Pre-Qualified
+            </a>
           </div>
         </div>
       </section>
